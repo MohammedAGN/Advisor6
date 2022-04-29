@@ -17,8 +17,15 @@ namespace Advisor6.Models
         public string Subject { get; set; }
         public string Summary { get; set; }
         public string Nots { get; set; }
-       
+        public DateTime EntryDate { get; set; }
+        public DateTime LadtUpdateDate { get; set; }
+        public string DataEntryName { get; set; }
+
         public string Image { get; set; }
         public string PDF { get; set; }
+
+        //Relationships
+        public List<Personal> Personal { get; set; }
+
     }
 }
