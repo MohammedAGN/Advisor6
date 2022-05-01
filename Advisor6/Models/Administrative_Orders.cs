@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace Advisor6.Models
 {
     public class Administrative_Orders
     {
         [Key]
-        public string Admi_id { get; set; }
+        public int Admi_id { get; set; }
         public int AdministrativeNo { get; set; }
         public int OrderNo { get; set; }
         public DateTime Administrative_Order_Date { get; set; }
@@ -24,8 +23,19 @@ namespace Advisor6.Models
         public string Image { get; set; }
         public string PDF { get; set; }
 
-        //Relationships
-        public List<Personal> Personal { get; set; }
+        //   //Relationships
+
+       //Personal
+
+        [ForeignKey("PersonalId")]
+       public int PersonalId { get; set; }       
+       public Personal Personal { get; set; }
+
+        //Employment_info
+
+        [ForeignKey("Employee_id")]
+        public int Employee_id { get; set; }
+        public Employment_info Employment_info { get; set; }
 
     }
 }

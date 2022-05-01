@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Advisor6.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,13 @@ namespace Advisor6.Data
         {
            
         }
+
+
+
+        public DbSet<Personal> Personal { get; set; }
+        public DbSet<Employment_info> Employment_info { get; set; }     
+        public DbSet<Administrative_Orders> Administrative_Orders { get; set; }
+        
 
     }
 }
