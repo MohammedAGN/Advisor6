@@ -13,4 +13,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Employment_info\" />
+    <Folder Include="Views\Administrative_Orders\" />
+  </ItemGroup>
+
 </Project>
