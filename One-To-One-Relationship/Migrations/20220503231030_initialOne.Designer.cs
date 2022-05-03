@@ -4,14 +4,16 @@ using Advisor6.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Advisor6.Migrations
+namespace One_To_One_Relationship.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220503231030_initialOne")]
+    partial class initialOne
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +40,7 @@ namespace Advisor6.Migrations
                     b.Property<int>("Employee_id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Employment_infoEmployee_id")
+                    b.Property<int?>("Employment_infoId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("EntryDate")
@@ -73,7 +75,7 @@ namespace Advisor6.Migrations
 
                     b.HasKey("Admi_id");
 
-                    b.HasIndex("Employment_infoEmployee_id");
+                    b.HasIndex("Employment_infoId");
 
                     b.HasIndex("PersonalId");
 
@@ -82,7 +84,7 @@ namespace Advisor6.Migrations
 
             modelBuilder.Entity("Advisor6.Models.Employment_info", b =>
                 {
-                    b.Property<int>("Employee_id")
+                    b.Property<int>("Employment_infoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -141,7 +143,7 @@ namespace Advisor6.Migrations
                     b.Property<string>("SubDeptartment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Employee_id");
+                    b.HasKey("Employment_infoId");
 
                     b.HasIndex("PersonalId")
                         .IsUnique();
@@ -206,8 +208,8 @@ namespace Advisor6.Migrations
             modelBuilder.Entity("Advisor6.Models.Administrative_Orders", b =>
                 {
                     b.HasOne("Advisor6.Models.Employment_info", "Employment_info")
-                        .WithMany("Administrative_Orders")
-                        .HasForeignKey("Employment_infoEmployee_id");
+                        .WithMany()
+                        .HasForeignKey("Employment_infoId");
 
                     b.HasOne("Advisor6.Models.Personal", "Personal")
                         .WithMany("Administrative_Orders")
@@ -223,7 +225,7 @@ namespace Advisor6.Migrations
             modelBuilder.Entity("Advisor6.Models.Employment_info", b =>
                 {
                     b.HasOne("Advisor6.Models.Personal", "Personal")
-                        .WithOne("Employment_info")
+                        .WithOne("Employment_Info")
                         .HasForeignKey("Advisor6.Models.Employment_info", "PersonalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -231,16 +233,11 @@ namespace Advisor6.Migrations
                     b.Navigation("Personal");
                 });
 
-            modelBuilder.Entity("Advisor6.Models.Employment_info", b =>
-                {
-                    b.Navigation("Administrative_Orders");
-                });
-
             modelBuilder.Entity("Advisor6.Models.Personal", b =>
                 {
                     b.Navigation("Administrative_Orders");
 
-                    b.Navigation("Employment_info");
+                    b.Navigation("Employment_Info");
                 });
 #pragma warning restore 612, 618
         }

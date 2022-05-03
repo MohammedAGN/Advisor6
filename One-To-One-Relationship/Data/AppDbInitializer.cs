@@ -102,7 +102,7 @@ namespace Advisor6.Data
                            Image = null,
                            PDF = null,
                            PersonalId= 1,
-                           Employee_id=1
+                          // Employee_id=1
                          },
 
                      });
