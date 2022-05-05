@@ -25,6 +25,11 @@ namespace Advisor6.Models
         public DateTime EmploymentBook_Date { get; set; }
         public string DirectBook_No { get; set; }
         public DateTime DirectBook_Date { get; set; }
+
+        public DateTime Actual_direct_date { get; set; }
+        public DateTime Contract_expiry_date { get; set; }
+
+        
         public string Nots { get; set; }
         public DateTime EntryDate { get; set; }
         public DateTime LastUpdateDate { get; set; }

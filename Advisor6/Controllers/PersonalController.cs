@@ -21,5 +21,11 @@ namespace Advisor6.Controllers
             var data = await _context.Personal.ToListAsync();
             return View(data);
         }
+
+        public async Task<IActionResult> Index1()
+        {
+            var data = await _context.Personal.Include(n=> n.Employment_info).ToListAsync();
+            return View(data);
+        }
     }
 }

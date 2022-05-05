@@ -32,16 +32,16 @@ namespace Advisor6.Data
 
                             Gender= Gender.ذكر,
                             MarriedStatus = MarriedStatus.اعزب,
-                            PhoneNo = null,
-                            Email =null,
-                            Address = null,
-                            BirthDate = null,
-                            BornPlace = null,
-                            Nots = null,
+                            PhoneNo = "07902851338",
+                            Email ="muhammed_ghazi@gmail.com",
+                            Address = "كرادة",
+                            BirthDate = "1982",
+                            BornPlace = "كرادة",
+                            Nots = "لايوجد",
                             EntryDate = DateTime.Today,
                             LastUpdateDate = DateTime.Today,
-                            DataEntryName = null,
-                            Image = null,
+                            DataEntryName = "محمد غازي",
+                            Image = "http://dotnethow.net/images/actors/actor-1.jpeg",
                             PDF = null
                         },
                         
@@ -74,8 +74,9 @@ namespace Advisor6.Data
                             LastUpdateDate = DateTime.Today,
                             DataEntryName = null,
                             Image = null,
-                            PDF = null
-                            
+                            PDF = null,
+                            PersonalId=1
+
                          },
                      });
                     context.SaveChanges();
