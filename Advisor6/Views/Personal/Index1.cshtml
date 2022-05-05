@@ -14,10 +14,7 @@
                         <div class="card-header text-white bg-info">
                             <p class="card-text text-white float-right">
                                 <h5 class="card-title float-right ">
-                                    @item.FullName
-                                   
-                                        <a class="bi bi-pencil-square"><i ></i></a>
-                                    
+                                    @item.FullName                                
                                 </h5>
                             </p>
                         </div>
@@ -30,8 +27,8 @@
                             <p class="card-text"><b>مدخل البيانات: </b>@item.DataEntryName</p>
                             <p class="card-text"><b>اسم المستشار: </b>@item.FullName</p>
                             <p class="card-text"><b>رقم الموبايل: </b>@item.PhoneNo</p>
-                            <p class="card-text"><b>المباشرة الفعلية: </b>@item.Employment_info.Actual_direct_date.ToString("dd MM yyyy")</p>
-                            <p class="card-text"><b>انتهاء العقد: </b>@item.Employment_info.Contract_expiry_date.ToString("dd MM yyyy")</p>
+                            <p class="card-text"><b>المباشرة الفعلية: </b>@item.Employment_info.Actual_direct_date.ToString("dd/MM/yyyy")</p>
+                            <p class="card-text"><b>انتهاء العقد: </b>@item.Employment_info.Contract_expiry_date.ToString("dd/MM/yyyy")</p>
                             <p class="card-text ">
                                 <b>Status: </b>
                                 @if (DateTime.Now  >= item.Employment_info.Actual_direct_date && DateTime.Now <= item.Employment_info.Contract_expiry_date)
@@ -47,21 +44,13 @@
 
                         </div>
                     </div>
-                    @*<div class="col-md-12">
+                    <div class="col-md-12">
                         <div class="card-footer ">
                             <p class="card-text">
-                                <a class="btn btn-outline-primary float-right" asp-action="Details" asp-route-id="@item.Id">
-                                    <i class="bi bi-eye-fill"></i> Show Details
-                                </a>
-                                <a class="btn btn-success text-white @((DateTime.Now > item.EndDate) ? "disabled" : "")"
-                                   asp-controller="Orders"
-                                   asp-action="AddItemToShoppingCart"
-                                   asp-route-id="@item.Id">
-                                    <i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Price.ToString("c"))
-                                </a>
+                                <a class="btn btn-outline-primary float-right" ><i class="bi bi-eye-fill"></i></a>
                             </p>
                         </div>
-                    </div>*@
+                    </div>
                 </div>
             </div>
         </div>
