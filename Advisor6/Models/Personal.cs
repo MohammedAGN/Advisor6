@@ -18,6 +18,8 @@ namespace Advisor6.Models
         public int PersonalId { get; set; }
 
         [Display(Name = "Full Name")]
+        [Required(ErrorMessage = "Full Name is required")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Full Name must be between 3 and 50 chars")]
         public string FullName { get; set; }
         public Gender Gender { get; set; }
         public MarriedStatus MarriedStatus { get; set; }

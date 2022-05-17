@@ -1,10 +1,8 @@
 ﻿@model IEnumerable<Personal>
-
 @{
     ViewData["Title"] = "List of Personal";
 }
-
-<div class="row"  dir="rtl" lang="ar">
+<div class="row" dir="rtl" lang="ar">
     @foreach (var item in Model)
     {
         <div class="col-md-4 col-xs-6 border-primary mb-3">
@@ -14,7 +12,7 @@
                         <div class="card-header text-white bg-info">
                             <p class="card-text text-white float-right">
                                 <h5 class="card-title float-right ">
-                                    @item.FullName                                
+                                    @item.FullName
                                 </h5>
                             </p>
                         </div>
@@ -31,7 +29,7 @@
                             <p class="card-text"><b>انتهاء العقد: </b>@item.Employment_info.Contract_expiry_date.ToString("dd/MM/yyyy")</p>
                             <p class="card-text ">
                                 <b>Status: </b>
-                                @if (DateTime.Now  >= item.Employment_info.Actual_direct_date && DateTime.Now <= item.Employment_info.Contract_expiry_date)
+                                @if (DateTime.Now >= item.Employment_info.Actual_direct_date && DateTime.Now <= item.Employment_info.Contract_expiry_date)
                                 {
                                     <span class="badge bg-success text-white">AVAILABLE</span>
                                 }
@@ -39,15 +37,13 @@
                                 {
                                     <span class="badge bg-danger text-white">EXPIRED</span>
                                 }
-                              
                             </p>
-
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="card-footer ">
                             <p class="card-text">
-                                <a class="btn btn-outline-primary float-right" ><i class="bi bi-eye-fill"></i></a>
+                                <a class="btn btn-outline-primary float-right"><i class="bi bi-eye-fill"></i></a>
                             </p>
                         </div>
                     </div>
@@ -55,6 +51,13 @@
             </div>
         </div>
     }
+    <div style="position: fixed; right: 25px; bottom: 75px;" class="text-white">
+        <a asp-controller="Personal" asp-action="CreatePersonal" class="btn btn-success">
+
+            <i class="bi bi-plus-circle"></i> اضافة جديد
+        </a>
+    </div>
 </div>
+
 
 
