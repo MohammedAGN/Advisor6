@@ -15,32 +15,35 @@ namespace Advisor6.Data.Services
             _context = context;
         }
 
-        public void Add(Personal personal)
+        public async Task AddAsync(Personal personal)
         {
-            _context.Personal.Add(personal);
-            _context.SaveChanges();
+          await  _context.Personal.AddAsync(personal);
+          await  _context.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public void Delete(int id) 
         {
             throw new NotImplementedException();
         }
 
-        public async Task< IEnumerable<Personal>> GetAll()
+        public async Task< IEnumerable<Personal>> GetAllAsync()
         {
             var result = await _context.Personal.ToListAsync();
 
             return result;
         }
 
-        public Personal GetById(int id)
+        public async Task<Personal> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Personal.FirstOrDefaultAsync(n => n.PersonalId == id);
+            return result;
         }
 
-        public Personal Update(int id, Personal newPersonal)
+        public async Task<Personal> UpdateAsync(int id, Personal newPersonal)
         {
-            throw new NotImplementedException();
+            _context.Update(newPersonal);
+            await _context.SaveChangesAsync();
+            return newPersonal;
         }
     }
 }

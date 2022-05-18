@@ -20,7 +20,7 @@ namespace Advisor6.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var data = await _service.GetAll();
+            var data = await _service.GetAllAsync();
             return View(data);
         }
 
@@ -32,8 +32,7 @@ namespace Advisor6.Controllers
 
         // Get : Personal/Create
         public IActionResult CreatePersonal()
-        {
-            
+        {           
             return View();
         }
 
@@ -46,8 +45,41 @@ namespace Advisor6.Controllers
             {
                 return View(personal);
             }
-            _service.Add(personal);
+           await _service.AddAsync(personal);
             return RedirectToAction(nameof(Index));
         }
+
+        //Get: Personal/Details/1
+        public async Task<IActionResult> Details(int id)
+        {
+            var personalDetails = await _service.GetByIdAsync(id);
+
+            if (personalDetails == null) return View("NotFound");
+            return View(personalDetails);
+        }
+
+        // Get : Personal/Edit
+        public async Task <IActionResult> EditPersonal(int id)
+        {
+            var personalDetails = await _service.GetByIdAsync(id);
+
+            if (personalDetails == null) return View("NotFound");
+            return View(personalDetails);
+        }
+
+        // Post : Personal/Edit
+        [HttpPost]
+        public async Task<IActionResult> EditPersonal(int id,[Bind("PersonalId,FullName,Gender,MarriedStatus,PhoneNo,Email,Address,BirthDate" +
+            ",BornPlace,Nots,EntryDate,DataEntryName,Image")] Personal personal)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(personal);
+            }
+            await _service.UpdateAsync(id, personal);
+
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

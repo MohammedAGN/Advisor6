@@ -8,10 +8,10 @@ namespace Advisor6.Data.Services
 {
    public interface IPersonalService
     {
-       Task< IEnumerable<Personal>> GetAll();
-        Personal GetById(int id);
-        void Add(Personal personal);
-        Personal Update(int id, Personal newPersonal);
+       Task< IEnumerable<Personal>> GetAllAsync();
+       Task <Personal> GetByIdAsync(int id);
+        Task AddAsync(Personal personal);
+       Task<Personal> UpdateAsync(int id, Personal newPersonal);
         void Delete(int id);
     }
 }
