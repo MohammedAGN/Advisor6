@@ -1,94 +1,93 @@
 ﻿@model Personal
 
 @{
-    ViewData["Title"] = "Update personal Informations";
+    ViewData["Title"] = "Delete Personal";
 }
 
 <div class="row text">
     <div class="col-md-8 offset-2">
-        <p>
-            <h1>تحديث بيانات المستشار </h1>
-        </p>
+        
         <div class="row">
             <div class="col-md-8 offset-2">
-                <form asp-action="EditPersonal">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+               
+                <p>
+                    <h1 dir="rtl" lang="ar" class="float-right">تاكيد حذف:@Model.FullName</h1>
+                </p>
 
                     <div class="form-group text-center">
                         <img id="ProfilePicturePreview" class="border-info rounded-circle" style="max-width: 150px" />
                     </div>
-                    <div class="form-group">
-                        
-                        <input asp-for="PersonalId" class="form-control" hidden/>
-                       
-                    </div>
-                    <div class="form-group">
+                    @*<div class="form-group">
                         <label asp-for="FullName" class="control-label"></label>
-                        <input asp-for="FullName" class="form-control" />
+                        <input asp-for="FullName" class="form-control" readonly />
                         <span asp-validation-for="FullName" class="text-danger"></span>
-                    </div>
+                    </div>*@
                     <div class="form-group">
                         <label asp-for="Gender" class="control-label"></label>
-                        <input asp-for="Gender" class="form-control" />
+                        <input asp-for="Gender" class="form-control" readonly />
                         <span asp-validation-for="Gender" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="MarriedStatus" class="control-label"></label>
-                        <input asp-for="MarriedStatus" class="form-control" />
+                        <input asp-for="MarriedStatus" class="form-control" readonly />
                         <span asp-validation-for="MarriedStatus" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="PhoneNo" class="control-label"></label>
-                        <input asp-for="PhoneNo" class="form-control" />
+                        <input asp-for="PhoneNo" class="form-control" readonly />
                         <span asp-validation-for="PhoneNo" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Email" class="control-label"></label>
-                        <input asp-for="Email" class="form-control" />
+                        <input asp-for="Email" class="form-control" readonly />
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Address" class="control-label"></label>
-                        <input asp-for="Address" class="form-control" />
+                        <input asp-for="Address" class="form-control"readonly />
                         <span asp-validation-for="Address" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="BirthDate" class="control-label"></label>
-                        <input asp-for="BirthDate" class="form-control" />
+                        <input asp-for="BirthDate" class="form-control" readonly/>
                         <span asp-validation-for="BirthDate" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="BornPlace" class="control-label"></label>
-                        <input asp-for="BornPlace" class="form-control" />
+                        <input asp-for="BornPlace" class="form-control"readonly />
                         <span asp-validation-for="BornPlace" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Nots" class="control-label"></label>
-                        <input asp-for="Nots" class="form-control" />
+                        <input asp-for="Nots" class="form-control"readonly />
                         <span asp-validation-for="Nots" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="EntryDate" class="control-label"></label>
-                        <input asp-for="EntryDate" class="form-control" />
+                        <input asp-for="EntryDate" class="form-control" readonly/>
                         <span asp-validation-for="EntryDate" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="DataEntryName" class="control-label"></label>
-                        <input asp-for="DataEntryName" class="form-control" />
+                        <input asp-for="DataEntryName" class="form-control"readonly />
                         <span asp-validation-for="DataEntryName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Image" class="control-label"></label>
-                        <input asp-for="Image" class="form-control" />
+                        <input asp-for="Image" class="form-control"readonly />
                         <span asp-validation-for="Image" class="text-danger"></span>
                     </div>
 
 
                     <div class="form-group">
-                        <input type="submit" value="Update" class="btn btn-outline-success float-right" />
-                        <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                        <form asp-action="DeletePersonal">
+                            <input type="hidden" asp-for="@Model.PersonalId" />
+                            <input type="submit" value="Confirm" class="btn btn-danger float-right" />
+                            <a class="btn btn-outline-success" asp-action="Index">Show All</a>
+                        </form> 
+                        
                     </div>
-                </form>
+                
             </div>
         </div>
     </div>

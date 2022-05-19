@@ -12,6 +12,6 @@ namespace Advisor6.Data.Services
        Task <Personal> GetByIdAsync(int id);
         Task AddAsync(Personal personal);
        Task<Personal> UpdateAsync(int id, Personal newPersonal);
-        void Delete(int id);
+        Task DeleteAsync(int id);
     }
 }

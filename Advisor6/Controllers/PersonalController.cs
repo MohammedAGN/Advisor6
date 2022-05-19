@@ -62,22 +62,49 @@ namespace Advisor6.Controllers
         public async Task <IActionResult> EditPersonal(int id)
         {
             var personalDetails = await _service.GetByIdAsync(id);
-
+           
             if (personalDetails == null) return View("NotFound");
+            
             return View(personalDetails);
         }
 
         // Post : Personal/Edit
         [HttpPost]
-        public async Task<IActionResult> EditPersonal(int id,[Bind("PersonalId,FullName,Gender,MarriedStatus,PhoneNo,Email,Address,BirthDate" +
+        public async Task<IActionResult> EditPersonal(int id, [Bind("PersonalId,FullName,Gender,MarriedStatus,PhoneNo,Email,Address,BirthDate" +
             ",BornPlace,Nots,EntryDate,DataEntryName,Image")] Personal personal)
         {
+            //var PersonalId = id;
             if (!ModelState.IsValid)
             {
                 return View(personal);
             }
             await _service.UpdateAsync(id, personal);
 
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
+
+
+        // Get : Personal/Delete
+        public async Task<IActionResult> DeletePersonal(int id)
+        {
+            var personalDetails = await _service.GetByIdAsync(id);
+
+            if (personalDetails == null) return View("NotFound");
+
+            return View(personalDetails);
+        }
+
+        // Post : Personal/Edit
+        [HttpPost, ActionName("DeletePersonal")]
+        public async Task<IActionResult> DeletePersonalConfirmed(int id)
+        {
+            var personalDetails = await _service.GetByIdAsync(id);
+
+            if (personalDetails == null) return View("NotFound");
+            await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
