@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Advisor6.Data;
 using System.ComponentModel.DataAnnotations.Schema;
-
-
+using Advisor6.Data.Base;
 
 namespace Advisor6.Models
 {
-    public class Personal
+    public class Personal : IEntityBase
     {
         [Key]
         public int PersonalId { get; set; }

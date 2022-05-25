@@ -24,11 +24,12 @@ namespace Advisor6.Controllers
             return View(data);
         }
 
-        //public async Task<IActionResult> Index1()
-        //{
-        //    var data = await _context.Personal.Include(n=> n.Employment_info).ToListAsync();
-        //    return View(data);
-        //}
+        public async Task<IActionResult> Index1()
+        {
+            var data = await _service.GetAllAsync();
+             //   Personal.Include(n => n.Employment_info).ToListAsync();
+            return View(data);
+        }
 
         // Get : Personal/Create
         public IActionResult CreatePersonal()
@@ -79,7 +80,6 @@ namespace Advisor6.Controllers
                 return View(personal);
             }
             await _service.UpdateAsync(id, personal);
-
             return RedirectToAction(nameof(Index));
         }
 
@@ -91,9 +91,7 @@ namespace Advisor6.Controllers
         public async Task<IActionResult> DeletePersonal(int id)
         {
             var personalDetails = await _service.GetByIdAsync(id);
-
             if (personalDetails == null) return View("NotFound");
-
             return View(personalDetails);
         }
 
