@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace Advisor6.Data
 {
@@ -44,7 +45,7 @@ namespace Advisor6.Data
                             Image = "http://dotnethow.net/images/actors/actor-1.jpeg",
                             PDF = null
                         },
-                        
+
 
                          });
                     context.SaveChanges();

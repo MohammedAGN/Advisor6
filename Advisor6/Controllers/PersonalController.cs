@@ -1,10 +1,12 @@
 ﻿using Advisor6.Data;
 using Advisor6.Data.Services;
 using Advisor6.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,10 +15,12 @@ namespace Advisor6.Controllers
     public class PersonalController : Controller
     {
         private readonly IPersonalService _service;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public PersonalController(IPersonalService service)
+        public PersonalController(IPersonalService service, IWebHostEnvironment webHostEnvironment)
         {
             _service = service;
+            _webHostEnvironment = webHostEnvironment;
         }
         public async Task<IActionResult> Index()
         {
@@ -39,15 +43,29 @@ namespace Advisor6.Controllers
 
         // Post : Personal/Create
         [HttpPost]
-        public async Task<IActionResult> CreatePersonal([Bind("FullName,Gender,MarriedStatus,PhoneNo,Email,Address,BirthDate" +
-            ",BornPlace,Nots,EntryDate,DataEntryName,Image")] Personal personal)
+        public async Task<IActionResult> CreatePersonal( Personal personal)
+            //[Bind("FullName,Gender,MarriedStatus,PhoneNo,Email,Address,BirthDate" +",BornPlace,Nots,EntryDate,DataEntryName,Image")]
         {
             if (!ModelState.IsValid)
             {
+               
+                await _service.AddAsync(personal);
                 return View(personal);
             }
-           await _service.AddAsync(personal);
-            return RedirectToAction(nameof(Index));
+           
+            
+                if (personal.Photo != null)
+                {
+                    string folder = "PADV/Photo/";
+                    folder += Guid.NewGuid().ToString() + "_" + personal.Photo.FileName;
+
+                    string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, folder);
+                    await personal.Photo.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
+
+                }
+                await _service.AddAsync(personal);
+                return RedirectToAction(nameof(Index));
+            
         }
 
         //Get: Personal/Details/1
@@ -82,11 +100,7 @@ namespace Advisor6.Controllers
             await _service.UpdateAsync(id, personal);
             return RedirectToAction(nameof(Index));
         }
-
-
-
-
-
+ 
         // Get : Personal/Delete
         public async Task<IActionResult> DeletePersonal(int id)
         {
