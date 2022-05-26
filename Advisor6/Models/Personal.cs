@@ -47,10 +47,12 @@ namespace Advisor6.Models
 
         [NotMapped]
         public IFormFile Photo  { get; set; }
+        [NotMapped]
+        public IFormFile pdf { get; set; }
 
 
-    //    //Relationships
-    public List<Administrative_Orders> Administrative_Orders { get; set; }
+        //    //Relationships
+        public List<Administrative_Orders> Administrative_Orders { get; set; }
 
         //    //Employment_info
         //   // public int Employment_infoId { get; set; }

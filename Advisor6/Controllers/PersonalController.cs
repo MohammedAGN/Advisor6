@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 
 namespace Advisor6.Controllers
@@ -31,42 +32,54 @@ namespace Advisor6.Controllers
         public async Task<IActionResult> Index1()
         {
             var data = await _service.GetAllAsync();
-             //   Personal.Include(n => n.Employment_info).ToListAsync();
+            //   Personal.Include(n => n.Employment_info).ToListAsync();
             return View(data);
         }
 
         // Get : Personal/Create
         public IActionResult CreatePersonal()
-        {           
+        {
             return View();
         }
 
         // Post : Personal/Create
         [HttpPost]
-        public async Task<IActionResult> CreatePersonal( Personal personal)
-            //[Bind("FullName,Gender,MarriedStatus,PhoneNo,Email,Address,BirthDate" +",BornPlace,Nots,EntryDate,DataEntryName,Image")]
+        public async Task<IActionResult> CreatePersonal(Personal personal)
+        //[Bind("FullName,Gender,MarriedStatus,PhoneNo,Email,Address,BirthDate" +",BornPlace,Nots,EntryDate,DataEntryName,Image")]
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-               
-                await _service.AddAsync(personal);
-                return View(personal);
-            }
-           
-            
                 if (personal.Photo != null)
                 {
                     string folder = "PADV/Photo/";
-                    folder += Guid.NewGuid().ToString() + "_" + personal.Photo.FileName;
 
-                    string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, folder);
-                    await personal.Photo.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
-
+                    personal.Image = await UploadImage(folder, personal.Photo);
                 }
-                await _service.AddAsync(personal);
-                return RedirectToAction(nameof(Index));
-            
+                //await _service.AddAsync(personal);
+                //     return View(personal);
+
+                if (personal.pdf != null)
+                {
+                    string folder = "PADV/PDF/";
+
+                    personal.PDF = await UploadImage(folder, personal.pdf);
+                }
+            }
+            await _service.AddAsync(personal);
+            return RedirectToAction(nameof(Index));
+
         }
+
+        private async Task<string> UploadImage(string folderPath, IFormFile file)
+        {
+
+            folderPath += Guid.NewGuid().ToString() + "_" + file.FileName;
+            string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, folderPath);
+            await file.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
+            return "/" + folderPath;
+        }
+
+
 
         //Get: Personal/Details/1
         public async Task<IActionResult> Details(int id)
@@ -78,12 +91,12 @@ namespace Advisor6.Controllers
         }
 
         // Get : Personal/Edit
-        public async Task <IActionResult> EditPersonal(int id)
+        public async Task<IActionResult> EditPersonal(int id)
         {
             var personalDetails = await _service.GetByIdAsync(id);
-           
+
             if (personalDetails == null) return View("NotFound");
-            
+
             return View(personalDetails);
         }
 
@@ -100,7 +113,7 @@ namespace Advisor6.Controllers
             await _service.UpdateAsync(id, personal);
             return RedirectToAction(nameof(Index));
         }
- 
+
         // Get : Personal/Delete
         public async Task<IActionResult> DeletePersonal(int id)
         {

@@ -28,9 +28,7 @@ namespace Advisor6.Data
                     {
                         new Personal()
                         {
-
                             FullName = "مستشار 1",
-
                             Gender= Gender.ذكر,
                             MarriedStatus = MarriedStatus.اعزب,
                             PhoneNo = "07902851338",
@@ -45,8 +43,6 @@ namespace Advisor6.Data
                             Image = "http://dotnethow.net/images/actors/actor-1.jpeg",
                             PDF = null
                         },
-
-
                          });
                     context.SaveChanges();
                 }
@@ -57,8 +53,6 @@ namespace Advisor6.Data
                     {
                         new Employment_info()
                         {
-
-
                             FullName = "مستشار",
                             MainDeptartment = null,
                             SubDeptartment = null,

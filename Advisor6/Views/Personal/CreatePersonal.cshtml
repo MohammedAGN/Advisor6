@@ -71,12 +71,7 @@
                         <label asp-for="DataEntryName" class="control-label"></label>
                         <input asp-for="DataEntryName" class="form-control" />
                         <span asp-validation-for="DataEntryName" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Image" class="control-label"></label>
-                        <input asp-for="Image" class="form-control" />
-                        <span asp-validation-for="Image" class="text-danger"></span>
-                    </div>
+                    </div>               
                     <div class="form-group">
                         <label asp-for="Photo" class="control-label"></label>
                         <div class="custom-file">
@@ -85,8 +80,14 @@
                         </div>
                         <span asp-validation-for="Photo" class="text-danger"></span>
                     </div>
-
-
+                    <div class="form-group">
+                        <label asp-for="pdf" class="control-label"></label>
+                        <div class="custom-file">
+                            <input asp-for="pdf" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                        <span asp-validation-for="pdf" class="text-danger"></span>
+                    </div>
                     <div class="form-group">
                         <input type="submit" value="CreatePersonal" class="btn btn-outline-success float-right" />
                         <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
