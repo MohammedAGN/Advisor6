@@ -38,5 +38,7 @@ namespace Advisor6.Data.Base
             entityEntry.State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
+
+      
     }
 }

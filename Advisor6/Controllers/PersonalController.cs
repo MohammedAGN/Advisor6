@@ -29,6 +29,24 @@ namespace Advisor6.Controllers
             return View(data);
         }
 
+        public async Task<IActionResult> Filter(string searchString)
+        {
+            var data = await _service.GetAllAsync();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                var filteredResult = data.Where(n => n.FullName.ToLower().Contains(searchString.ToLower())
+                || n.Email.ToLower().Contains(searchString.ToLower())).ToList();
+                //في حالة البحث مطابق للاحرف
+                //var filteredResultNew = data.Where(n => string.Equals(n.FullName, searchString, StringComparison.CurrentCultureIgnoreCase) 
+                //|| string.Equals(n.Email, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+                return View("Index1", filteredResult);
+            }
+
+            return View("Index1", data);
+        }
+
         public async Task<IActionResult> Index1()
         {
             var data = await _service.GetAllAsync();
@@ -132,6 +150,8 @@ namespace Advisor6.Controllers
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
+
+        
 
     }
 }

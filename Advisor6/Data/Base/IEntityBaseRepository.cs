@@ -13,5 +13,7 @@ namespace Advisor6.Data.Base
         Task UpdateAsync(int id, T entity);
         Task DeleteAsync(int id);
 
+
+
     }
 }
