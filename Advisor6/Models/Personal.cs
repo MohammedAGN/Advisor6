@@ -46,7 +46,7 @@ namespace Advisor6.Models
         public string PDF { get; set; }
 
         [NotMapped]
-        public IFormFile Photo  { get; set; }
+        public IFormFile Photo { get; set; }
         [NotMapped]
         public IFormFile pdf { get; set; }
 
