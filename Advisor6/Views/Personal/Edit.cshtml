@@ -7,11 +7,11 @@
 <div class="row text">
     <div class="col-md-8 offset-2">
         <p>
-            <h1>تحديث بيانات المستشار </h1>
+            <h1>تحديث بيانات مستشار </h1>
         </p>
         <div class="row">
             <div class="col-md-8 offset-2">
-                <form asp-action="EditPersonal">
+                <form enctype="multipart/form-data" asp-action="Edit">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                     <div class="form-group text-center">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         
-                        <input asp-for="PersonalId" class="form-control" hidden/>
+                        <input asp-for="PersonalId" class="form-control" readonly/>
                        
                     </div>
                     <div class="form-group">
@@ -76,14 +76,23 @@
                         <label asp-for="DataEntryName" class="control-label"></label>
                         <input asp-for="DataEntryName" class="form-control" />
                         <span asp-validation-for="DataEntryName" class="text-danger"></span>
+                    </div>               
+                    <div class="form-group">
+                        <label asp-for="Photo" class="control-label"></label>
+                        <div class="custom-file">
+                            <input asp-for="Photo" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                        <span asp-validation-for="Photo" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Image" class="control-label"></label>
-                        <input asp-for="Image" class="form-control" />
-                        <span asp-validation-for="Image" class="text-danger"></span>
+                        <label asp-for="pdf" class="control-label"></label>
+                        <div class="custom-file">
+                            <input asp-for="pdf" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                        <span asp-validation-for="pdf" class="text-danger"></span>
                     </div>
-
-
                     <div class="form-group">
                         <input type="submit" value="Update" class="btn btn-outline-success float-right" />
                         <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>

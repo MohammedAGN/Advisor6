@@ -108,8 +108,10 @@ namespace Advisor6.Controllers
             return View(personalDetails);
         }
 
+
+
         // Get : Personal/Edit
-        public async Task<IActionResult> EditPersonal(int id)
+        public async Task<IActionResult> Edit(int id)
         {
             var personalDetails = await _service.GetByIdAsync(id);
 
@@ -120,17 +122,36 @@ namespace Advisor6.Controllers
 
         // Post : Personal/Edit
         [HttpPost]
-        public async Task<IActionResult> EditPersonal(int id, [Bind("PersonalId,FullName,Gender,MarriedStatus,PhoneNo,Email,Address,BirthDate" +
-            ",BornPlace,Nots,EntryDate,DataEntryName,Image")] Personal personal)
+        public async Task<IActionResult> Edit(int id, Personal personal)
+        //[Bind("FullName,Gender,MarriedStatus,PhoneNo,Email,Address,BirthDate" +",BornPlace,Nots,EntryDate,DataEntryName,Image")]
         {
-            //var PersonalId = id;
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(personal);
+                if (personal.Photo != null)
+                {
+                    string folder = "PADV/Photo/";
+
+                    personal.Image = await UploadImage(folder, personal.Photo);
+                }
+                //await _service.AddAsync(personal);
+                //     return View(personal);
+
+                if (personal.pdf != null)
+                {
+                    string folder = "PADV/PDF/";
+
+                    personal.PDF = await UploadImage(folder, personal.pdf);
+                }
             }
-            await _service.UpdateAsync(id, personal);
+            await _service.UpdateAsync(id,personal);
             return RedirectToAction(nameof(Index));
+
         }
+
+
+
+
+
 
         // Get : Personal/Delete
         public async Task<IActionResult> DeletePersonal(int id)
@@ -140,16 +161,7 @@ namespace Advisor6.Controllers
             return View(personalDetails);
         }
 
-        // Post : Personal/Edit
-        [HttpPost, ActionName("DeletePersonal")]
-        public async Task<IActionResult> DeletePersonalConfirmed(int id)
-        {
-            var personalDetails = await _service.GetByIdAsync(id);
-
-            if (personalDetails == null) return View("NotFound");
-            await _service.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
-        }
+        
 
         
 
