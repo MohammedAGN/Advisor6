@@ -63,7 +63,7 @@ namespace Advisor6
             });
 
             //Seed database
-            AppDbInitializer.Seed(app);
+         // AppDbInitializer.Seed(app);
          //   AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
         }
     }

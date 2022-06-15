@@ -154,13 +154,20 @@ namespace Advisor6.Controllers
 
 
         // Get : Personal/Delete
-        public async Task<IActionResult> DeletePersonal(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var personalDetails = await _service.GetByIdAsync(id);
             if (personalDetails == null) return View("NotFound");
             return View(personalDetails);
         }
-
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeletePersonal(int id)
+        {
+            var personalDetails = await _service.GetByIdAsync(id);
+            if (personalDetails == null) return View("NotFound");
+            await _service.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
         
 
         

@@ -10,7 +10,11 @@
 
 <div class="row">
     <div class="col-md-8 offset-md-2">
-        <table class="table">
+        <p>
+            <h1 dir="rtl" lang="ar" class="float-right">قائمة السادة المستشارين</h1>
+        </p>
+        
+        <table class="table" dir="rtl">
             <thead>
                 <tr class="text-center">
                     <th>@Html.DisplayNameFor(model => model.Image)</th>
@@ -40,7 +44,7 @@
                             <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.PersonalId"><i class="bi bi-pencil-square"></i></a> |
                             <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.PersonalId"><i class="bi bi-eye"></i></a> |
                             <a class="btn btn-info" target="_blank" href="@item.PDF"><i class="bi bi-file-earmark-pdf-fill"></i></a> |
-                            <a class="btn btn-danger text-white" asp-action="DeletePersonal" asp-route-id="@item.PersonalId"><i class="bi bi-trash"></i></a>
+                            <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.PersonalId"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
                 }

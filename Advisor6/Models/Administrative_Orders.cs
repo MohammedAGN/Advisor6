@@ -7,7 +7,7 @@ namespace Advisor6.Models
 {
     public class Administrative_Orders
     {
-        [Key]
+       [Key]
         public int Admi_id { get; set; }
         public int AdministrativeNo { get; set; }
         public int OrderNo { get; set; }
@@ -25,17 +25,17 @@ namespace Advisor6.Models
 
         //   //Relationships
 
-       //Personal
+       ////Personal
 
-        [ForeignKey("PersonalId")]
-       public int PersonalId { get; set; }       
-       public Personal Personal { get; set; }
+       // [ForeignKey("PersonalId")]
+       //public int PersonalId { get; set; }       
+       //public Personal Personal { get; set; }
 
         //Employment_info
 
-        [ForeignKey("Employee_id")]
-        public int Employee_id { get; set; }
-        public Employment_info Employment_info { get; set; }
+        //[ForeignKey("Employee_id")]
+        //public int Employee_id { get; set; }
+        //public Employment_info Employment_info { get; set; }
 
     }
 }

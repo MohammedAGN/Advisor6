@@ -51,13 +51,13 @@ namespace Advisor6.Models
         public IFormFile pdf { get; set; }
 
 
-        //    //Relationships
-        public List<Administrative_Orders> Administrative_Orders { get; set; }
+        ////    //Relationships
+        //public List<Administrative_Orders> Administrative_Orders { get; set; }
 
-        //    //Employment_info
-        //   // public int Employment_infoId { get; set; }
+        ////    //Employment_info
+        ////   // public int Employment_infoId { get; set; }
 
-        //   //// [ForeignKey("Employment_infoId")]
-        public Employment_info Employment_info { get; set; }
+        ////   //// [ForeignKey("Employment_infoId")]
+        //public Employment_info Employment_info { get; set; }
     }
 }

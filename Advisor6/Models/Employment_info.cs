@@ -12,8 +12,8 @@ namespace Advisor6.Models
     public class Employment_info
     {
 
-        [Key]
-        public int Employee_id { get; set; }
+       [Key]
+        public int PersonalId { get; set; }
         public string FullName { get; set; }
         public string MainDeptartment { get; set; }
         public string SubDeptartment { get; set; }
@@ -40,12 +40,12 @@ namespace Advisor6.Models
 
       //  //Relationships
 
-       public List<Administrative_Orders> Administrative_Orders { get; set; }
+       //public List<Administrative_Orders> Administrative_Orders { get; set; }
 
-        //  //Personal
-        ////  [ForeignKey("PersonalId")]
-        public int PersonalId { get; set; }
+       // //  //Personal
+       // ////  [ForeignKey("PersonalId")]
+       // public int PersonalId { get; set; }
 
-        public Personal Personal { get; set; }
+       // public Personal Personal { get; set; }
     }
 }

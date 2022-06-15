@@ -35,12 +35,6 @@ namespace Advisor6.Migrations
                     b.Property<string>("DataEntryName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Employee_id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Employment_infoEmployee_id")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("EntryDate")
                         .HasColumnType("datetime2");
 
@@ -59,9 +53,6 @@ namespace Advisor6.Migrations
                     b.Property<string>("PDF")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PersonalId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Subject")
                         .HasColumnType("nvarchar(max)");
 
@@ -73,16 +64,12 @@ namespace Advisor6.Migrations
 
                     b.HasKey("Admi_id");
 
-                    b.HasIndex("Employment_infoEmployee_id");
-
-                    b.HasIndex("PersonalId");
-
                     b.ToTable("Administrative_Orders");
                 });
 
             modelBuilder.Entity("Advisor6.Models.Employment_info", b =>
                 {
-                    b.Property<int>("Employee_id")
+                    b.Property<int>("PersonalId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -135,9 +122,6 @@ namespace Advisor6.Migrations
                     b.Property<string>("PDF")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PersonalId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Salary")
                         .HasColumnType("nvarchar(max)");
 
@@ -147,10 +131,7 @@ namespace Advisor6.Migrations
                     b.Property<string>("SubDeptartment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Employee_id");
-
-                    b.HasIndex("PersonalId")
-                        .IsUnique();
+                    b.HasKey("PersonalId");
 
                     b.ToTable("Employment_info");
                 });
@@ -209,46 +190,6 @@ namespace Advisor6.Migrations
                     b.HasKey("PersonalId");
 
                     b.ToTable("Personal");
-                });
-
-            modelBuilder.Entity("Advisor6.Models.Administrative_Orders", b =>
-                {
-                    b.HasOne("Advisor6.Models.Employment_info", "Employment_info")
-                        .WithMany("Administrative_Orders")
-                        .HasForeignKey("Employment_infoEmployee_id");
-
-                    b.HasOne("Advisor6.Models.Personal", "Personal")
-                        .WithMany("Administrative_Orders")
-                        .HasForeignKey("PersonalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Employment_info");
-
-                    b.Navigation("Personal");
-                });
-
-            modelBuilder.Entity("Advisor6.Models.Employment_info", b =>
-                {
-                    b.HasOne("Advisor6.Models.Personal", "Personal")
-                        .WithOne("Employment_info")
-                        .HasForeignKey("Advisor6.Models.Employment_info", "PersonalId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Personal");
-                });
-
-            modelBuilder.Entity("Advisor6.Models.Employment_info", b =>
-                {
-                    b.Navigation("Administrative_Orders");
-                });
-
-            modelBuilder.Entity("Advisor6.Models.Personal", b =>
-                {
-                    b.Navigation("Administrative_Orders");
-
-                    b.Navigation("Employment_info");
                 });
 #pragma warning restore 612, 618
         }

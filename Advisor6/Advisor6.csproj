@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Reports\" />
     <Folder Include="Views\Employment_info\" />
     <Folder Include="Views\Administrative_Orders\" />
     <Folder Include="wwwroot\PADV\PDF\" />
