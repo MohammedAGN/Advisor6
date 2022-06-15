@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Advisor6.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220615010956_One_To_One")]
-    partial class One_To_One
+    [Migration("20220615121658_One_To_One1")]
+    partial class One_To_One1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -114,6 +114,9 @@ namespace Advisor6.Migrations
 
                     b.Property<DateTime>("LastUpdateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Last_Job")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MainDeptartment")
                         .HasColumnType("nvarchar(max)");

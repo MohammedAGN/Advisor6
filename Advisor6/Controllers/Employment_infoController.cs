@@ -1,4 +1,5 @@
 ﻿using Advisor6.Data;
+using Advisor6.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,15 +11,15 @@ namespace Advisor6.Controllers
 {
     public class Employment_infoController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IEmploymentService _service;
 
-        public Employment_infoController(AppDbContext context)
+        public Employment_infoController(IEmploymentService service)
         {
-            _context = context;
+            _service= service;
         }
         public async Task<IActionResult> Index()
         {
-            var data = await _context.Employment_info.ToListAsync();
+            var data = await _service.GetAllAsync();
             return View();
         }
     }

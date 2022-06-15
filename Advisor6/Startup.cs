@@ -31,6 +31,7 @@ namespace Advisor6
 
             // Services configuration
             services.AddScoped<IPersonalService, PersonalService>();
+            services.AddScoped<IEmploymentService, EmploymentService>();
 
             services.AddControllersWithViews();
         }

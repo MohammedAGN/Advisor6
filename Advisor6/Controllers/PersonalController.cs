@@ -35,8 +35,8 @@ namespace Advisor6.Controllers
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                var filteredResult = data.Where(n => n.FullName.ToLower().Contains(searchString.ToLower())
-                || n.Email.ToLower().Contains(searchString.ToLower())).ToList();
+                var filteredResult = data.Where(n => n.FullName.ToLower().Contains(searchString.ToLower())).ToList();
+                // || n.Email.ToLower().Contains(searchString.ToLower())).ToList();
                 //في حالة البحث مطابق للاحرف
                 //var filteredResultNew = data.Where(n => string.Equals(n.FullName, searchString, StringComparison.CurrentCultureIgnoreCase) 
                 //|| string.Equals(n.Email, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Advisor6.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220615010635_NewMigration")]
-    partial class NewMigration
+    [Migration("20220615114854_One_To_One")]
+    partial class One_To_One
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -71,7 +71,7 @@ namespace Advisor6.Migrations
 
             modelBuilder.Entity("Advisor6.Models.Employment_info", b =>
                 {
-                    b.Property<int>("Employee_id")
+                    b.Property<int>("PersonalId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -133,7 +133,7 @@ namespace Advisor6.Migrations
                     b.Property<string>("SubDeptartment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Employee_id");
+                    b.HasKey("PersonalId");
 
                     b.ToTable("Employment_info");
                 });

@@ -113,6 +113,9 @@ namespace Advisor6.Migrations
                     b.Property<DateTime>("LastUpdateDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Last_Job")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("MainDeptartment")
                         .HasColumnType("nvarchar(max)");
 

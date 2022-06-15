@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Advisor6.Migrations
 {
-    public partial class NewMigration : Migration
+    public partial class One_To_One : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -35,7 +35,7 @@ namespace Advisor6.Migrations
                 name: "Employment_info",
                 columns: table => new
                 {
-                    Employee_id = table.Column<int>(type: "int", nullable: false)
+                    PersonalId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MainDeptartment = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -59,7 +59,7 @@ namespace Advisor6.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employment_info", x => x.Employee_id);
+                    table.PrimaryKey("PK_Employment_info", x => x.PersonalId);
                 });
 
             migrationBuilder.CreateTable(
