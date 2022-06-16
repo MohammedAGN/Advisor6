@@ -5,15 +5,21 @@
 }
 
 <div class="row text">
-    <div class="col-md-8 offset-2">
-        
+    <div class="center col-md-8 offset-2">
+         <div class="center col-md-4 form-grou table-bordered ">
+                        
+                        <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-id ="@Model.PersonalId">Edit</a>
+                        <a class="btn btn-outline-success float-right" asp-action="Index">Show All</a>
+                        <a class="btn btn-outline-secondary" asp-controller="Employment_info" asp-action="Details" asp-route-id ="@Model.PersonalId">المعلومات الوظيفية</a>
+                    </div>
         <div class="row">
             <div class="col-md-8 offset-2">
                
                 <p>
                     <h1 dir="rtl" lang="ar" class="float-right">الاسم الكامل:@Model.FullName</h1>
                 </p>
-
+               
+                
                     <div class="form-group text-center">
                         <img id="ProfilePicturePreview" class="border-info rounded-circle" style="max-width: 150px" />
                     </div>
@@ -79,12 +85,7 @@
                     </div>
 
 
-                    <div class="form-group">
-                        
-                        <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-id ="@Model.PersonalId">Show All</a>
-                        <a class="btn btn-outline-success float-right" asp-action="Index">Show All</a>
-                    </div>
-                
+                    
             </div>
         </div>
     </div>

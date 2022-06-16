@@ -7,6 +7,7 @@ using System.Linq;
 using Advisor6.Data;
 using System.ComponentModel.DataAnnotations.Schema;
 using Advisor6.Data.Base;
+using Microsoft.AspNetCore.Http;
 
 namespace Advisor6.Models
 {
@@ -38,15 +39,19 @@ namespace Advisor6.Models
         public string Image { get; set; }
         public string PDF { get; set; }
 
+        [NotMapped]
+        public IFormFile Photo { get; set; }
+        [NotMapped]
+        public IFormFile pdf { get; set; }
 
-      //  //Relationships
+        //  //Relationships
 
-       //public List<Administrative_Orders> Administrative_Orders { get; set; }
+        //public List<Administrative_Orders> Administrative_Orders { get; set; }
 
-       // //  //Personal
-       // ////  [ForeignKey("PersonalId")]
-       // public int PersonalId { get; set; }
+        // //  //Personal
+        // ////  [ForeignKey("PersonalId")]
+        // public int PersonalId { get; set; }
 
-       // public Personal Personal { get; set; }
+        // public Personal Personal { get; set; }
     }
 }
