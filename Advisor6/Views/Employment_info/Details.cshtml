@@ -109,7 +109,7 @@
                     </div>
                     <div class="form-group">
                         
-                        <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-id ="@Model.PersonalId">Edit</a>
+                        <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-id ="@Model.Id">Edit</a>
                         <a class="btn btn-outline-success float-right" asp-controller="Personal" asp-action="Index">Show All</a>
                     </div>
                
@@ -118,7 +118,7 @@
     </div>
 </div>
  <div>
-                     @await Html.PartialAsync("_CreateNew", "Personal")
+                     @await Html.PartialAsync("_CreateNew", "Employment_info")
                 </div>
 
 }

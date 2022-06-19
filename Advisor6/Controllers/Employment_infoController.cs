@@ -17,15 +17,17 @@ namespace Advisor6.Controllers
     {
         private readonly IEmploymentService _service;
         private readonly IWebHostEnvironment _webHostEnvironment;
-
+        
         public Employment_infoController(IEmploymentService service, IWebHostEnvironment webHostEnvironment)
         {
+            
             _service= service;
             _webHostEnvironment = webHostEnvironment;
         }
         public async Task<IActionResult> Index()
         {
             var data = await _service.GetAllAsync();
+               
             return View(data);
         }
 
@@ -35,14 +37,20 @@ namespace Advisor6.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var employment_info = await _service.GetByIdAsync(id);
-            if (employment_info == null) return View("NotFound");
+                
+            if (employment_info == null) return View("Create");
+
             return View(employment_info);
         }
 
 
         //GET: Employment_info/create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            // اضافة المعلومات الوظيفية الى المستشار
+         
+            //== id);
+            
             return View();
         }
         // Post : Employment_info/Create

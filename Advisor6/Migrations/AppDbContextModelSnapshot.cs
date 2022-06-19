@@ -69,7 +69,7 @@ namespace Advisor6.Migrations
 
             modelBuilder.Entity("Advisor6.Models.Employment_info", b =>
                 {
-                    b.Property<int>("PersonalId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -134,14 +134,14 @@ namespace Advisor6.Migrations
                     b.Property<string>("SubDeptartment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PersonalId");
+                    b.HasKey("Id");
 
                     b.ToTable("Employment_info");
                 });
 
             modelBuilder.Entity("Advisor6.Models.Personal", b =>
                 {
-                    b.Property<int>("PersonalId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -160,6 +160,9 @@ namespace Advisor6.Migrations
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Employment_infoId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("EntryDate")
                         .HasColumnType("datetime2");
@@ -187,12 +190,33 @@ namespace Advisor6.Migrations
                     b.Property<string>("PDF")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PersonalId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PhoneNo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PersonalId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("Employment_infoId");
 
                     b.ToTable("Personal");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Personal", b =>
+                {
+                    b.HasOne("Advisor6.Models.Employment_info", "Employment_info")
+                        .WithMany("Personal")
+                        .HasForeignKey("Employment_infoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employment_info");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Employment_info", b =>
+                {
+                    b.Navigation("Personal");
                 });
 #pragma warning restore 612, 618
         }

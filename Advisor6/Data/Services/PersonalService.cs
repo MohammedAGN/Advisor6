@@ -10,16 +10,28 @@ namespace Advisor6.Data.Services
 {
     public class PersonalService : EntityBaseRepository<Personal>, IPersonalService
     {
-       // private readonly AppDbContext _context;
+        private readonly AppDbContext _context;
         public PersonalService(AppDbContext context) : base(context)
         {
+            _context = context;
+        }
 
+        public async Task<Personal> GetPersonalByIdAsync(int id)
+        {
+            var personalDetails = await _context.Personal
+                .Include(c => c.Employment_info)
+                .FirstOrDefaultAsync(n => n.Id == id);
+            //.Include(p => p.Producer)
+            //.Include(am => am.Actors_Movies).ThenInclude(a => a.Actor)
+
+
+            return personalDetails;
         }
         // تم حذفها في المحاضرة 41
         //{
         //    _context = context;
         //}
-        
+
         //public async Task AddAsync(Personal personal)
         //{
         //  await  _context.Personal.AddAsync(personal);

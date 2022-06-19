@@ -1,34 +1,143 @@
 ﻿@model Personal
 
 @{
-    ViewData["Title"] = "Details of Personal";
+    ViewData["Title"] = "Personal details";
 }
 
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="card mb-12">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="card-header text-white bg-info">
+                        <p class="card-text">
+                            <h5 class="card-title">
+                                @Model.FullName
+                            </h5>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="@Model.Image" width="100%" alt="@Model.FullName">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <p class="card-text">@Model.Nots</p>
+                        <p class="card-text">
+                            <b>Cinema: </b>
+                            <a asp-controller="Employment_info" asp-action="Details" asp-route-id="@Model.Employment_infoId">
+                                @Model.Employment_info.PDF
+                            </a>
+                        </p>
+                        @*<p class="card-text">
+                            <b>Producer: </b>
+                            <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId">
+                                @Model.Producer.FullName
+                            </a>
+                        </p>*@
+                        <p class="card-text"><b>Gender: </b>@Model.Gender</p>
+                        <p class="card-text"><b>Actual_direct_date: </b>@Model.Employment_info.Actual_direct_date.ToString("dd MMM yy")</p>
+                        <p class="card-text"><b>End Date: </b>@Model.Employment_info.Contract_expiry_date.ToString("dd MMM yy")</p>
+                        <p class="card-text ">
+                            <b>Status: </b>
+                            @if (DateTime.Now >= Model.Employment_info.Actual_direct_date && DateTime.Now <= Model.Employment_info.Contract_expiry_date)
+                            {
+                                <span class="badge bg-success text-white">AVAILABLE</span>
+                            }
+                            else if (DateTime.Now > Model.Employment_info.Contract_expiry_date)
+                            {
+                                <span class="badge bg-danger text-white">EXPIRED</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-primary text-white">UPCOMING</span>
+                            }
+                        </p>
+                        <p class="card-text">
+                            <b>Actors: </b>
+                            <hr />
+                            @*<div class="row">
+                                تؤجل الى الكادر
+                                @foreach (var actor in Model.Actors_Movies)
+                                {
+                                    <div class="column text-center">
+                                        <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="max-width: 150px" />
+                                        <br />
+                                        <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.ActorId">@actor.Actor.FullName</a>
+                                    </div>
+                                }
+                            </div>*@
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card-footer">
+                        <p class="card-text">
+                            <a class="btn btn-outline-primary float-right" asp-action="Card">
+                                Back to List
+                            </a>
+                            @*<a class="btn btn-success text-white  @((DateTime.Now > Model.EndDate) ? "disabled" : "")"
+                               asp-controller="Orders"
+                               asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"><i class="bi bi-cart-plus"></i> Add to Cart (Price @Model.Price.ToString("c"))</a>*@
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--<!-
+-------------------------------------------------------------------------------------------------------------
+@{
+    ViewData["Title"] = "Details of Personal";
+}
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-nav alert-light bg-white border-secondary box-shadow mb-3">
+    <div class="container-fluid" dir="rtl"  >
+        <a class="navbar-brand" href="">المعلومات الشخصية</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-id="@Model.PersonalId">Edit</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-success float-right" asp-controller="Personal" asp-action="Index">Show All</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="btn btn-outline-secondary" asp-controller="Employment_info" asp-action="Index" asp-route-id="@Model.PersonalId">المعلومات الوظيفية</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
 <div class="row text">
     <div class="center col-md-8 offset-2">
-         <div class="center col-md-4 form-grou table-bordered ">
-                        
-                        <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-id ="@Model.PersonalId">Edit</a>
-                        <a class="btn btn-outline-success float-right" asp-action="Index">Show All</a>
-                        <a class="btn btn-outline-secondary" asp-controller="Employment_info" asp-action="Details" asp-route-id ="@Model.PersonalId">المعلومات الوظيفية</a>
-                    </div>
         <div class="row">
             <div class="col-md-8 offset-2">
-               
+
                 <p>
                     <h1 dir="rtl" lang="ar" class="float-right">الاسم الكامل:@Model.FullName</h1>
                 </p>
-               
-                
+
+
                     <div class="form-group text-center">
                         <img id="ProfilePicturePreview" class="border-info rounded-circle" style="max-width: 150px" />
-                    </div>
-                    @*<div class="form-group">
-                        <label asp-for="FullName" class="control-label"></label>
-                        <input asp-for="FullName" class="form-control" readonly />
-                        <span asp-validation-for="FullName" class="text-danger"></span>
-                    </div>*@
-                    <div class="form-group">
+                    </div>-->-->
+<!--@*<div class="form-group">
+        <label asp-for="FullName" class="control-label"></label>
+        <input asp-for="FullName" class="form-control" readonly />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>*@-->
+<!--<div class="form-group">
                         <label asp-for="Gender" class="control-label"></label>
                         <input asp-for="Gender" class="form-control" readonly />
                         <span asp-validation-for="Gender" class="text-danger"></span>
@@ -84,11 +193,9 @@
                         <span asp-validation-for="Image" class="text-danger"></span>
                     </div>
 
-
-                    
             </div>
         </div>
     </div>
 </div>
 
-}
+}-->

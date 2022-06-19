@@ -7,6 +7,7 @@ namespace Advisor6.Data.Base
 {
    public interface IEntityBase
     {
-        int PersonalId { get; set; }
+        int Id { get; set; }
+      //  int Employment_infoId { get; set; }
     }
 }

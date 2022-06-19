@@ -15,6 +15,7 @@ namespace Advisor6.Models
     public class Personal : IEntityBase
     {
         [Key]
+        public int Id { get; set; }
         public int PersonalId { get; set; }
 
       //  [Display(Name = "Full Name")]
@@ -54,10 +55,10 @@ namespace Advisor6.Models
         ////    //Relationships
         //public List<Administrative_Orders> Administrative_Orders { get; set; }
 
-        ////    //Employment_info
-        ////   // public int Employment_infoId { get; set; }
+        // Employment_info
+        public int Employment_infoId { get; set; }
 
-        ////   //// [ForeignKey("Employment_infoId")]
-        //public Employment_info Employment_info { get; set; }
+        [ForeignKey("Employment_infoId")]
+        public Employment_info Employment_info { get; set; }
     }
 }

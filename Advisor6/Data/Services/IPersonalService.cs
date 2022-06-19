@@ -9,11 +9,12 @@ namespace Advisor6.Data.Services
 {
    public interface IPersonalService : IEntityBaseRepository<Personal>
     {
+        Task<Personal> GetPersonalByIdAsync(int id);
         // تم حذفها في المحاضرة 41
-       //Task< IEnumerable<Personal>> GetAllAsync();
-       //Task <Personal> GetByIdAsync(int id);
-       // Task AddAsync(Personal personal);
-       //Task<Personal> UpdateAsync(int id, Personal newPersonal);
-       // Task DeleteAsync(int id);
+        //Task< IEnumerable<Personal>> GetAllAsync();
+        //Task <Personal> GetByIdAsync(int id);
+        // Task AddAsync(Personal personal);
+        //Task<Personal> UpdateAsync(int id, Personal newPersonal);
+        // Task DeleteAsync(int id);
     }
 }
