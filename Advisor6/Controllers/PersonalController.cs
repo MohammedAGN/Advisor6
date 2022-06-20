@@ -85,7 +85,7 @@ namespace Advisor6.Controllers
         {
             var personalDetails = await _service.GetPersonalByIdAsync(id);
 
-            if (personalDetails == null) return View("NotFound");
+           if (personalDetails == null) return View("NotFound");
 
             var response = new NewPersonalVM()
             {
