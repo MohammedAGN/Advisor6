@@ -1,4 +1,5 @@
 ﻿using Advisor6.Data.Base;
+using Advisor6.Data.ViewModels;
 using Advisor6.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,6 +17,41 @@ namespace Advisor6.Data.Services
             _context = context;
         }
 
+        public async Task AddNewPersonalAsync(NewPersonalVM data)
+        {
+            var newPersonal = new Personal()
+            {
+                FullName = data.FullName,
+                PhoneNo = data.PhoneNo,
+                Gender = data.Gender,
+                Email = data.Email,
+                Address = data.Address,
+                BirthDate = data.BirthDate,
+                BornPlace = data.BornPlace,
+                Nots = data.Nots,
+                EntryDate = data.EntryDate,
+                LastUpdateDate = data.LastUpdateDate,
+                DataEntryName = data.DataEntryName,
+                Image = data.Image,
+                PDF = data.PDF,
+                Employment_infoId = data.Employment_infoId
+            };
+            await _context.Personal.AddAsync(newPersonal);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<NewPersonalDropdownsVM> GetNewPersonalDropdownsValues()
+        {
+            var response = new NewPersonalDropdownsVM()
+            {
+                Employment_infos = await _context.Employment_info.OrderBy(n => n.MainDeptartment).ToListAsync()
+                //Cinemas = await _context.Cinemas.OrderBy(n => n.Name).ToListAsync(),
+                //Producers = await _context.Producers.OrderBy(n => n.FullName).ToListAsync()
+            };
+
+            return response;
+        }
+
         public async Task<Personal> GetPersonalByIdAsync(int id)
         {
             var personalDetails = await _context.Personal
@@ -26,6 +62,32 @@ namespace Advisor6.Data.Services
 
 
             return personalDetails;
+        }
+
+        public async Task UpdatePersonalAsync(NewPersonalVM data)
+        {
+            var dbPersonal = await _context.Personal.FirstOrDefaultAsync(n => n.Id == data.Id);
+
+            if (dbPersonal != null)
+            {
+                dbPersonal.FullName = data.FullName;
+                dbPersonal.PhoneNo = data.PhoneNo;
+                dbPersonal.Gender = data.Gender;
+                dbPersonal.Email = data.Email;
+                dbPersonal.Address = data.Address;
+                dbPersonal.BirthDate = data.BirthDate;
+                dbPersonal.BornPlace = data.BornPlace;
+                dbPersonal.Nots = data.Nots;
+                dbPersonal.EntryDate = data.EntryDate;
+                dbPersonal.LastUpdateDate = data.LastUpdateDate;
+                dbPersonal.DataEntryName = data.DataEntryName;
+                dbPersonal.Image = data.Image;
+                dbPersonal.PDF = data.PDF;
+                dbPersonal.Employment_infoId = data.Employment_infoId;
+                await _context.SaveChangesAsync();
+            }
+
+              
         }
         // تم حذفها في المحاضرة 41
         //{

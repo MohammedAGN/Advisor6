@@ -14,7 +14,7 @@ namespace Advisor6.Models
 {
     public class NewPersonalVM 
     {
-       
+        public int Id { get; set; }
         public int PersonalId { get; set; }
 
       //  [Display(Name = "Full Name")]
