@@ -24,6 +24,7 @@ namespace Advisor6.Data.Services
                 FullName = data.FullName,
                 PhoneNo = data.PhoneNo,
                 Gender = data.Gender,
+                MarriedStatus = data.MarriedStatus,
                 Email = data.Email,
                 Address = data.Address,
                 BirthDate = data.BirthDate,
@@ -73,6 +74,7 @@ namespace Advisor6.Data.Services
                 dbPersonal.FullName = data.FullName;
                 dbPersonal.PhoneNo = data.PhoneNo;
                 dbPersonal.Gender = data.Gender;
+                dbPersonal.MarriedStatus = data.MarriedStatus;
                 dbPersonal.Email = data.Email;
                 dbPersonal.Address = data.Address;
                 dbPersonal.BirthDate = data.BirthDate;

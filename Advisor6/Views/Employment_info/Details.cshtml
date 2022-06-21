@@ -1,124 +1,122 @@
 ﻿@model Employment_info
 
 @{
-    ViewData["Title"] = "Details of employment_info";
+	ViewData["Title"] = "Details of employment_info";
 }
+<div class="row">
+	<div class="col-md-8 offset-2 ">
+		<p>
+			<h1 class="float-right">اضافة مستشار جديد</h1>
+		</p>
+		<br />
+		<br />
 
-<div class="row text">
-    <div class="col-md-8 offset-2">
-        
-        <div class="row">
-            <div class="col-md-8 offset-2">
-               
-                <p>
-                    <h1 dir="rtl" lang="ar" class="float-right">الاسم الكامل:@Model.FullName</h1>
-                </p>
+		<div class="row">
+			<div class="col-md-10 offset-2">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label asp-for="MainDeptartment" class="control-label"></label>
+							<input asp-for="MainDeptartment" class="form-control" readonly />
+							<span asp-validation-for="MainDeptartment" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="SubDeptartment" class="control-label"></label>
+							<input asp-for="SubDeptartment" class="form-control" readonly />
+							<span asp-validation-for="SubDeptartment" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="Salary" class="control-label"></label>
+							<input asp-for="Salary" class="form-control" readonly />
+							<span asp-validation-for="Salary" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="Service_Continuation" class="control-label"></label>
+							<input asp-for="Service_Continuation" class="form-control" readonly />
+							<span asp-validation-for="Service_Continuation" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="Job_Title" class="control-label"></label>
+							<input asp-for="Job_Title" class="form-control" readonly />
+							<span asp-validation-for="Job_Title" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="Job_Status" class="control-label"></label>
+							<input asp-for="Job_Status" class="form-control" readonly />
+							<span asp-validation-for="Job_Status" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="EmploymentBook_No" class="control-label"></label>
+							<input asp-for="EmploymentBook_No" class="form-control" readonly />
+							<span asp-validation-for="EmploymentBook_No" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="EmploymentBook_Date" class="control-label"></label>
+							<input asp-for="EmploymentBook_Date" class="form-control" readonly />
+							<span asp-validation-for="EmploymentBook_Date" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="DirectBook_No" class="control-label"></label>
+							<input asp-for="DirectBook_No" class="form-control" readonly />
+							<span asp-validation-for="DirectBook_No" class="text-danger"></span>
+						</div>
 
-                    <div class="form-group text-center">
-                        <img id="ProfilePicturePreview" class="border-info rounded-circle" style="max-width: 150px" />
-                    </div>
-                    @*<div class="form-group">
-                        <label asp-for="FullName" class="control-label"></label>
-                        <input asp-for="FullName" class="form-control" readonly />
-                        <span asp-validation-for="FullName" class="text-danger"></span>
-                    </div>*@
-                    <div class="form-group">
-                        <label asp-for="MainDeptartment" class="control-label"></label>
-                        <input asp-for="MainDeptartment" class="form-control" readonly />
-                        <span asp-validation-for="MainDeptartment" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="SubDeptartment" class="control-label"></label>
-                        <input asp-for="SubDeptartment" class="form-control" readonly />
-                        <span asp-validation-for="SubDeptartment" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Salary" class="control-label"></label>
-                        <input asp-for="Salary" class="form-control" readonly />
-                        <span asp-validation-for="Salary" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Service_Continuation" class="control-label"></label>
-                        <input asp-for="Service_Continuation" class="form-control" readonly />
-                        <span asp-validation-for="Service_Continuation" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Job_Title" class="control-label"></label>
-                        <input asp-for="Job_Title" class="form-control"readonly />
-                        <span asp-validation-for="Job_Title" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Job_Status" class="control-label"></label>
-                        <input asp-for="Job_Status" class="form-control" readonly/>
-                        <span asp-validation-for="Job_Status" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="EmploymentBook_No" class="control-label"></label>
-                        <input asp-for="EmploymentBook_No" class="form-control"readonly />
-                        <span asp-validation-for="EmploymentBook_No" class="text-danger"></span>
-                    </div>
-                     <div class="form-group">
-                        <label asp-for="EmploymentBook_Date" class="control-label"></label>
-                        <input asp-for="EmploymentBook_Date" class="form-control"readonly />
-                        <span asp-validation-for="EmploymentBook_Date" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="DirectBook_No" class="control-label"></label>
-                        <input asp-for="DirectBook_No" class="form-control" readonly/>
-                        <span asp-validation-for="DirectBook_No" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="DirectBook_Date" class="control-label"></label>
-                        <input asp-for="DirectBook_Date" class="form-control"readonly />
-                        <span asp-validation-for="DirectBook_Date" class="text-danger"></span>
-                    </div>
-                     <div class="form-group">
-                        <label asp-for="Actual_direct_date" class="control-label"></label>
-                        <input asp-for="Actual_direct_date" class="form-control"readonly />
-                        <span asp-validation-for="Actual_direct_date" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Contract_expiry_date" class="control-label"></label>
-                        <input asp-for="Contract_expiry_date" class="form-control" readonly/>
-                        <span asp-validation-for="Contract_expiry_date" class="text-danger"></span>
-                    </div>              
-                    <div class="form-group">
-                        <label asp-for="Nots" class="control-label"></label>
-                        <input asp-for="Nots" class="form-control"readonly />
-                        <span asp-validation-for="Nots" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="EntryDate" class="control-label"></label>
-                        <input asp-for="EntryDate" class="form-control" readonly/>
-                        <span asp-validation-for="EntryDate" class="text-danger"></span>
-                    </div>
-                     <div class="form-group">
-                        <label asp-for="LastUpdateDate" class="control-label"></label>
-                        <input asp-for="LastUpdateDate" class="form-control"readonly />
-                        <span asp-validation-for="LastUpdateDate" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="DataEntryName" class="control-label"></label>
-                        <input asp-for="DataEntryName" class="form-control"readonly />
-                        <span asp-validation-for="DataEntryName" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Last_Job" class="control-label"></label>
-                        <input asp-for="Last_Job" class="form-control"readonly />
-                        <span asp-validation-for="Last_Job" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        
-                        <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-id ="@Model.Id">Edit</a>
-                        <a class="btn btn-outline-success float-right" asp-controller="Personal" asp-action="Index">Show All</a>
-                    </div>
-               
-            </div>
-        </div>
-    </div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label asp-for="DirectBook_Date" class="control-label"></label>
+								<input asp-for="DirectBook_Date" class="form-control" readonly />
+								<span asp-validation-for="DirectBook_Date" class="text-danger"></span>
+							</div>
+							<div class="form-group">
+								<label asp-for="Actual_direct_date" class="control-label"></label>
+								<input asp-for="Actual_direct_date" class="form-control" readonly />
+								<span asp-validation-for="Actual_direct_date" class="text-danger"></span>
+							</div>
+							<div class="form-group">
+								<label asp-for="Contract_expiry_date" class="control-label"></label>
+								<input asp-for="Contract_expiry_date" class="form-control" readonly />
+								<span asp-validation-for="Contract_expiry_date" class="text-danger"></span>
+							</div>
+							<div class="form-group">
+								<label asp-for="Nots" class="control-label"></label>
+								<input asp-for="Nots" class="form-control" readonly />
+								<span asp-validation-for="Nots" class="text-danger"></span>
+							</div>
+							<div class="form-group">
+								<label asp-for="EntryDate" class="control-label"></label>
+								<input asp-for="EntryDate" class="form-control" readonly />
+								<span asp-validation-for="EntryDate" class="text-danger"></span>
+							</div>
+							<div class="form-group">
+								<label asp-for="LastUpdateDate" class="control-label"></label>
+								<input asp-for="LastUpdateDate" class="form-control" readonly />
+								<span asp-validation-for="LastUpdateDate" class="text-danger"></span>
+							</div>
+							<div class="form-group">
+								<label asp-for="DataEntryName" class="control-label"></label>
+								<input asp-for="DataEntryName" class="form-control" readonly />
+								<span asp-validation-for="DataEntryName" class="text-danger"></span>
+							</div>
+							<div class="form-group">
+								<label asp-for="Last_Job" class="control-label"></label>
+								<input asp-for="Last_Job" class="form-control" readonly />
+								<span asp-validation-for="Last_Job" class="text-danger"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<a class="btn btn-outline-secondary" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+							<a class="btn btn-outline-success float-right" asp-controller="Personal" asp-action="Index">Show All</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
 </div>
- <div>
-                     @await Html.PartialAsync("_CreateNew", "Employment_info")
-                </div>
 
-}
+<div>
+	@await Html.PartialAsync("_CreateNew", "Employment_info")
+</div>
+
+

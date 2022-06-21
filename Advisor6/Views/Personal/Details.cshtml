@@ -1,5 +1,5 @@
-﻿@model Personal
-
+﻿@model NewPersonalVM
+@using Advisor6.Data
 @{
 	ViewData["Title"] = "Personal details";
 }
@@ -25,34 +25,17 @@
 						<p class="card-text">@Model.Nots</p>
 						<p class="card-text">
 							<b>Cinema: </b>
-							<a asp-controller="Employment_info" asp-action="Details" asp-route-id="@Model.Employment_infoId">
-								@Model.Employment_info.PDF
-							</a>
+							
 						</p>
 						@*<p class="card-text">
 						<b>Producer: </b>
 						<a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId">
 						@Model.Producer.FullName
-						</a>
-						</p>*@
-						<p class="card-text"><b>Gender: </b>@Model.Gender</p>
-						<p class="card-text"><b>Actual_direct_date: </b>@Model.Employment_info.Actual_direct_date.ToString("dd MMM yy")</p>
-						<p class="card-text"><b>End Date: </b>@Model.Employment_info.Contract_expiry_date.ToString("dd MMM yy")</p>
-						<p class="card-text ">
-							<b>Status: </b>
-							@if (DateTime.Now >= Model.Employment_info.Actual_direct_date && DateTime.Now <= Model.Employment_info.Contract_expiry_date)
-							{
-								<span class="badge bg-success text-white">AVAILABLE</span>
-							}
-							else if (DateTime.Now > Model.Employment_info.Contract_expiry_date)
-							{
-								<span class="badge bg-danger text-white">EXPIRED</span>
-							}
-							else
-							{
-								<span class="badge bg-primary text-white">UPCOMING</span>
-							}
+						</a>@**@
 						</p>
+						<p class="card-text"><b>Gender: </b>@Model.Gender</p>
+						
+						
 						<p class="card-text">
 							<b>Actors: </b>
 							<hr />
@@ -88,38 +71,6 @@
 	</div>
 </div>
 
-
-
-
-
-
-@*@{
-	ViewData["Title"] = "Details of Personal";
-}
-<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-nav alert-light bg-white border-secondary box-shadow mb-3">
-	<div class="container-fluid" dir="rtl">
-		<a class="navbar-brand" href="">المعلومات الشخصية</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-			<ul class="navbar-nav flex-grow-1">
-				<li class="nav-item">
-					<a class="btn btn-outline-secondary" asp-action="Edit" asp-route-id="@Model.PersonalId">Edit</a>
-				</li>
-				<li class="nav-item">
-					<a class="btn btn-outline-success float-right" asp-controller="Personal" asp-action="Index">Show All</a>
-				</li>
-
-				<li class="nav-item">
-					<a class="btn btn-outline-secondary" asp-controller="Employment_info" asp-action="Index" asp-route-id="@Model.PersonalId">المعلومات الوظيفية</a>
-				</li>
-			</ul>
-
-		</div>
-	</div>
-</nav>
-*@
 <div class="row" dir="rtl">
 	<div class="center col-mb-12 offset-2">
 		<p>
@@ -187,10 +138,10 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Employment_infoId" class="control-label float-right">المعلومات الوظيفية</label>
-                    <input asp-for="Employment_infoId" class="form-control" readonly />
+                    <select asp-for="Employment_infoId" class="form-control" asp-items="ViewBag.Employment_infos" readonly></select>
                     <span asp-validation-for="Employment_infoId" class="text-danger"></span>
                 </div>
-
+				
                 <div class="form-group">
                     <label asp-for="Nots" class="control-label float-right">الملاحظات</label>
                     <textarea asp-for="Nots" class="form-control" readonly></textarea>
