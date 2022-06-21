@@ -121,84 +121,90 @@
 </nav>
 *@
 <div class="row" dir="rtl">
-	<div class="center col-md-8 offset-2">
+	<div class="center col-mb-12 offset-2">
 		<p>
 			<h1 dir="rtl" lang="ar" class="float-right">المعلومات الشخصية</h1>
 		</p>
 		<br />
 		<br />
-		<div class="row">
-			<div class="col-md-8 offset-2">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="form-group">
-							<label asp-for="FullName" class="control-label  float-right">الاسم الكامل</label>
-							<input asp-for="FullName" class="form-control" readonly />
-							<span asp-validation-for="FullName" class="text-danger"></span>
-						</div>
-						<div class="form-group">
-							<label asp-for="Gender" class="control-label float-right">الجنس</label>
-							<input asp-for="Gender" class="form-control" readonly />
-							<span asp-validation-for="Gender" class="text-danger"></span>
-						</div>
-						<div class="form-group">
-							<label asp-for="MarriedStatus" class="control-label float-right">الحالة الاجتماعية</label>
-							<input asp-for="MarriedStatus" class="form-control" readonly />
-							<span asp-validation-for="MarriedStatus" class="text-danger"></span>
-						</div>
-						<div class="form-group">
-							<label asp-for="PhoneNo" class="control-label float-right">رقم الهاتف</label>
-							<input asp-for="PhoneNo" class="form-control" readonly />
-							<span asp-validation-for="PhoneNo" class="text-danger"></span>
-						</div>
-						<div class="form-group">
-							<label asp-for="Email" class="control-label float-right">Email</label>
-							<input asp-for="Email" class="form-control" readonly />
-							<span asp-validation-for="Email" class="text-danger"></span>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label asp-for="Address" class="control-label float-right">العنوان</label>
-							<input asp-for="Address" class="form-control" readonly />
-							<span asp-validation-for="Address" class="text-danger"></span>
-						</div>
-						<div class="form-group">
-							<label asp-for="BirthDate" class="control-label float-right">تاريخ الميلاد</label>
-							<input asp-for="BirthDate" type="date" class="form-control" readonly />
-							<span asp-validation-for="BirthDate" class="text-danger"></span>
-						</div>
-						<div class="form-group">
-							<label asp-for="BornPlace" class="control-label float-right">محل الولادة</label>
-							<input asp-for="BornPlace" class="form-control" readonly />
-							<span asp-validation-for="BornPlace" class="text-danger"></span>
-						</div>
-						<div class="form-group">
-							<label asp-for="EntryDate" class="control-label float-right">تاريخ حفظ القيد</label>
-							<input asp-for="EntryDate" type="date" class="form-control" readonly />
-							<span asp-validation-for="EntryDate" class="text-danger"></span>
-						</div>
-						<div class="form-group">
-							<label asp-for="DataEntryName" class="control-label float-right">اسم مدخل البيانات</label>
-							<input asp-for="DataEntryName" class="form-control" readonly />
-							<span asp-validation-for="DataEntryName" class="text-danger"></span>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<label asp-for="Employment_infoId" class="control-label float-right">المعلومات الوظيفية</label>
-					<input asp-for="Employment_infoId" class="form-control" readonly />
-					<span asp-validation-for="Employment_infoId" class="text-danger"></span>
-				</div>
+        <div class="row">
+            <div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="FullName" class="control-label  float-right">الاسم الكامل</label>
+                            <input asp-for="FullName" class="form-control" readonly />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Gender" class="control-label float-right">الجنس</label>
+                            <input asp-for="Gender" class="form-control" readonly />
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MarriedStatus" class="control-label float-right">الحالة الاجتماعية</label>
+                            <input asp-for="MarriedStatus" class="form-control" readonly />
+                            <span asp-validation-for="MarriedStatus" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PhoneNo" class="control-label float-right">رقم الهاتف</label>
+                            <input asp-for="PhoneNo" class="form-control" readonly />
+                            <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label float-right">Email</label>
+                            <input asp-for="Email" class="form-control" readonly />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Address" class="control-label float-right">العنوان</label>
+                            <input asp-for="Address" class="form-control" readonly />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BirthDate" class="control-label float-right">تاريخ الميلاد</label>
+                            <input asp-for="BirthDate" type="date" class="form-control" readonly />
+                            <span asp-validation-for="BirthDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BornPlace" class="control-label float-right">محل الولادة</label>
+                            <input asp-for="BornPlace" class="form-control" readonly />
+                            <span asp-validation-for="BornPlace" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EntryDate" class="control-label float-right">تاريخ حفظ القيد</label>
+                            <input asp-for="EntryDate" type="date" class="form-control" readonly />
+                            <span asp-validation-for="EntryDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DataEntryName" class="control-label float-right">اسم مدخل البيانات</label>
+                            <input asp-for="DataEntryName" class="form-control" readonly />
+                            <span asp-validation-for="DataEntryName" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Employment_infoId" class="control-label float-right">المعلومات الوظيفية</label>
+                    <input asp-for="Employment_infoId" class="form-control" readonly />
+                    <span asp-validation-for="Employment_infoId" class="text-danger"></span>
+                </div>
 
-				<div class="form-group">
-					<label asp-for="Nots" class="control-label float-right">الملاحظات</label>
-					<textarea asp-for="Nots" class="form-control" readonly></textarea>
-					<span asp-validation-for="Nots" class="text-danger"></span>
-				</div>
-
-			</div>
-		</div>
+                <div class="form-group">
+                    <label asp-for="Nots" class="control-label float-right">الملاحظات</label>
+                    <textarea asp-for="Nots" class="form-control" readonly></textarea>
+                    <span asp-validation-for="Nots" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <a class="btn btn-outline-primary float-right" href="/Personal/Card">Back to Cards</a>|
+                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@Model.Id"><i class="bi bi-pencil-square"></i></a> |
+                <a class="btn btn-info" target="_blank" href="@Model.PDF"><i class="bi bi-file-earmark-pdf-fill"></i></a> |
+                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@Model.Id"><i class="bi bi-trash"></i></a>|
+                <a class="btn btn-outline-secondary" asp-action="Index">Back to List</a>
+            </div>
+        </div>
 	</div>
 </div>
 

@@ -1,101 +1,92 @@
-﻿@model Personal
+﻿@model NewPersonalVM
+@using Advisor6.Data
+@*@{
+       // ViewData["Title"] = "Update personal";
+    }*@
 
-@{
-    ViewData["Title"] = "Delete Personal";
-}
-
-<div class="row text">
+<div class="row" dir="rtl">
     <div class="col-md-8 offset-2">
-        
+        <p>
+            <h1 class="float-right">حذف بيانات مستشار</h1>
+        </p>
+        <br />
+        <br />
         <div class="row">
             <div class="col-md-8 offset-2">
-
-                <p>
-                    <h1 dir="rtl" lang="ar" class="float-right">تاكيد حذف:@Model.FullName</h1>
-                </p>
-
-                <div class="form-group text-center">
-                    <img id="ProfilePicturePreview" class="border-info rounded-circle" style="max-width: 150px" />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="FullName" class="control-label  float-right">الاسم الكامل</label>
+                            <input asp-for="FullName" class="form-control" readonly />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Gender" class="control-label float-right">الجنس</label>
+                            <select asp-for="Gender" class="form-control" readonly></select>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MarriedStatus" class="control-label float-right">الحالة الاجتماعية</label>
+                            <select asp-for="MarriedStatus" class="form-control" readonly></select>
+                            <span asp-validation-for="MarriedStatus" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PhoneNo" class="control-label float-right">رقم الهاتف</label>
+                            <input asp-for="PhoneNo" class="form-control" readonly />
+                            <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label float-right">Email</label>
+                            <input asp-for="Email" class="form-control" readonly />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Address" class="control-label float-right">العنوان</label>
+                            <input asp-for="Address" class="form-control" readonly />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BirthDate" class="control-label float-right">تاريخ الميلاد</label>
+                            <input asp-for="BirthDate" type="date" class="form-control" readonly />
+                            <span asp-validation-for="BirthDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BornPlace" class="control-label float-right">محل الولادة</label>
+                            <input asp-for="BornPlace" class="form-control" readonly />
+                            <span asp-validation-for="BornPlace" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EntryDate" class="control-label float-right">تاريخ حفظ القيد</label>
+                            <input asp-for="EntryDate" type="date" class="form-control" readonly />
+                            <span asp-validation-for="EntryDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DataEntryName" class="control-label float-right">اسم مدخل البيانات</label>
+                            <input asp-for="DataEntryName" class="form-control" readonly />
+                            <span asp-validation-for="DataEntryName" class="text-danger"></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
-
-                    <input asp-for="PersonalId" class="form-control" readonly />
-
-                </div>
-                @*<div class="form-group">
-            <label asp-for="FullName" class="control-label"></label>
-            <input asp-for="FullName" class="form-control" readonly />
-            <span asp-validation-for="FullName" class="text-danger"></span>
-        </div>*@
-                <div class="form-group">
-                    <label asp-for="Gender" class="control-label"></label>
-                    <input asp-for="Gender" class="form-control" readonly />
-                    <span asp-validation-for="Gender" class="text-danger"></span>
+                    <label asp-for="Employment_infoId" class="control-label float-right">المعلومات الوظيفية</label>
+                    <select asp-for="Employment_infoId" class="form-control" asp-items="ViewBag.Employment_infos" readonly></select>
+                    <span asp-validation-for="Employment_infoId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="MarriedStatus" class="control-label"></label>
-                    <input asp-for="MarriedStatus" class="form-control" readonly />
-                    <span asp-validation-for="MarriedStatus" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="PhoneNo" class="control-label"></label>
-                    <input asp-for="PhoneNo" class="form-control" readonly />
-                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Email" class="control-label"></label>
-                    <input asp-for="Email" class="form-control" readonly />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Address" class="control-label"></label>
-                    <input asp-for="Address" class="form-control" readonly />
-                    <span asp-validation-for="Address" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="BirthDate" class="control-label"></label>
-                    <input asp-for="BirthDate" class="form-control" readonly />
-                    <span asp-validation-for="BirthDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="BornPlace" class="control-label"></label>
-                    <input asp-for="BornPlace" class="form-control" readonly />
-                    <span asp-validation-for="BornPlace" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Nots" class="control-label"></label>
-                    <input asp-for="Nots" class="form-control" readonly />
+                    <label asp-for="Nots" class="control-label float-right">الملاحظات</label>
+                    <textarea asp-for="Nots" class="form-control" readonly></textarea>
                     <span asp-validation-for="Nots" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="EntryDate" class="control-label"></label>
-                    <input asp-for="EntryDate" class="form-control" readonly />
-                    <span asp-validation-for="EntryDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="DataEntryName" class="control-label"></label>
-                    <input asp-for="DataEntryName" class="form-control" readonly />
-                    <span asp-validation-for="DataEntryName" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Image" class="control-label"></label>
-                    <input asp-for="Image" class="form-control" readonly />
-                    <span asp-validation-for="Image" class="text-danger"></span>
-                </div>
-
-
-                <div class="form-group">
                     <form asp-action="Delete">
-                        <input type="hidden" asp-for="@Model.PersonalId" />
+                        <input type="hidden" asp-for="Id" />
                         <input type="submit" value="Confirm" class="btn btn-danger float-right" />
-                        <a class="btn btn-outline-success" asp-action="Index">Show All</a>
                     </form>
-
+                    <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-
-}

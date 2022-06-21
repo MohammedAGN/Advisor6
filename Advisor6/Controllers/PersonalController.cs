@@ -18,7 +18,7 @@ namespace Advisor6.Controllers
     {
         private readonly IPersonalService _service;
         private readonly IWebHostEnvironment _webHostEnvironment;
-       public PersonalController(IPersonalService service, IWebHostEnvironment webHostEnvironment)
+        public PersonalController(IPersonalService service, IWebHostEnvironment webHostEnvironment)
         {
             _service = service;
             _webHostEnvironment = webHostEnvironment;
@@ -55,7 +55,7 @@ namespace Advisor6.Controllers
             ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
             return View();
         }
-     
+
         // Post : Personal/Create
         [HttpPost]
         public async Task<IActionResult> Create(NewPersonalVM personal)
@@ -85,7 +85,7 @@ namespace Advisor6.Controllers
         {
             var personalDetails = await _service.GetPersonalByIdAsync(id);
 
-           if (personalDetails == null) return View("NotFound");
+            if (personalDetails == null) return View("NotFound");
 
             var response = new NewPersonalVM()
             {
@@ -110,7 +110,6 @@ namespace Advisor6.Controllers
             ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
             return View(response);
         }
-
         // Post : Personal/Edit
         [HttpPost]
         public async Task<IActionResult> Edit(int id, NewPersonalVM personal)
@@ -136,8 +135,6 @@ namespace Advisor6.Controllers
             await _service.UpdatePersonalAsync(personal);
             return RedirectToAction(nameof(Card));
         }
-
-
         private async Task<string> UploadImage(string folderPath, IFormFile file)
         {
             folderPath += Guid.NewGuid().ToString() + "_" + file.FileName;
@@ -145,66 +142,50 @@ namespace Advisor6.Controllers
             await file.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
             return "/" + folderPath;
         }
-
         //Get: Personal/Details/1
         public async Task<IActionResult> Details(int id)
         {
-            var personalDetails = await _service.GetPersonalByIdAsync(id);         
-           // if (personalDetails == null) return View("NotFound");
+            var personalDetails = await _service.GetPersonalByIdAsync(id);
+            // if (personalDetails == null) return View("NotFound");
             return View(personalDetails);
         }
-
-        // Get : Personal/Edit
-        //public async Task<IActionResult> Edit(int id)
-        //{
-        //    var personalDetails = await _service.GetByIdAsync(id);
-
-        //    if (personalDetails == null) return View("NotFound");
-
-        //    return View(personalDetails);
-        //}
-
-        // Post : Personal/Edit
-        [HttpPost]
-        //public async Task<IActionResult> Edit(int id, Personal personal)
-        ////[Bind("FullName,Gender,MarriedStatus,PhoneNo,Email,Address,BirthDate" +",BornPlace,Nots,EntryDate,DataEntryName,Image")]
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        if (personal.Photo != null)
-        //        {
-        //            string folder = "PADV/Photo/";
-
-        //            personal.Image = await UploadImage(folder, personal.Photo);
-        //        }
-        //        //await _service.AddAsync(personal);
-        //        //     return View(personal);
-
-        //        if (personal.pdf != null)
-        //        {
-        //            string folder = "PADV/PDF/";
-
-        //            personal.PDF = await UploadImage(folder, personal.pdf);
-        //        }
-        //    }
-        //    await _service.UpdateAsync(id,personal);
-        //    return RedirectToAction(nameof(Index));
-        //}
-
-        // Get : Personal/Delete
+        // Get : Personal/Delete/1
         public async Task<IActionResult> Delete(int id)
         {
-            var personalDetails = await _service.GetByIdAsync(id);
+            var personalDetails = await _service.GetPersonalByIdAsync(id);
             if (personalDetails == null) return View("NotFound");
-            return View(personalDetails);
+            var response = new NewPersonalVM()
+            {
+                Id = personalDetails.Id,
+                FullName = personalDetails.FullName,
+                PhoneNo = personalDetails.PhoneNo,
+                Gender = personalDetails.Gender,
+                Email = personalDetails.Email,
+                Address = personalDetails.Address,
+                BirthDate = personalDetails.BirthDate,
+                BornPlace = personalDetails.BornPlace,
+                Nots = personalDetails.Nots,
+                EntryDate = personalDetails.EntryDate,
+                LastUpdateDate = personalDetails.LastUpdateDate,
+                DataEntryName = personalDetails.DataEntryName,
+                Image = personalDetails.Image,
+                PDF = personalDetails.PDF,
+                Employment_infoId = personalDetails.Employment_infoId
+            };
+            var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
+            ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
+            return View(response);
         }
+        // Post : Personal/Delete
         [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeletePersonal(int id)
+        public async Task<IActionResult> DeleteConfirm(int id)
         {
-            var personalDetails = await _service.GetByIdAsync(id);
+            var personalDetails = await _service.GetPersonalByIdAsync(id);
             if (personalDetails == null) return View("NotFound");
             await _service.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
-        }       
+            return RedirectToAction(nameof(Card));
+        }
     }
 }
+
+
