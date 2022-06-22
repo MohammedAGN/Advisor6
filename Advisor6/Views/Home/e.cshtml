@@ -1,0 +1,1146 @@
+﻿<html class="dxChrome dxWindowsPlatform dxWebKitFamily dxBrowserVersion-102"><head><link rel="stylesheet" href="/DXR.axd?r=1_68,1_69,1_209,1_206,1_210,0_1374,0_1377,0_1503,0_1506,0_1781,0_1784,1_74,1_73-nj7lm"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>
+	HR System
+</title><link href="../Shared/css/bootstrap.min.css" rel="stylesheet"><link href="../Shared/font-awesome/css/font-awesome.css" rel="stylesheet"><link href="../Shared/css/plugins/chosen/bootstrap-chosen.css" rel="stylesheet"><link href="../Shared/css/animate.css" rel="stylesheet"><link href="../Shared/css/style.css" rel="stylesheet">
+
+
+
+ 
+   @* <style>
+        @font-face {
+            font-family: 'beIN Normal';
+            font-style: normal;
+            src: url('../bein-ar-normal.woff') format('woff');
+        }
+    </style>*@
+    
+                <script type="text/javascript">
+        function alertMe() {
+            alert('لا توجد لديك صلاحية');
+            window.location = "../Default.aspx";
+            setTimeout('alertMe()', 5000);
+        }
+        
+    </script>
+
+<link href="/WebResource.axd?d=lwgz3BEaFr8V6rnSnqQ4jRh4vCGniUob762vZ5UzfQ-YnIiIu1kqecxHen4kbuOQKVK5GxLF0lSJt_VU0yCv8HhituK773WSERGB_MQ5XNhWB5EgBjfRSIKUy2B2cy20xL5rWsmd_Ou0SylMNVMNNw2&amp;t=636300845000000000" type="text/css" rel="stylesheet"><link href="/WebResource.axd?d=UT1Cj7SEzX8U-GEgOjD-q7qasDMBQ5OsR5hPEBt9-_4l8k-0n-Z2iKZl4dqO1mbsZI1DV-eHRM0d2mKVIr-7rANHT-8gPUiaVRIWL_Q4U_faLkLInHkU4mzJPjGpY089sl52DEtLuIawDHNdi55jQg2&amp;t=636300845000000000" type="text/css" rel="stylesheet"><style></style></head>
+<body class="top-navigation">
+    <form method="post" action="./Update_Employment.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="HFhWpw3JAAfM3G0Uns1h7Ql6qntGshfx2GWsDWQBPGw2UqTTF9CzImc+fv0TPlMMAn8z3uENdHoftPN4eUdU0NAiaQno0A3+h/ILyjwjzM8DUHHV1CVgxQmvFnLiFz3X8ag1nTYEHIoQLmBqLSI/Bv5UBS0g0z0aW3hzZ82HbA+XSPZHz5cFCaUj0OhIaKyCenTrNM2SPxfpVUbTbBu44WvLp2nc5Y468l78WQH46JFWzGUfmvGntC3TIvpEXAewFMvX7tsHfBeK7eCO6XrJsBs52eqvM+14gId7LKiDy+Kn+YX3s9J6hln8UPAcrefngraN3uM5v9YvwxqhoeSeCKSfHU6m/1ZrDIenacrmj0u/EXlvFtxgSnqaUvuWKDEkB/w9shP/pph1JVWFZUe0coc37UDFtL8BACGkLu9VEJw+mydnWG6ELNw4rq4LsOn04HZCDbf5+1PWddWA2ZzKU0ibsTDXqYzFWs4GBk2OhZqTuJskUTRDBIO1l65HDzzNAqgG/IH+zElj1GJOIEhGjAymsR59uUT+/87SKQbsVo6GLK5ZZ0+FVY7Uc5JwHP9pa2DIoBz/1ADkBCgTQMtywugXP3MLt7z7uOctI1VU0iN1CgoeMZRiI6q8EB8SN5gty0kNTAQye41v7/cFNi2I9b0qObeMrpWus3+2Z6Su2Z/Tfw30pvwQ4pTrXF//7c7uNeMkV+ZVDq7X7MnsIE4XyT9o/dStkdCSYnB3CTOVaPNxqe6l/D+vLUikDKgaj/HPzNwFAp2idGw5JUAoHWQ44z+QkVk2TJBhH6gPK3A30td87qXBiLm4ogAIwbJm/H6FdzWWSzcPBS/Cz69BNkQhi+/V59OYy1af0dRPuSdNrweaYds2INXpL8Jcq+sec5hSpi9eIR7d+XLG83ZLEuNOrhVPcFPSyfJFSfrZH3XNXWg1T5JBolNPnZls4Hp5MD7gAMkL9J07HE4J7x0azewqe06F8SFCNWrSN46CsN6yl6S1x5HNkdUj7pMi86dPH05t17RwTHTmbH+Wmi/lLDZMHst3VKMiIQGV3nyVOmP35k55CT8qx6GHGiJ3UeZ4xdikaTh44B9XCeVsC1gx/Elx9sh7vgLalRjSPP9/YuBNOAiij0wluHGI/CNeuYi/Wwm8IIN7OHz2kCbPupq1CBGOrCbB6BlkZk62dt133B6dWFXAXmvhGsTZpPawa5aB5wd/cXCXvkFTA4PUitXK7pmKFCN7nSxYABBA6UThHac2rjtX7NKFSwP4JNvwgAI5O4rgcAkGp7NZsx4IC/dHo95EwVTEl34ucWjFaP9d6jRkMlw7e9bSxQdsU5wCPDNLT+czzkyuPtpqHCWdca62SrwOo/DRmoXny80mkYM3jC4u+/CxTrGMHdwJgcKjeLPyJnN549LRLIlgP1ueoRBSmPKnTSiIcIIsVg53Dsn6H+uSUOKg6E5BAlHu7UKiDR2Ib6y2fY0mB0/cZL3vIqJtWoEL+M7UXbMHLdQ5oYVatui7tzGC/kx1bArOZxF9rjmiV/AUE33orHXJ6V3UPTIdP4uBe5s2DXN/FA4Ua9IhSO4y4luIyaOD3A33PFoCRdWpgQklLOjKZJyBGh4J3tO9Tf0aIgrKHZ1/CmDSbc8kKexnSCkjIwgXCb3YRviU2mW2OfuRWmT9JMPlv+jB04ExVgV7fa89RTMkJc7GQiBM/r6Fs8a19S7iP69kkJ4b9UgsTW+57pU+G+ac2GJSCdJLNRsSARraDvSOP1ngMP1lfYjCEL0gItpwoG/0/QyYCTLAZ2ed3fDH1pV4uRvInrFHzyD+1+WCN4CFsHVZFyIR8SQSMJT03zlICmCGWsJAm1XRs8g5O80I3E8AGsV17VaUdqppwj9P+HF4is+y9oaz4uUVE9isU7TGy/S5/ldpcdzCdk998tfodNhRcb2+44FnoY1PvqQ3iS2mKH6EYVPCZO8YSL8yEFiQBrDBYkFn/+TR2j2CqotlJqMrmyvmvBoww1wr+0CCu5rFWqKXR7ab7V31nE/eNrjYSNxlcnseimrVXFpRNp7hbgg5nKtHxEWLiYNJUY2Vjx0YXcewlnINHrlFzA8VwefD5g0tzW8rEZetevh5ESvsGpn60UttTrmjNLEEWGv4A5gxJLdX8L1TecC24L2xWTD4rOGM/2HZY5N9aTr6AlQRv4Byn3Jy2iCoK8IqvH10f+jGB0Z2JcA16tAcUhr8shU8n0G0N2IbEJJVUqmi37owMrhLYxGhG/i17oO8VlXmCcOF3JfJicYJNegDAM9I1s2AL1CVmUCJLjy9ftoR3dMkUO0V7sAYeX1lN7h73zC4eWey1S4UC6wwipzHUTVsQhY5tYTOuE/CoR30Q4VEbcEe7Fgb6VnNWgPbI4lUlXoj+bkeE/T7Bpl1M11yTgumGxkbNnvoW6PLrcgbEWj+wSL1/0et5/J8IJKB0UWV4v2zD3iY4TKUUA5SYWVxQsAr+HC1lXUhIl+xH8xgj/RsGj4pyfklrI+bes5wsvUbIop97KMRrTvEF8hHYfgQ0fmznV/vF+wG1coANcIm0UvnJN9pyTlzX9DuGeCinyyPm/iNPnbC6Ood+Y7bCyGMJ3V/8DyO2RazYQeir0ao7gASE4dtncZwABL2jlTCi/VfNsVKIvbI/Sjj2zahFsskGQ/LF2NmAhHQdgOQ4l5cltOjIK/LyU6f2cxZbHCf49xOvKiYvInK9UG+BmAnKUy6QBi9PB1fZd9xBrm1v/qkH0FAqzkwpMVZ6ywu0VEAT7eQaGCeXCo7WO8fagFgBdBBarytnK610FXa5a5Zk6LUkZd/13dA0jIvFO10XM14oyWo4HAbsmivk6Q17KZ58QZyhoNfqSKImJN3jPBAfecLrdBzggE0aNMAOL/FF1kfaFUySsrqRpJION8J0uDgkK0p6Ndfl1Rsti/oCA9mFxu2FZh3xNiVjHAokt5UbzG/Fs3AZ7fgFCovKlU4hB2yQ9a5WRKaHea6pTjV++GciEUByg9E31ruz3/AW/C763Gi1bx4+4dIAgJfnhUHURidgqLGeZXp16U7I4VuJBUB6GDNwf8vVHtbTvZ3xv8neewTd1DqOmRtBuxqodeUuUcRLtiRC3qBtH9gz+LYQrHfbn6dyI0/dVpVm9MYyoalc7JinGvGvBUysX03OYrywEtgK12DS+xCvcg4Timnzi0jGT2I2H4m+5kSwvbKwqxQsRVHzbB9Ff3rOAcE2RM/PlDdUslewcqzeM1xT7Wv2YSBq4d8opaPMKrFgHK0GB6ZvkzaljppqTkVd3x97rWXh9DnVdkvFmQwZg1NhYu4o2pUZA1Ja/THB2XyzZ52CiGd+A8yURz7scaWWtbHQZaN21qQ9trJA76GZi+zGZuAebgEz3Cn4WO5qMfkhLfqDtjSA2ZqglUklIv/AhLNbDcptWDzP8qpF78B+v0hu+A1ohryAGHWykT80xmUBLGzlWa76eq9Z1Hw9hVSUhrOwFYpefvwKtmnxhKqkPu7Rl18Ly20xNgR1cMtjZEmYEcFNaA4UAgk2KV+k7P8kjTRxonqRXA02GfmtO0kQhKWF+Z41ZTukQjQ7RJ7ADD+6ZDTRtgJKkh283ekPQtfcRXEgbW6pKXaAqc7OsnH60r454IkcTHD5OBJQTevWKC+uPKwY/f/YwljyDvM6eKSHKREaRQ6yN/X2iwiyPDkc0p+w5U0uBvjOTwBwZiF2hmBmIOR7HQfxZnuTsgWYn3DbQav/c3OPhrihianiTxvdnL6XKHgBJmIyoX0Ss0mU2UPJ53WA/vKrRuWd7KjFtqQcbVjUdt0XXVhHMNYpqKdus26Vl2aJnqKuiHKWLjujjXOY5bGFmu91GviNv2OOEmUAl+P9RBUyz+10KtWUCVs/MfA4nYqT4son7EEhe+hl8fJTFn2GUqp0mgWMcSLfhWW03SytsHbbbH8KsNtRCx8S2qbOxwqES/CNBeZ2wOXxyO30wqHfuifnxF5xlNNGM1vvMcanEmP7Q+ZqF5LVlOAORsyK+jdh45OjPjKPlaOTx5oeWF+kWx6D6Y7TK8QavxDBzN6x1iTmx21110EZZIV8K0nxqitaUJaW1m3Nc9LUNluqVVwCYxuUVzdgXF7eSxR101pWzKiRIQxvcmDw/N0jblMKdUf9PG2WarYJ1aJ8IGtuWAOi6W8bHHcW9YYshSZF5XR7Dqa/xOZ/0wTdwOf3kuogBPsorkYHH5werH/H8jATETucDwVktMp/QPhMyrgOGzZdbo9jQemlhpiYACMCf4H4e3aVQJlT9Yl5qKSSPvjFAPSzDcth0ORDPXeQOVOuhiNSYaBx4iRU/2Athr5PaR5GDKVZ6ZkP/fpLcraRcWKFRp3ktCYPDdfytJ40oxVIyyyTTJ3P8nHi9OozpvvdovzZ1QfuHYx/XNhL0EiTsGjIjuEjqhUwIlnwbT65ZqVlw4EKlLRhTgTLqndgW9X1TzX0jRvyvSIaKYH03Pw53xq0eXnOrixcF7JgUccSC62UJ3zERltyk5qK/m3gUFtXPJA+u+TIaB4wsz82HGKgfi1y8c2+vCLrTKVcpIjHxKsKDFxTGPQcIYHonkdJW2dH54Xi5AvjL7sNbBXyl63C84ToVLQlEuRKkwXS2PZk6VSVbNDGHxJ4NVPYm2+DPbPNaPKfqKZYFtkwY5TVjJzf7VK749KRXeFKSMExo72fNW9sO3xJXTbZfTCxGMAjdBDtr92eft4gysnDfqFn9YR4nYocL0d5oETdrGxnhx9kTuth+ng9xhAL7hR0Puojg2Htb5JP8NLlbYU+A3FpY7Nt6uketQ6kT8tbR5dJ1wZvDCwkp2cIvAWCoGsSBHlbrB+14BqYgNAvwNwb5BshGVnPqiK9mnttVxma91G3pc+5ccyLFNcB+nq4IkFz+LK24OM5PB7qS59kR49lEHetXnQrBKmvbGTTBW9n7fxTMzlMAYgyLAFhAbpsAYYu/3K9XYFnyLVEEGH6AxYiCruFD9tYzznyNgyIO0e4yCBwVQONwofxarHN6BfW4iP4J0PHwRzzU/kOnWG0XS4r2ylBSK5q4vdojzsa38Zf/llHu4Gfg4pG7MAEvCA3LGBslfvXvdWxbl5ZOPyyXs5ZcpMy5deKjZIlPvxI8G2izrT8zvmZFSw1IWZxltarmTu1MDZ9aPf5cv6uGtvWFDl8CEQ2fjZGekKo4kuu0MNiLvvTiULVpGhwlJaJYRvISg/h9bWFvRs2AB8Cw/d44C+5ynx2KraZ3L08FFxseQ71OJNEYwfAS4IMxbDdwTkrcSvZqnFj+SnRXQIRdtbr8WvcExNC/G2WEoWnWRb07yXFQf2yCm9PjXDgD21nzeZd2yWcGL/BoqkDpiOyz+4NQiYFChzhvsE3PdgUcfDwn9L8YwvlNDuIV7zB/d558lSQWGXKPWL4vnxhacwEPg1tMxL2Xm9omPYjx9hUYYi3a81nSWEhFrGN6xfyUKVRkhubwPFr8CdQwFBWg/KHiNhuEx40aUwDZAeLKwkoHDyMF0M0Bi39dOMVVBmog5sFKDeY5j60ZpwM7l6j0koxguiU5PPIRB5qoROsoPOfZ6nB7Nl/HiMU1zbp3ZtbWbD6A4hytmwk+IHwlC9TdAdBoyaHu+lF7c6EnjE/PpG8QWFj90+9K/pcaF++sVPVKWM+ebuo/a8oEkAPEWhYoDbBPNRhuC+/3tkwASuYgZNneDjBOpGm/7H/++V18jCo3h1FWvo3VVvMsO/fVAOJ4cBwUgIm9iwXqTco4ZVLH3zxfEGsSxRToG5DCNLw5p+v783gMmlsxE0WaueM6wl45rTgTKzV15dRp5blwww5dwogVtb80wIBqAjpRDT2zbi89EuoprgDdxhPHC4VrJDCa2XWHjHGIBUVyKFKjEwFuFFYRwjvQC7hRLgdtSWmlM0nQrjbIg4mV0+4mY1otxCD6W5MOVDcAtm4lgWafZ+DlPYhNnsB/sj5EwuVhp1EWc4WzIjZNU2x2FQeU9aMXP5NiDL85GdJ83ySik4zyT7nyiM4qFw6zbHOMiGfTWKPF3fx4rwkReiPJ8eFfuEu9zzM8dVGEXsisyZL44lHWE9Tq0Nl+LMguf9B/Ai0PrERJouSlgzLqh15OsiWMFG+qW4HVNJm1oDckprCpe9tCpBO9WvP7OhBZJQKmC3DBqADwx5m0ArT24zhkNt3E27o57KxcPPsq4J7KWXDuEaJm+RhmvPyQ9W41rYfS0cWr1eptHr5rMwR839ChchPVhWHD0yHvG8sEytd5ZnOznzhCKfp22xfgy25sEj3rdRD73rb7RYNda4Eph2/mPP4gPywLibwQ65i5SMwIzu3xzL8Ju8MAHXiznVQi6AuFcU+SogumpQQl8YhbcSYvT9exZsAHUb2Bsk0kVFKTonHIxUjNnYq1X72fgGSCYXajg4AqN/T9NBflPh+gmK8WVCKFLo9qG7ZONxhXdob+wzS30GIyxSvOE6MwKjM2I0kV++R6tpIVmn33eCsme/8S4QdtNWgqDaXK5nT6q9BpgOdpy4GBG3hNF8EEB8ij0VtTcxXuiaodUfcdDja+H9mw6TgdrtuOlF6oL28cHTcCu+/ntBwumS7c9gh0fIh+8Q7tvdkREK2NFAsLt+QKUg4OkdiJLVlxtv7bCcbK6HqlK2F8qYdEx4L7XqztJwvRhn0+sez1IyryfwhLizE46Ta1VCsgkT8pNRssgIinD0NfGg2Me5MpVjnYp6cD8llCtwXzU5ymMb1MiSt4Ux5Pxrw0+Gt1e6VCJpYhTcdhuYdVUWLmitq2BUJuqEitL3eYsJEClUF2SIxY9sSTXb2YRftpKDZRuzV/X4xCovRGG4WZDhAt668m9ipjFQKb0DcK39hHooY3q0dfXAebOJaoNNTSO8yE9s9DdDG3YIh0lLS62pzOcMNSC9DgN8NAK1AEIZtDIEpDawwLd7jQG77C3YrxU/HVRa+jrI2m5cUoOLMHU7XUjzX1bHRJxPOpIqV9+kIN5KaUXBqVuzro8ARtkJRUdHlhqZIvBKuD39UKxuYvhZ4KueQWtqabhESEs4RsDg4qrijAXODD06qfg4PCHNm45xbnetcr3Cis+UpvjL84MFu+AaBDXb7lSbH8xJFbM9E17GRldrPDT3T5bowuacM/16agoDSjazc9hxdz0axY2MlYSc4C5nbwT2GwQgxOW149eoL5NIPTranokmbUAqCAxFS75N4KPWPAe3vFIfAPLyFmc/K44b7EG3uesB5IEfxwwZOwXWAoGZHlP53RoDBae9iPsue4tN3WFn3Ouur6GwpQOcbKrKky6GEq/E1F7kU5YVsT9xt8qbuNARADBagsEBQekiTSBLZZK2rKAgPDMHwnvInGELX/G4zTSgffBqeeQCc9DQqTNeVS7r7EME6s1lh+54c6AviNqOBB8zsRkYEhJ+EKcMbTwfrzzlSIg/aMRfyQAl1GCfXVTiaZs/zsTJGeMR/wReC07ay/lDCZxVEuESSAb1pccV+daTIXXZBb2/vhIJPhc5qhvC0edcMFtz0c7vteD5CI+lqLnlAvxOt+LECZ48veikL4kGYCUdPV23Ewi0XqqoIsjQOXc0fdeLjro6zCl0VCAq3iHnhz0NC0phpx8xeVK/ncPtZnqOHfHtBaPLP0rvXQZV+rteuvt5ol/ELzKsFtTeNGYXVkH5gLgNU8O4a5+KZTQ6o677dMOXIqsNsdr+5L9byJ7oqcDoYHrc2OBqInJFpXkwJrgBxsRay7ycKkRP611J7+Dib2//CvQk2M+5anpF9AYdCxTjsywSqaeT38WyuY+14y4RmOchXUqfrzG15ARL+6MPylW0sZSnL5YH8ydJB+70ZmVa9yU2P7C0eNY3ZS3NzJCZnuejIHcZ59V94cN1Aan3q+5lmwEvR5BoTEcR7H//9Ct/8ksrPLYvNe0T0vOrawdr8dkaY7mIqFlEbC73Sqgbu+8GJYTbcwV1LllwIFMc/PQKtDo8aVgocO2uTvzm9e8bHBgxpd0YrOz8kONxYQlpWofiSiLAL7czBCDBOQKmnMb5cQCP0Luf890YqtT38odDmBITu1G9rcqI/1V/qU2vHGBK/hAjSDhlVbICXm5DVByE428Id8djEOyC9I4TGLUxgMgOKlKCXIMfS+h4htX/nT7ih2xjM2RQ8KH9aILyJl0KkBXO0Yk5YSWFaNpEwGOtnqbTAXUUsfhJqOVK3Ln9Mc/X3+WxtIdL3lqzOO997Pdni016r4YMV4Lp56LXVRJRXh3MRkFYxKff5qlfiEhxHwAAte6ZeXYXl4W82pBiz/mt6uxtPhxWz8awn07UJayBG8io2I8cbAFH3kptW0NumQLRhWvxb5JAUDDncC3CIu2b69tCVA86Zfo6JU9YrCR6R7HmvH4yPZlnrMs6MSU2fjC1wGhmrlmmQUe6ZtTzbZdCLyk74HI9IyqP+lNr3wLCk6kpCPHivMKpWtNAAgKqupM46P/BVLQDtp8YnYOVQfopMtvWbQPG/8VPuo5JyQYDDW+7cb2iKZOx4MjSxkmPnUZWG7VIPxcjmh+GRfBCssaJci2APpkRwi9kr3fCMcLGGgvX9bVQqOmd1G6zxaSTMlP2MWoLR17STC3WnQDEZM67i1dJZiAq2/1t7zdM5MMOTA0WuJ334EVraqVDjsiCfmAezBRhHhDNfSvNkC0yr6HbhKqr7M4nsXTSnpbC7YWcuhtq71RG7qhPJc8KRX19xm8vGnhXOtnyBIRAKTcsaRImUAclLKc39oxoWcACD2HYsEB2Tdy6s4HBKwuPix3ctUXUxZm0NZNCemxmGDCll/ZnxWhI5o0tLE174Hd1zLvUMRnUAbLSv9DJiwjSwI3gm/8dGrYlpq38vMtMwjEGgokX9ZN/HwoK+mxLp2zyRMvwA6wbLG6EtRnpxGgB5kJpbTmh0VMyMAOyQYrJv+yEkFkXO70czH5kjVi0hdQDSonb4WfS7E1kGg0zw6Ot77qfeSvDhmxnanZROE39wGIhUrC3Hr2lkfQpY/zp4B9qzkE9cpLIa/wXiCXDWp7hM6xtpgDr1vix8x0LR2TJIAUQQe0cGhB0yfxTaB5VqfcVVaVTC/Q7hQIMwaehDPb4c7r6sETu6JiHtx7Xb7Mr19OAd4ooRXZd/P+mwgN+N6QehTa1x8Gn20GpqdX4puBkPA12/NgLdBhpaZYmC/K2b7LAyg0234Ajt3W2z3INdT6v0W5QtoaYIJX4a4TDOUx2MblJPRhzdJZUyWhFa463MltZxTZz+SwljlKOpGu7vz/TNBq1867PTMVquvld1eeSXyzNL08AMb5GLQFD+xCiirGb5ljha3TqJsg1ySPIipuPOGWyDxsr8oTxEnXrTV/84txk3uZowPCCzIB6dPibZf2OZdKRwqDwrlmo8M26t85Tv2wcEiWwAIqhtX8zqGqSusHwKbeQM4JPmIjGd6k94/0Gob5Ta2yv7EX5WIOBMgDxb4y2isVGh5kmKsm5BEFfB9WKBSEkOBNHZhXq8SJ+xcTd+BNzQRlbkoc4tCnt5G6uST30jwHefDqxn/CiwfbbkLVDrHtXDosGqnFnUev3HQLyWchDaYg2Gxm50P9iPjG1+96QS5H4XZi7tdH9m1PByKdfXcAaahGh4xJSoUoNpgq8O/2/QhwTJAdFduxRO0jUixiIhZJbBMBfl0QgkZ0fbt5sh5hpngN0VucOwUFAjDLdkOZD3HE5sNfmpk/xXXP70ja6Mom//GATi3ba2qjncISBkGM5baw0nCUEB/ei2HNSOLYBMKlkeg2s1AU/xmX2B1RqY56hbgtbgwdqla1j3q8uFrqsSkn6tmFLUYdipDLhCPnnRXrF+a5Fl9HtfKMGcV/M6MYnq2kRC3WNmsQRX6ARK0C1wTrtYRdBuhixvqb3ZGQh69QRUjQauI3+wToE0AxsF8qRZ9MVQjtSBphiRJEgjUdGczGDN6skpW5jhOPIpJk8X1O0rd5kWNeE2c6oS0v3I1mPuN+MT3C37DSvb4AVdfQpx/gFta+hnt+7k7B4DlKL1vrpUr+ril/Of94eC5pssgdmxTAL/JbiR4GwTV2i9IQ1B2WC73nUkCUBbaYZxjA0oqtUKWUZIR7+H+jwGbPWn/nZVm9inYbkqfZ6Jr5tyTaR5KQzkUNIH60Sizu00oQ4gVAwImJ+KuDdUBjBVd2jSRuH5nqdl2gUOtAA7gS2vvJIEXwTxt+IJ+xSCBWoCWbiKkV/j9ggKnY3HoPSubm9mnj3qV/5XZUkByj4OVgFqk+EjeOQ7UgO3WGvuKROamh9NNmSD93HqNRw3kBDFxBrHrQjxYWxCWmSABfRdSGshu9g17sW1gR4bipd9FChy2SsB94toNxVscMS03NtcwRSZYC45ZZTcHvS1dxjp8mxTHmucKmdk+30T2aqsS6K/N9v7ejhcQHiWRurkJ9uHIrRd2Ed0av/6Q8W79fot/RO0TQ8wwZz6RpKZth0UXetTYFCAHqVGFxCskM6UUEdkNh9G1ZgFoRras8UsZnbmNNWyKLsx2svMhmQKuw/ZcjfVYjI4Gk78vKPMf0DxV3+249dh+JIhpszC+xcG7t11UEh04Sb0y19uhNPuvGfxeYi5XOhBBHW0RX8rGudSd30rAxqs3Yyv+hkYnYFaYVV/YCp+JM55G0Eu5XmkFsHdQyE/NUiFzACe1I6tOqp0mpklRAjQKSeupJtPpfR+eSCQStkMj5xyBRe12B3Hk+Z2+oCzZug9Er0pP6VyD985DJArYN3mw+C6/Qxuxch74Jw3wVYMasIKQ+/NTkmwPX1FyRFzYfc+zxGngs=">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGgNPRs1JDomi-Rlaz9vhJy80gP0k_cZKS1MMYc0D8dLPFXLH05dTW84QXXzSG6kVg2&amp;t=637811837229275428" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=nv7asgRUU0tRmHNR2D6t1H2otaKxDB1Re-oWPIWD9npNRs0oPaXdvyC3bZaYQ3hRaYkn193eqsKQnEhVAoMeDi8YEe12Qvx55Yy6SIIX7mbcPH5-8PirFhunUAqRPkkTYIQ2RIHXdbV_o8xBq3eADA2&amp;t=2265eaa7" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=D9drwtSJ4hBA6O8UhT6CQv6dZfWi-FaMBgx3c17o1QVNi4pAx33AWXjMHK7heBYxMvZN1xhzvSbySxGDQuMeSkHBk1twZaSAwQnsYGHeOD7DpeUVP2VtYkcoTNI4OlKXv7mPBUDVe6enSnpjDCR5Ao6oo55bvsHm9t64OVmc10U1&amp;t=ffffffffaa493ab8" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=JnUc-DEDOM5KzzVKtsL1tV3p17QYbvza3Hq5jlktZcbUI85fyZmrVd6XsEUJP3eBWBalW9XusQsqqo9LWHi57qLC1AxSxJAb9GVZlobU93lpvLhVFYgb7Bl8OX6tkHMcErCjFiDDeai0RcZVoA-sViChQboedfqJbAs5M4BndASCzYArVCTwyy9xJvg3rsp00&amp;t=ffffffffaa493ab8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=pVdHczR8HTv0TYtXLibFoHHe8EXQSgwUkf9gkLEALqGuns4ISXPDdH-y1eOwdwi9y070-_o7BM3bJFcJR7q_SpPNirx2zBwmGbFNP5aGJQo7f5mFBwSROoYQC6Nn_ds6Y6Mu2XeYQJTKQ-ffbLoOCA2&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=-qISl4-OkT-7X02E4Fisr8DHl3Jm4aK8YnWAZcOWH0zN3Ln7KcGokyMXJO94X_nfeRbmVxjVTRVcH61ResvjBSKxJudlc9oTjNZvCzLg1p5WTgqLiTkfolGlN8d3GYOb0&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=LpGQnoKUSgO3ODsBUs8GfdFpDY0xqEDxpi-3GmkF3onV5D0iA_Ip-Uxb0sAqm1rhCF4agBO-jQE_-df3nSmLM_ttqp_QcSnCZbJaxTMli6SZmV3k1PKzAoh2WvsofkG10&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=yU8qy6lBkK3tBrsJLcY-r__ls0eXyI4yUcPOaTxtgghje8jWQuG4gSnS_wg22j6uIvQ-dHZcx6qJz-p_gI0qYvZHkFRJjj9emjm3dcTv6FRaFXQTgkkG93qgZOWDGw-90&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=iC2sD0Al8A6ZX4AVmUco0SF5SNlG_8KfyTugaKfJmofCUEbpBN0QjiDDEwM7jLqMARqccwK7DsQDhd5oWop2hy8KJN99ZAIr8U0slgwP8jSplmu4BZ6vg7YhGhn_7POQ0&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=q85rlLsZEVu9loex9kzISAFizZhEFr6wzT4FyZSkTPuMTeOQVAr594gZWq-mINiQ4SqttJDuDh_Vc9Oj1zfhWzOTSfdYDXWdc1EjtKvVD0MFNA6AIqi6xJumupB1BVG90&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=VXG5HWKmJ5VfT6XbkUxKRmL9Wnp2F6meK-REZ-DYASNcM25eqcOFlS9Dqe67Bady9_tlAj5inSx7MQrkzB3VHXAlTYIWcPx4SoDdCOzN2QyGyu9Ds48Ts8bTO2pr4-aw0&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=9fVK6SOzqud8-CG5DRcWdcO9Ei8gPQ_manQY5eYtvWQdwOy1q6yEnoGqZriIyXJJ1PpkYQyRB1xUioLBqwrRWO3a-Pnbs5c-599y1_FPiJy2v7lTYB9W1HqLWSWlgp010&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=sjnc2GCx94Cxb1ZyngUXYiL-NxkUY92PgWDFCpJyTZQsoUP0AqW7WXEbNJTbh_P02PMGjh76iR62EkUlA48TDLsCZuaV6Pymzu95OSjWZGT3zAdftN9zIDUbyHzyfod00&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=fLmPtwBM7iAqsX1ogwShTy6LveUm5Z3Q2DlIfYvPuBAKWOc_cVvzqBrUlCAWfhAytW9GOOUSZQLFf4txaoUBvj6386CRBn7L_PDxZqWuvWmSrmfRWnDkaCFQCAaNNb--0&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=BtVjqlFfNWRQ4Fv4f6wktYt6NJhi_mYvIqRcexj6rYrC2RDKPa_oVIzdRfn1ax6y0g4ejJdcdImrMNZ-gu2i2b9YYSaZ5ZPheQUQixNzXxfq7s7kDPlb04PBW1MVhsi50&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=_KnZu_0gsdxO6ZuMCkFMJVt4JEME9DRsff-GWtnOBPHcMoYOmAHNvdpzNqNJGbA1BDn3Nh2Hqx5BpUmViErzus4M1aZF9obhEINyIm1nDwINDKKSYRsxetPhLm6eYru-0&amp;t=27679117" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+null;if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2CD95E73">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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">
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', ['tctl00$ContentPlaceHolder1$UpdatePanel1','ContentPlaceHolder1_UpdatePanel1'], [], ['ctl00$ContentPlaceHolder1$UpdateButton','ContentPlaceHolder1_UpdateButton'], 90, 'ctl00');
+//]]>
+</script>
+
+        <div id="wrapper">
+            <div id="page-wrapper" class="gray-bg">
+                <div class="row border-bottom white-bg">
+                    <nav class="navbar navbar-static-top" role="navigation">
+                        <div class="navbar-header">
+                            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                                <i class="fa fa-reorder"></i>
+                            </button>
+                           <a href="../Shared/EmpViewCate.aspx" class="navbar-brand">نظام ادارة المستشارين</a>
+                        </div>
+                        <div class="navbar-collapse collapse" id="navbar">
+                            <ul class="nav navbar-nav">
+                                
+                                <li>
+                                     <a "="" href="../Shared/EmpViewCate.aspx"> واجهة التحديث </a>
+                                     
+                                </li>
+                               
+
+                                <li>
+                                    <a href="../EmpCategory/CreateUser.aspx">واجهة المستخدمين </a>
+                                     
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="../Shared/EmpViewCate.aspx" data-toggle="dropdown">
+                                            <script id="dxis_548018503" src="/DXR.axd?r=1_11,1_252,1_12,1_23,1_64,1_13,1_14,1_183,1_184,1_21,1_22,1_190,1_15,1_17,1_186,1_193,1_41,1_47,1_40-lj7lm"></script><span class="dxeBase" dir="rtl" id="menu_notif" style="color:Red;"></span>
+                                         الاشعارات <span class="caret"></span></a>
+                                     <ul class="dropdown-menu">
+                                          <li><a id="up_notif" class="dropdown-item">
+                                              <span class="dxeBase" dir="rtl" id="upp_notif" style="color:Red;"></span>
+                                             
+
+                                             </a>
+                                            
+                                         </li>
+                                         <li></li>
+                                       
+                                          <li></li>
+
+                                          <li><a class="dropdown-item" href="egaza_end.aspx">
+                                                  <span class="dxeBase" dir="rtl" id="eg_notif" style="color:Red;"></span>
+                                              الاجازات المنهية
+
+                                              </a>
+                                          
+
+                                          </li>
+                                          <li></li>
+                                           <li><a class="dropdown-item" href="endjob_rep.aspx">
+                                                  <span class="dxeBase" dir="rtl" id="endj" style="color:Red;"></span>
+                                              المنتهية خدمتهم
+
+                                              </a>
+                                          
+
+                                          </li>
+                                          <li></li>
+                                      
+                                    
+                                      
+                                
+                                 </ul> 
+                            </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="../Shared/EmpViewCate.aspx" data-toggle="dropdown">
+                                            <span class="dxeBase" dir="rtl" id="ASPxLabel1" style="color:Red;"></span>
+                                         التقارير <span class="caret"></span></a>
+                                     <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item"></a></li>
+                                           <li></li>
+                                             <li><a class="dropdown-item" href="../all_emp_report.aspx">تقرير الموظفين</a></li>
+                                           
+                                          <li></li>
+                                           <li></li>
+                                             <li><a class="dropdown-item"></a></li>
+                                           
+                                          <li></li>
+                                         
+                                          <li></li>
+                                          <li><a class="dropdown-item" href="../mst_emp.aspx">موظفي المستشارين</a></li>
+                                         <li></li>
+                                          <li><a class="dropdown-item" href="../mst_job_rep.aspx">مهام المستشارين</a></li>
+                                         </ul>
+                                    </li>
+
+
+
+
+                               <li class="dropdown">
+                                     
+                                    <a href="../Shared/ViewTaramiz.aspx">الهيكيلية</a>
+                                </li>
+                                <li>
+                                    <a href="../service_rep.aspx">خلاصة الخدمة لموظف معين</a>
+                                </li>
+                               
+
+
+                                
+                            </ul>
+                            <ul class="nav navbar-top-links navbar-right">
+                                <li>
+                                    <a id="Sign_Out" href="javascript:__doPostBack('ctl00$Sign_Out','')"><i class="fa fa-sign-out"></i>خروج من النظام</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-user fa-1x"></i> <span id="ViewUser_lbl" style="color:Red;font-weight:bold;">mohammed</span>  
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                  <div class="panel panel-primary">
+
+                                <div class="panel-heading">
+                                    <h3 class="panel-title text-left ">واجهة البحث</h3>
+                                </div>
+                   <div class="panel-body">
+                                    <div class=" form-group col-sm-12 text-left ">
+
+                                        <div class="col-sm-6">
+                                            <span id="Label1">اسم الموظف</span>
+                                            <table class="dxeButtonEditSys dxeButtonEdit_iOS form-control chosen-select text-left" dir="rtl" id="txtsearch1" style="background-color:White;height:49px;">
+	<tbody><tr>
+		<td style="display:none;"><input id="txtsearch1_VI" name="txtsearch1_VI" type="hidden" value="11"></td><td class="dxic" style="width:100%;"><input class="dxeEditArea_iOS dxeEditAreaSys" id="txtsearch1_I" name="ctl00$txtsearch1" onfocus="ASPx.EGotFocus('txtsearch1')" onblur="ASPx.ELostFocus('txtsearch1')" onchange="ASPx.ETextChanged('txtsearch1')" value="صباح عبد اللطيف مشتت مشل الغريباوي" type="text" style="background-color:White;" autocomplete="off"></td><td id="txtsearch1_B-1" class="dxeButtonLeft dxeButtonEditButton_iOS" style="-webkit-user-select:none;"><img id="txtsearch1_B-1Img" class="dxEditors_edtDropDown_iOS" src="/DXR.axd?r=1_89-lj7lm" alt="v"></td>
+	</tr>
+</tbody></table><div id="txtsearch1_DDD_PW-1" class="dxpcDropDown_iOS dxpclW dxpc-ddSys dxRtl dxdd-root" dir="rtl" style="z-index:10000;display:none;visibility:hidden;">
+	<div class="dxpc-mainDiv dxdd-list dxpc-shadow">
+		<div class="dxpc-contentWrapper">
+			<div class="dxpc-content" id="txtsearch1_DDD_PWC-1">
+				<table class="dxeListBox_iOS" dir="rtl" id="txtsearch1_DDD_L" style="border-collapse:separate;" data-observed="true">
+					<tbody><tr>
+						<td style="vertical-align:Top;"><div id="txtsearch1_DDD_L_D" class="dxlbd" dir="rtl" style="width:100%;overflow-x:hidden;overflow-y:auto;"><div id="txtsearch1_DDD_LLBVSTC" style="overflow: hidden; width: 100%;"><div id="txtsearch1_DDD_LVirtualScrollTopSpacer"></div>
+							<input id="txtsearch1_DDD_L_VI" type="hidden" name="ctl00$txtsearch1$DDD$L" value="11"><table style="border-collapse:separate;visibility:hidden!important;display:none!important;">
+								<tbody><tr id="txtsearch1_DDD_L_LBI-1" class="dxeListBoxItemRow_iOS">
+									<td id="txtsearch1_DDD_L_LBI-1T0" class="dxeListBoxItem_iOS" style="text-align: right;">&nbsp;</td>
+								</tr>
+							</tbody></table><table id="txtsearch1_DDD_L_LBT" dir="rtl" style="width:100%;border-collapse:separate;">
+
+							</table>
+						</div></div></td>
+					</tr>
+				</tbody></table><script id="dxss_1453465385" data-executed="true">
+<!--
+ASPx.createControl(ASPxClientListBox,'txtsearch1_DDD_L','',{'uniqueID':'ctl00$txtsearch1$DDD$L','rtl':true,'scStates':6,'scPostfix':'iOS','savedSelectedIndex':22,'isSyncEnabled':false,'isComboBoxList':true,'hasSampleItem':true,'itemHorizontalAlign':'right','hoverClasses':['dxeListBoxItemHover_iOS'],'selectedClasses':['dxeListBoxItemSelected_iOS'],'disabledClasses':['dxeDisabled_iOS'],'itemsInfo':[{'value':'45','text':'ابراهيم حميد محسن حسن الزبيدي'},{'value':'13','text':'ابراهيم محمد عباس الصميدعي '},{'value':'46','text':'احمد شوقي عبد الامير كاظم الحمداني'},{'value':'26','text':'احمد عبد الزهرة كاظم الفتلاوي '},{'value':'1014','text':'احمد غني سرفان - الخفاجي'},{'value':'56','text':'اركان رشيد معروف مصطفى آل معروف'},{'value':'41','text':'اياد بنيان محمد عبد الله النداوي'},{'value':'22','text':'جبار اجخيم تميم ناصر الرفاعي'},{'value':'54','text':'جوان محمد فؤاد معصوم معصوم'},{'value':'1013','text':'حامد خلف احمد المياح -'},{'value':'1009','text':'حامد معيدي حيال بريدي الباهلي'},{'value':'1','text':'حسن سوادي عبد العزيز ابو طبيخ '},{'value':'1002','text':'حسنين رشيد نقي  جاسم الشيخ'},{'value':'1019','text':'حسين احمد هادي المالكي '},{'value':'1017','text':'حسين علي جابر الواسطي '},{'value':'38','text':'حق محمد رضا حسين الحكيم'},{'value':'18','text':'حمودي عباس حميد رضا اللامي'},{'value':'10','text':'حيدر فاضل  مصطفى  الشبلي'},{'value':'9','text':'خالد عبدالوهاب أيوب محمد الملا'},{'value':'55','text':'رشيد احمد رشيد باقر المعموري'},{'value':'34','text':'سالم ساجت عنزي ثامر العيساوي'},{'value':'1003','text':'صادق باقر جواد الجواد '},{'value':'11','text':'صباح عبد اللطيف مشتت مشل الغريباوي'},{'value':'19','text':'صبيح حسين راضي علي الشيباني'},{'value':'8','text':'صفاء صباح ناصر هندي '},{'value':'27','text':'ضرغام صباح عبد المحسن علي المالكي'},{'value':'1004','text':'طارق علي جاسم - العاني'},{'value':'7','text':'طالب جبار مطر الاحمد '},{'value':'35','text':'عبد الحسين محمد عباس طعمة العنبكي'},{'value':'6','text':'عبد الحسين هنين عباس الزيادي '},{'value':'28','text':'عبد الحسين يعقوب عزيز محمد الهنداوي'},{'value':'31','text':'عبد الحليم جواد كاظم الزهيري '},{'value':'1008','text':'عبد الواحد زيدان حسن - -'},{'value':'1005','text':'عثمان سلمان غيلان خلف العبودي'},{'value':'16','text':'عرفان محمود عبد الغفور الحيالي '},{'value':'44','text':'عقيل محمود كريم علي الخزعلي'},{'value':'36','text':'علاء عبد الحسين صالح كاظم الساعدي'},{'value':'32','text':'علي احمد رشيد  المعموري'},{'value':'1016','text':'علي بدر حسين -\- -\-'},{'value':'5','text':'علي عبد الاله عبدالجبار عبدالحميد العبادي'},{'value':'24','text':'علي عبد الزهرة زبون محمد اللامي'},{'value':'1011','text':'علي ناصر علوان الخويلدي -'},{'value':'42','text':'قريش فازع فجر حسين القصير'},{'value':'39','text':'لمياء داود كاظم سلمان السعدي'},{'value':'43','text':'مؤيد علي عبد الحسين باقر الساعدي'},{'value':'1010','text':'محمد حسين ابراهيم بركة الشامي'},{'value':'15','text':'محمد عبد السادة قبطان الاسدي '},{'value':'37','text':'محمد عبد الهادي محمد تقي الحكيم'},{'value':'52','text':'محمد محمد باهر سلام '},{'value':'40','text':'مشرق عباس حسن حسين '},{'value':'30','text':'مظهر محمد صالح قاسم العلواني'},{'value':'12','text':'منقذ محمد محمود داغر الكناني'},{'value':'4','text':'مهند نعيم عباس  الكناني'},{'value':'14','text':'نهاد حاتم نافع  '},{'value':'20','text':'نوزاد هادي مولود  '},{'value':'50','text':'هشام صالح داود سلمان '},{'value':'1018','text':'هيثم  رمضان عبد علي الجبوري '},{'value':'3','text':'هيثم مجيد محمد علي الحسيني'},{'value':'51','text':'وئام عبد الرزاق عبد الكريم  '},{'value':'21','text':'وليد عبد الغفار محمد رضا الشهيب الحلي'},{'value':'2','text':'يوسف كاصد عطية العباس '}]},{'SelectedIndexChanged':function (s, e) { ASPx.CBLBSelectedIndexChanged('txtsearch1', e); },'ItemClick':function (s, e) { ASPx.CBLBItemMouseUp('txtsearch1', e); }},null,{'decorationStyles':[{'key':'F','className':'dxeFocused_iOS','cssText':''}]});
+
+//-->
+</script>
+			</div>
+		</div>
+	</div>
+</div><script id="dxss_1063670991" data-executed="true">
+<!--
+ASPx.AddHoverItems('txtsearch1_DDD',[[['dxpc-closeBtnHover'],[''],['HCB-1']]]);
+ASPx.createControl(ASPxClientPopupControl,'txtsearch1_DDD','',{'uniqueID':'ctl00$txtsearch1$DDD','rtl':true,'adjustInnerControlsSizeOnShow':false,'popupAnimationType':'slide','closeAction':'CloseButton','popupHorizontalAlign':'RightSides','popupVerticalAlign':'Below','isPopupPositionCorrectionOn':false},{'Shown':function (s, e) { ASPx.DDBPCShown('txtsearch1', e); }});
+
+//-->
+</script><script id="dxss_1663909164" data-executed="true">
+<!--
+ASPx.AddHoverItems('txtsearch1',[[['dxeButtonEditButtonHover_iOS'],[''],['B-1']]]);
+ASPx.RemoveHoverItems('txtsearch1',[[['B-100']]]);
+ASPx.AddPressedItems('txtsearch1',[[['dxeButtonEditButtonPressed_iOS'],[''],['B-1']]]);
+ASPx.RemovePressedItems('txtsearch1',[[['B-100']]]);
+ASPx.createControl(ASPxClientComboBox,'txtsearch1','',{'uniqueID':'ctl00$txtsearch1','rtl':true,'stateObject':{'rawValue':'صباح عبد اللطيف مشتت مشل الغريباوي'},'nullText':'اختر من فظلك','autoCompleteAttribute':{'name':'autocomplete','value':'off'},'ddmInput':true,'lastSuccessValue':'11','islastSuccessValueInit':true},null,null,{'decorationStyles':[{'key':'F','className':'dxeFocused_iOS','cssText':''},{'key':'N','className':'dxeNullText_iOS','cssText':''}]});
+
+//-->
+</script>
+                                            
+                                            
+                                            <br>
+                                            
+                                        </div>
+                                         <div class="col-sm-12 text-left">
+
+                                        <input type="submit" name="ctl00$CancelButton" value="الغاء" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$CancelButton&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="CancelButton" class="btn btn-white">
+                                        <input type="submit" name="ctl00$SaveButton" value="بحث عن موظف" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$SaveButton&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="SaveButton" class="btn btn-primary">
+                                        <hr>
+                                    </div>
+                                         <div class="col-sm-12">
+                                              <input type="submit" name="ctl00$Button9" value="تحديث الاشعارات" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Button9&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="Button9" class="btn btn-danger">
+                                              
+
+                                             </div>
+                                         <div class="col-sm-12">
+                                            
+                                                
+                                  
+                                                
+                                  
+                                                 <input type="submit" name="ctl00$Button8" value="الايفادات" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Button8&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="Button8" class="btn btn-default">
+                                  
+                                                 <input type="submit" name="ctl00$Button7" value="الدورات" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Button7&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="Button7" class="btn btn-default">
+                                  
+                                                 
+                                  
+                                                 <input type="submit" name="ctl00$Button5" value="مهام المستشارين" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Button5&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="Button5" class="btn btn-default">
+                                  
+                                                 
+                                  
+                                                 <input type="submit" name="ctl00$Button3" value="الاوامر الادارية" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Button3&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="Button3" class="btn btn-default">
+                                  
+                                                 
+                                  
+                                                 
+                                  
+                                                 <input type="submit" name="ctl00$Button14" value="اضافة الخدمة" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Button14&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="Button14" class="btn btn-default">
+                                  
+                                                 
+                                  
+                                                 <input type="submit" name="ctl00$Button12" value="الاجازات" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Button12&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="Button12" class="btn btn-default">
+                                  
+                                                 
+                                  
+                                                 <input type="submit" name="ctl00$emp" value="الوظيفية" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$emp&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="emp" class="btn btn-default">
+                                  
+                                                 <input type="submit" name="ctl00$per" value="الشخصية" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$per&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="per" class="btn btn-default">
+                                  
+                                             </div> 
+                                    </div>
+
+
+                                  
+
+                                    
+                                    
+                       </div> 
+               </div> 
+                
+
+     <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div id="ContentPlaceHolder1_UpdatePanel1">
+	
+            <div class="col-lg-8">
+                <div class="ibox float-e-margins">
+
+                    <div class="ibox-content">
+                        
+                        <div class="form-horizontal">
+                            
+                            <div class="panel panel-primary">
+
+                                <div class="panel-heading">
+                                    <h3 class="panel-title text-left ">تعديل البيانات الوظيفية للموظف</h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    
+                                    <div class=" form-group  text-left">
+                                        <div class="col-sm-12">
+                                            <span id="ContentPlaceHolder1_FullName_lbl" style="color:Green;font-size:Large;">صباح عبد اللطيف مشتت مشل الغريباوي</span> 
+                                             
+                                            <hr>
+                                        </div>
+                                         <div class="col-sm-12">
+                                              <input type="submit" name="ctl00$ContentPlaceHolder1$input_page" value="صفحة الادخال" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$input_page&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ContentPlaceHolder1_input_page" class="btn btn-warning Mybtn">
+                              <hr>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_Label15">رقم الموظف الوطني</span>
+                                            <input name="ctl00$ContentPlaceHolder1$Emp_National_ID" type="text" maxlength="20" id="ContentPlaceHolder1_Emp_National_ID" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                        </div>
+                                         <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblOffice"> أسم الدائرة</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddlOffice" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlOffice\',\'\')', 0)" id="ContentPlaceHolder1_ddlOffice" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="0">اختر من فضلك</option>
+		<option value="2">هيئة المستشارين</option>
+		<option value="3">اللجنة العليا للمبادرة التعليمية</option>
+		<option value="4">اللجنة العليا للمبادرة الزراعية</option>
+		<option value="5">قصر الزقورة</option>
+		<option value="6">لجنة الحوار والسلم المجتمعي</option>
+		<option value="7">مكتب المستشار المالي</option>
+		<option value="8">لجنة تقصي الحقائق</option>
+		<option value="9">دائرة المستشار القانوني</option>
+		<option value="12">مديرية شؤون العقارات</option>
+		<option value="13">مستشار</option>
+		<option value="14">المكتب الاعلامي</option>
+		<option value="15">التدقيق والرقابة الداخلية</option>
+		<option value="16">قصر الحكومة</option>
+		<option value="17">خلية ادارة الاصلاح</option>
+		<option value="18">الادارية</option>
+		<option value="19">المالية</option>
+		<option value="20">دائرة التنسيق والمراسم</option>
+		<option value="21">الشؤون الهندسية والفنية</option>
+		<option value="22">القانونية</option>
+		<option value="23">مركز العمليات الوطني</option>
+		<option value="24">-</option>
+		<option value="25">اللجنة العليا للاصلاح</option>
+		<option value="1002">مكتب رئيس مجلس الوزراء</option>
+		<option value="1003">مكتب مستشار شؤون الرياضة والشباب</option>
+		<option value="1004">دائرة السياسات والعلاقات العامة</option>
+		<option value="1006">دائرة الشؤون المالية</option>
+		<option value="1007">دار الدولة</option>
+
+	</select>
+                                            
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblDepartment">أسم القسم</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddlDepartment" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlDepartment\',\'\')', 0)" id="ContentPlaceHolder1_ddlDepartment" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="0">اختر من فضلك</option>
+		<option value="2">خدمات استشارية في المجال السياسي</option>
+		<option value="4">القسم السياسي</option>
+
+	</select>
+                                            
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblSection">أسم الشعبة</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddlSection" id="ContentPlaceHolder1_ddlSection" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="0">اختر من فضلك</option>
+		<option value="1">NA</option>
+		<option value="3">NA</option>
+		<option value="4">NA</option>
+		<option value="1042">NA</option>
+		<option value="1043">NA</option>
+
+	</select>
+                                            
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    <div class="form-group text-left">
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblJobRole">المنصب</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddlJobRole" id="ContentPlaceHolder1_ddlJobRole" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="نعم">نعم</option>
+		<option value="لا">لا</option>
+
+	</select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblContinue">استمرارية الخدمة</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddlContinue" id="ContentPlaceHolder1_ddlContinue" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="1">استقالة</option>
+		<option value="2">انهاء انتداب</option>
+		<option value="3">مستمر</option>
+		<option value="4">ترقين قيد</option>
+		<option value="5">-</option>
+		<option value="6">اقصاء من الوظيفة</option>
+		<option value="7">نقل خدمات</option>
+		<option value="8">انهاء تكليف</option>
+		<option value="9">انهاء تنسيب</option>
+		<option value="10">تقاعد</option>
+		<option value="11">متفرغ</option>
+		<option value="12">انهاء عقد</option>
+		<option value="13">الغاء نقل</option>
+		<option value="14">الغاء تعيين</option>
+
+	</select>
+                                            
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblAchievement"> التحصيل الدراسي</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddlAchievement" id="ContentPlaceHolder1_ddlAchievement" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="1">بكالوريوس</option>
+		<option value="2">ماجستير</option>
+		<option value="3">دكتوراه</option>
+		<option value="4">-</option>
+		<option value="1002">دبلوم</option>
+
+	</select>
+                                            
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblJobTitle">العنوان الوظيفي</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddlJobTitle" id="ContentPlaceHolder1_ddlJobTitle" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="2">خبير (باجر)</option>
+		<option value="3">مستشار اصالة</option>
+		<option value="4">مستشار وكالة</option>
+		<option value="5">مستشار (باجر)</option>
+		<option value="6">مستشار (بدون اجر)</option>
+		<option value="9">خبير (بدون اجر)</option>
+		<option value="10">-</option>
+		<option value="11">تكليف</option>
+
+	</select>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class=" form-group text-left">
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblDegree">الدرجة الوظيفية</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddlDegree" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlDegree\',\'\')', 0)" id="ContentPlaceHolder1_ddlDegree" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="1">-</option>
+		<option value="2">1</option>
+		<option value="3">2</option>
+		<option value="4">3</option>
+		<option value="5">4</option>
+		<option value="6">5</option>
+		<option value="7">6</option>
+		<option value="8">7</option>
+		<option value="9"></option>
+		<option value="10">8</option>
+		<option value="11"></option>
+
+	</select>
+                                            
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblPhase">المرحلة</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddlPhase" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlPhase\',\'\')', 0)" id="ContentPlaceHolder1_ddlPhase" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="1">-</option>
+		<option value="2">1</option>
+		<option value="3">2</option>
+		<option value="4">3</option>
+		<option value="5">4</option>
+		<option value="6">5</option>
+		<option value="7">6</option>
+		<option value="8">7</option>
+		<option value="9">8</option>
+		<option value="10">9</option>
+		<option value="11">10</option>
+		<option value="12">11</option>
+
+	</select>
+                                            
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblJobState">الحالة الوظيفية</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddlJobState" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddlJobState\',\'\')', 0)" id="ContentPlaceHolder1_ddlJobState" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="عقد">عقد</option>
+		<option value="دائمي">دائمي</option>
+		<option value="اجر يومي">اجر يومي</option>
+		<option value="منتدب">منتدب</option>
+		<option value="تكليف">تكليف</option>
+		<option value="تنسيب">تنسيب</option>
+
+	</select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_Label7">المنصب</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddl_JobType_ID" id="ContentPlaceHolder1_ddl_JobType_ID" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="0">اختر من فضلك</option>
+		<option value="1">نعم</option>
+		<option value="2">لا</option>
+		<option value="3">-</option>
+
+	</select>
+                                            
+                                        </div>
+                                        
+
+                                    </div>
+                                    <div class=" form-group  text-left">
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_Label8">ملاك الموظف</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddl_CadreType" id="ContentPlaceHolder1_ddl_CadreType" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="منسب">منسب</option>
+		<option value="غير منسب">غير منسب</option>
+
+	</select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblLastUpgradingDate">تاريخ آخر ترفيع</span>
+                                            <input name="ctl00$ContentPlaceHolder1$txtLastUpgradingDate" type="text" id="ContentPlaceHolder1_txtLastUpgradingDate" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                            
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_Label6">تاريخ آخر علاوة</span>
+                                            <input name="ctl00$ContentPlaceHolder1$Last_RiseStep_Date" type="text" id="ContentPlaceHolder1_Last_RiseStep_Date" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                            
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblNominalSalary">الراتب الاسمي</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddl_NominalSalary" id="ContentPlaceHolder1_ddl_NominalSalary" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="0">0</option>
+		<option value="1">0</option>
+
+	</select>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                      <div class=" form-group text-left">
+                                          
+                                           <div class="col-sm-3">
+                                                    <span id="ContentPlaceHolder1_Label22">دائرة المستشارين</span>
+                                                    <select name="ctl00$ContentPlaceHolder1$mst_office" id="ContentPlaceHolder1_mst_office" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="0">إختر من فضلك</option>
+		<option value="نعم">نعم</option>
+		<option value="لا">لا</option>
+
+	</select>
+                                                          </div> 
+                                          <div class="col-sm-4">
+                                                    <span id="ContentPlaceHolder1_Label25">نوع العمل</span>
+                                                    <input name="ctl00$ContentPlaceHolder1$jobtype" type="text" id="ContentPlaceHolder1_jobtype" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                                    
+                                                </div>
+                                           <div class="col-sm-5">
+                                            <span id="ContentPlaceHolder1_Label12">الملاحظات</span>
+                                            <textarea name="ctl00$ContentPlaceHolder1$Note" rows="2" cols="20" id="ContentPlaceHolder1_Note" disabled="disabled" class="aspNetDisabled form-control text-left" style="height:100px;"></textarea>
+                                        </div>
+                                          </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title text-left ">تعديل بيانات التعيين</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class=" form-group  text-left">
+                                        <div class="col-sm-2">
+                                            <span id="ContentPlaceHolder1_lblHireBookNo">رقم كتاب التعيين</span>
+                                            <input name="ctl00$ContentPlaceHolder1$txtHireBookNo" type="text" id="ContentPlaceHolder1_txtHireBookNo" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <span id="ContentPlaceHolder1_lblHireBookDate">تاريخ كتاب التعيين</span>
+                                            <input name="ctl00$ContentPlaceHolder1$txtHireBookDate" type="text" id="ContentPlaceHolder1_txtHireBookDate" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                            
+                                        </div>
+                                        <div class=" col-sm-2">
+                                            <span id="ContentPlaceHolder1_lblBeginJobBookNo">رقم كتاب المباشرة</span>
+                                            <input name="ctl00$ContentPlaceHolder1$txtBeginJobBookNo" type="text" id="ContentPlaceHolder1_txtBeginJobBookNo" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <span id="ContentPlaceHolder1_lblBeginJobBookDate">تاريخ كتاب المباشرة</span>
+                                            <input name="ctl00$ContentPlaceHolder1$txtBeginJobBookDate" type="text" id="ContentPlaceHolder1_txtBeginJobBookDate" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                            
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_lblBeginJobDate">تاريخ المباشرة الفعلي</span>
+                                            <input name="ctl00$ContentPlaceHolder1$txtBeginJobDate" type="text" id="ContentPlaceHolder1_txtBeginJobDate" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                            
+                                        </div>
+                                        </div> 
+                                         <div class=" form-group  text-left">
+                                        <div class="col-sm-2">
+                                            <span id="ContentPlaceHolder1_Label9">لديك خدمة مضافة</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddl_HaveAddtionalService" id="ContentPlaceHolder1_ddl_HaveAddtionalService" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="نعم">نعم</option>
+		<option value="لا">لا</option>
+
+	</select>
+                                        </div>
+                                              <div class="col-sm-2">
+                                                    <span id="ContentPlaceHolder1_Label19">من ذوي الشهداء</span>
+                                                    <select name="ctl00$ContentPlaceHolder1$martyrs" id="ContentPlaceHolder1_martyrs" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="0">إختر من فضلك</option>
+		<option value="نعم">نعم</option>
+		<option value="لا">لا</option>
+
+	</select>
+                                                          </div> 
+                                                           <div class="col-sm-2">
+                                                    <span id="ContentPlaceHolder1_Label20">سجين سياسي</span>
+                                                    <select name="ctl00$ContentPlaceHolder1$prisoner" id="ContentPlaceHolder1_prisoner" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="0">إختر من فضلك</option>
+		<option value="نعم">نعم</option>
+		<option value="لا">لا</option>
+
+	</select>
+                                                               </div> 
+                                                
+                                                     <div class="col-sm-2">
+                                                    <span id="ContentPlaceHolder1_Label21">فصل سياسي</span>
+                                                    <select name="ctl00$ContentPlaceHolder1$terrist" id="ContentPlaceHolder1_terrist" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="0">إختر من فضلك</option>
+		<option value="نعم">نعم</option>
+		<option value="لا">لا</option>
+
+	</select>
+                                                         </div>
+                                        <div class="col-sm-2">
+                                                    <span id="ContentPlaceHolder1_Label18">تاريخ انتهاء الخدمة</span>
+                                                    <input name="ctl00$ContentPlaceHolder1$endjobdate" type="text" id="ContentPlaceHolder1_endjobdate" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                                    
+                                                    
+                                                    <span id="ContentPlaceHolder1_RegularExpressionValidator7" style="color:Red;display:none;">التاريخ بصيغة 20/05/2017</span>
+                                                </div>
+                                             </div> 
+                                    
+                                    <div class="form-group text-left">
+                                        <div class="col-sm-4">
+                                            <span id="ContentPlaceHolder1_Label10">هل الموظف تارك للعمل مسبقا</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddl_LeaveWorkBefore" id="ContentPlaceHolder1_ddl_LeaveWorkBefore" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="نعم">نعم</option>
+		<option value="لا">لا</option>
+
+	</select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_Label11">هل الموظف منقول</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddl_EmployeeTransported" id="ContentPlaceHolder1_ddl_EmployeeTransported" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="نعم">نعم</option>
+		<option value="لا">لا</option>
+
+	</select>
+                                        </div>
+                                                                                <div class="col-sm-2">
+                                            <span id="ContentPlaceHolder1_Label13">رقم كتاب الحذف</span>
+                                            <input name="ctl00$ContentPlaceHolder1$DeleteBook_No" type="text" id="ContentPlaceHolder1_DeleteBook_No" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                        </div>
+                                         <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_Label14">رقم كتاب الاستحداث</span>
+                                            <input name="ctl00$ContentPlaceHolder1$DevelopmentBook_No" type="text" id="ContentPlaceHolder1_DevelopmentBook_No" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                        </div>
+                                        </div> 
+                                          <div class="form-group text-left">
+                                         <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_Label16">رصيد الاعتيادية المدور</span>
+                                            <input name="ctl00$ContentPlaceHolder1$normal_rsed" type="text" id="ContentPlaceHolder1_normal_rsed" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                        </div>
+                                         <div class="col-sm-3">
+                                            <span id="ContentPlaceHolder1_Label17">رصيد المرضية المدور</span>
+                                            <input name="ctl00$ContentPlaceHolder1$sike_rsed" type="text" id="ContentPlaceHolder1_sike_rsed" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                        </div>
+                                                <div class="col-sm-4">
+                                                    <span id="ContentPlaceHolder1_Label24">الدائرة السابقة</span>
+                                                    <input name="ctl00$ContentPlaceHolder1$old_office" type="text" id="ContentPlaceHolder1_old_office" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                                    
+                                                </div>
+                                              
+                                                     <div class="col-sm-2">
+                                                    <span id="ContentPlaceHolder1_Label23">هل تم تدقيق البيانات</span>
+                                                    <select name="ctl00$ContentPlaceHolder1$chkdata" id="ContentPlaceHolder1_chkdata" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="0">إختر من فضلك</option>
+		<option value="نعم">نعم</option>
+		<option value="لا">لا</option>
+
+	</select>
+                                                         </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title text-left ">تعديل معلومات شهادة التعيين</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class=" form-group  text-left">
+                                        <div class="col-sm-4">
+                                            <span id="ContentPlaceHolder1_Label1">الجهة المانحة</span>
+                                            <select name="ctl00$ContentPlaceHolder1$ddl_Universities_ID" id="ContentPlaceHolder1_ddl_Universities_ID" disabled="disabled" class="aspNetDisabled form-control text-left">
+		<option selected="selected" value="0">اختر من فضلك</option>
+		<option value="1">-</option>
+
+	</select>
+                                            
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <span id="ContentPlaceHolder1_Label2">التخصص</span>
+                                            <input name="ctl00$ContentPlaceHolder1$txtGeneral_Specialization" type="text" id="ContentPlaceHolder1_txtGeneral_Specialization" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <span id="ContentPlaceHolder1_Label3">سنة التخرج</span>
+                                            <input name="ctl00$ContentPlaceHolder1$txtGraduate_Date" type="text" id="ContentPlaceHolder1_txtGraduate_Date" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                           
+                                            
+                                           
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <span id="ContentPlaceHolder1_Label4">رقم صحة الصدور</span>
+                                            <input name="ctl00$ContentPlaceHolder1$Termentaion_Service_NO" type="text" id="ContentPlaceHolder1_Termentaion_Service_NO" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <span id="ContentPlaceHolder1_Label5">تاريخ صحة الصدور</span>
+                                            <input name="ctl00$ContentPlaceHolder1$Termination_Service_Date" type="text" id="ContentPlaceHolder1_Termination_Service_Date" disabled="disabled" class="aspNetDisabled form-control text-left">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                 <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title  text-left">تحميل ملف </h3>
+                                    </div>
+                                    <div class="panel-body">
+
+                                         <div class=" form-group  text-right">
+                                            <div class="col-sm-5 text-right">
+                                           <table class="dxuc-root dxucControl_Material" dir="rtl" id="ContentPlaceHolder1_f_upload" style="width:280px;">
+		<tbody><tr>
+			<td style="width:100%;vertical-align:top;"><table id="ContentPlaceHolder1_f_upload_UploadInputs" class="dxucInputs_Material" style="width:100%;border-collapse:separate;">
+				<tbody><tr id="ContentPlaceHolder1_f_upload_FIT" style="display:none;">
+					<td id="ContentPlaceHolder1_f_upload_TextBoxT" class="dxTB dxucTextBox_Material dx-ar" style="width:100%;border-left-style:Solid;border-left-width:0px;"><input id="ContentPlaceHolder1_f_upload_TextBoxT_Input" class="dxTI" type="file" name="ContentPlaceHolder1_f_upload_TextBoxT_Input" accept=".pdf" style="position:absolute;filter:alpha(opacity=0);opacity:0;top:-5000px;z-index:29999;" multiple=""><input id="ContentPlaceHolder1_f_upload_TextBoxT_FakeInput" class="dxTF dxucEditArea_Material" type="text" readonly="readonly" tabindex="-1" style="background-color:Transparent;border-width:0px;width:100%;"></td><td id="ContentPlaceHolder1_f_upload_ClearBoxT" class="dxCB dxucTextBox_Material" style="border-left-style:Solid;border-left-width:0px;border-right-style:Solid;border-right-width:0px;"><a href="javascript:;" style="visibility:hidden;"><img id="ContentPlaceHolder1_f_upload_ClearBoxTImg" title="Clear selection" class="dxWeb_ucClearButton_Material" src="/DXR.axd?r=1_89-lj7lm" alt="Clear selection" style="display:inline;"></a></td><td id="ContentPlaceHolder1_f_upload_BrowseT" class="dxBB dxucBrowseButton_Material"><a tabindex="-1" href="javascript:;">Browse...</a></td>
+				</tr><tr id="ContentPlaceHolder1_f_upload_ErrRRT" style="display:none;">
+					<td class="dxucErrorCell_Material" colspan="3"></td>
+				</tr><tr class="dxucSR" style="display:none;">
+					<td colspan="3" style="font:0;height:2px;"></td>
+				</tr><tr id="ContentPlaceHolder1_f_upload_FI0">
+					<td id="ContentPlaceHolder1_f_upload_TextBox0" savedclass="dxTB dxucTextBox_Material dx-ar" savedstyle="width:100%;border-left-style:Solid;border-left-width:0px;" class="dxucTextBox_Material dxucNullText_Material" style="border-left-width: 0px; width: 100%;"><input id="ContentPlaceHolder1_f_upload_TextBox0_Input" class="dxTI" type="file" name="ContentPlaceHolder1_f_upload_TextBox0_Input" accept=".pdf" style="position:absolute;filter:alpha(opacity=0);opacity:0;top:-5000px;z-index:29999;" multiple=""><input id="ContentPlaceHolder1_f_upload_TextBox0_FakeInput" class="dxTF dxucEditArea_Material" type="text" readonly="readonly" tabindex="-1" savedstyle="background-color:Transparent;border-width:0px;width:100%;" style="background-color: transparent; border-width: 0px; width: 100%;"></td><td id="ContentPlaceHolder1_f_upload_ClearBox0" savedstyle="border-left-style:Solid;border-left-width:0px;border-right-style:Solid;border-right-width:0px;" savedclass="dxCB dxucTextBox_Material" class="dxucTextBox_Material dxucNullText_Material dxCB" style="border-left-width: 0px; border-right-width: 0px;"><a href="javascript:;" style="visibility:hidden;"><img id="ContentPlaceHolder1_f_upload_ClearBox0Img" title="Clear selection" class="dxWeb_ucClearButton_Material" src="/DXR.axd?r=1_89-lj7lm" alt="Clear selection" style="display:inline;"></a></td><td id="ContentPlaceHolder1_f_upload_Browse0" class="dxBB dxucBrowseButton_Material"><a tabindex="-1" href="javascript:;">Browse...</a></td>
+				</tr><tr id="ContentPlaceHolder1_f_upload_ErrR0" style="display:none;">
+					<td class="dxucErrorCell_Material" colspan="3"></td>
+				</tr><tr id="ContentPlaceHolder1_f_upload_AddUploadR">
+					<td colspan="3" style="font:0;height:13px;"></td>
+				</tr><tr id="ContentPlaceHolder1_f_upload_AddUploadPanelR">
+					<td class="dx-al" colspan="3"><table>
+						<tbody><tr>
+							<td id="ContentPlaceHolder1_f_upload_Upload" class="dxucButton_Material dxucDisabled_Material dxucButtonDisabled_Material"><a href="javascript:;" tabindex="-1" unselectable="on">Upload</a></td>
+						</tr>
+					</tbody></table></td>
+				</tr>
+			</tbody></table><table id="ContentPlaceHolder1_f_upload_ProgressPanel" style="width:100%;display:none;">
+				<tbody><tr>
+					<td style="vertical-align:middle;"><table style="width:100%;">
+						<tbody><tr>
+							<td><script id="dxss_1921474607" data-executed="true">
+<!--
+(function(){
+var a = {'percentPattern':1,'numPosInf':'∞','numNegInf':'-∞'};
+for(var b in a) ASPx.CultureInfo[b] = a[b];
+})();
+
+
+//-->
+</script><table class="dxucProgressBar_Material" dir="rtl" id="ContentPlaceHolder1_f_upload_UCProgress" style="width:100%;border-collapse:separate;">
+								<tbody><tr>
+									<td class="dxPBMainCell"><div id="ContentPlaceHolder1_f_upload_UCProgress_DI" class="dxucProgressBarIndicator_Material" style="width:0%;">
+
+									</div><table style="width:100%;margin-top:0px;">
+										<tbody><tr>
+											<td id="ContentPlaceHolder1_f_upload_UCProgress_VIC" class="dx" style="text-align:Center;vertical-align:Middle;"><div class="dxpbVC">
+												0%
+											</div></td>
+										</tr>
+									</tbody></table></td>
+								</tr>
+							</tbody></table><script id="dxss_627353569" data-executed="true">
+<!--
+ASPx.AddDisabledItems('ContentPlaceHolder1_f_upload_UCProgress',[[[''],[''],['VIC']]]);
+ASPx.createControl(ASPxClientProgressBarBase,'ContentPlaceHolder1_f_upload_UCProgress','',{'uniqueID':'ctl00$ContentPlaceHolder1$f_upload$UCProgress','rtl':true,'minimum':0,'maximum':100,'position':0,'displayMode':0,'displayFormat':'{0:0.##}','hasOwner':false});
+
+//-->
+</script></td>
+						</tr><tr>
+							<td style="font:0;height:13px;"></td>
+						</tr><tr>
+							<td class="dx-ac"><table>
+								<tbody><tr>
+									<td id="ContentPlaceHolder1_f_upload_Cancel" class="dxucButton_Material dxucDisabled_Material dxucButtonDisabled_Material"><a href="javascript:;" tabindex="-1" unselectable="on">Cancel</a></td>
+								</tr>
+							</tbody></table></td>
+						</tr>
+					</tbody></table></td>
+				</tr>
+			</tbody></table><div id="ContentPlaceHolder1_f_upload_CErr" class="dxucErrorCell_Material" style="padding-top:13px;display:none;">
+				Common error text is displayed here
+			</div><ul id="ContentPlaceHolder1_f_upload_FileList" class="dxucFileList" style="list-style-type: none; display: none;">
+				<li id="ContentPlaceHolder1_f_upload_FileRT" style="display:none;"><div class="dxucNameCell">
+					<div>
+						<span class="dxucFileListItem_Material"></span>
+					</div>
+				</div><div class="dxRB dxucButton_Material" dir="rtl">
+					<a tabindex="-1" href="javascript:;">Remove</a>
+				</div><div class="dxucBarCell">
+					<table class="dxucProgressBar_Material dxucFL-Progress" dir="rtl" id="ContentPlaceHolder1_f_upload_FL_Progress" style="height:6px;width:100%;border-collapse:separate;display:none;">
+						<tbody><tr>
+							<td class="dxPBMainCell"><div id="ContentPlaceHolder1_f_upload_FL_Progress_DI" class="dxucProgressBarIndicator_Material" style="width:0%;">
+
+							</div></td>
+						</tr>
+					</tbody></table><script id="dxss_706722214" data-executed="true">
+<!--
+ASPx.AddDisabledItems('ContentPlaceHolder1_f_upload_FL_Progress',[[[''],[''],['VIC']]]);
+ASPx.createControl(ASPxClientProgressBarBase,'ContentPlaceHolder1_f_upload_FL_Progress','',{'uniqueID':'ctl00$ContentPlaceHolder1$f_upload$FL_Progress','clientVisible':false,'rtl':true,'minimum':0,'maximum':100,'position':0,'displayMode':2,'customDisplayFormat':'','displayFormat':'{0:0.##}','hasOwner':false});
+
+//-->
+</script>
+				</div></li>
+			</ul></td>
+		</tr>
+	</tbody></table><iframe id="ContentPlaceHolder1_f_upload_UploadIframe" title="No user content" name="ContentPlaceHolder1_f_upload_UploadIframe" style="overflow:hidden;border:0;position:absolute;display:none;z-index:100000;filter:progid:DXImageTransform.Microsoft.Alpha(Style=0, Opacity=0);">
+
+	</iframe><script id="dxss_985766272" data-executed="true">
+<!--
+ASPx.AddHoverItems('ContentPlaceHolder1_f_upload',[[['dxucBrowseButtonHover_Material'],[''],['Browse0']]]);
+ASPx.AddPressedItems('ContentPlaceHolder1_f_upload',[[['dxucBrowseButtonPressed_Material'],[''],['Browse0']]]);
+ASPx.AddDisabledItems('ContentPlaceHolder1_f_upload',[[['dxucDisabled_Material dxucButtonDisabled_Material'],[''],['Add','Upload','Cancel','Remove0']],[['dxucDisabled_Material dxucTextBoxDisabled_Material'],[''],['TextBox0'],['','_FakeInput']],[['dxucDisabled_Material dxucTextBoxDisabled_Material'],[''],['ClearBox0'],,[[{'spriteCssClass':'dxWeb_ucClearButtonDisabled_Material'}]],['Img']],[['dxucDisabled_Material dxucBrowseButtonDisabled_Material'],[''],['Browse0']]]);
+ASPx.createControl(ASPxClientUploadControl,'ContentPlaceHolder1_f_upload','',{'uniqueID':'ctl00$ContentPlaceHolder1$f_upload','rtl':true,'stateObject':{'inputCount':1},'fileInputSpacing':'2px','generalErrorText':'خطأ في تحميل الملف','callbackResultErrorText':'The web server returned unexpected response.','uploadWasCanceledErrorText':'File upload was canceled.','selectedSeveralFilesText':'{0} files are selected for upload','nullTextItem':{'textBox':{'className':'dxucTextBox_Material dxucNullText_Material','cssText':'border-left-width:0px;width:100%;'},'editArea':{'cssText':'background-color:Transparent;border-width:0px;width:100%;'},'clearBox':{'className':'dxucTextBox_Material dxucNullText_Material dxCB','cssText':'border-left-width:0px;border-right-width:0px;'}},'validationSettings':{'invalidWindowsFileNameErrorText':'The file name contains invalid characters.','maxFileCountErrorText':'{0} file(s) have been removed from the selection because they exceed the limit of files to be uploaded at once (which is set to {1}).','allowedFileExtensions':['.pdf'],'multiSelectionErrorText':'انتباه! لايمكن تحميل اكثر من ملف واحد فقط','maxFileSizeErrorText':'File size exceeds the maximum allowed size, which is {0} bytes','maxFileCount':1,'notAllowedFileExtensionErrorText':'صيغة الملف غير مدعومة','maxFileSize':4194304},'progressHandlerPage':'/ASPxUploadProgressHandlerPage.ashx','uploadingKey':'3e4be01699b0f2ab50275ba2a6415723','uploadProcessingEnabled':true,'advancedModeEnabled':true,'slUploadHelperUrl':'/DXR.axd?r=1_137-lj7lm','enableFileList':true,'enableMultiSelect':true,'tooManyFilesErrorText':'Too many files are selected. Reduce the number of selected files and try again.','enableDragAndDrop':true,'dropZoneText':'Drop file(s) here','autoModeEnabled':true,'settings':'ItH9eDURVlqSlLRvlr8a47qfogU3TK42GEKdHZVxygvrLtuedjpsbnKl/8bCrSAvRtf+hYGUU1n4QsHBUQwOdrwKMgPBuRhPXY7rvyyQRJqhspxcKVC8F2vq2JecUJiCbtkj2htGCuekvGA9sU1ebEvO6bUsDOV0K9luT8mx38rFWfuZ0HZzQfRTsaf4DCNeliqocx8KCnH9WwqQAWG69aPWUW/wOJiylbjO0tO1j2U=','templateDisabledTextBoxItem':{'element':'TextBoxT','postfixes':['','_FakeInput'],'imageUrls':[''],'imagePostfixes':[''],'className':['dxucDisabled_Material dxucTextBoxDisabled_Material'],'cssText':[''],'name':'ContentPlaceHolder1_f_upload'},'templateDisabledClearBoxItem':{'element':'ClearBoxT','postfixes':[''],'imagePostfixes':['Img'],'className':['dxucDisabled_Material dxucTextBoxDisabled_Material'],'cssText':[''],'name':'ContentPlaceHolder1_f_upload','imageObjs':[{'spriteCssClass':'dxWeb_ucClearButtonDisabled_Material'}]},'templateHoveredBrowseItem':{'element':'BrowseT','postfixes':[''],'imagePostfixes':['Img'],'className':['dxucBrowseButtonHover_Material'],'cssText':[''],'name':'ContentPlaceHolder1_f_upload','imageObjs':[]},'templatePressedBrowseItem':{'element':'BrowseT','postfixes':[''],'imagePostfixes':['Img'],'className':['dxucBrowseButtonPressed_Material'],'cssText':[''],'name':'ContentPlaceHolder1_f_upload','imageObjs':[]},'templateDisabledBrowseItem':{'element':'BrowseT','postfixes':[''],'imagePostfixes':['Img'],'className':['dxucDisabled_Material dxucBrowseButtonDisabled_Material'],'cssText':[''],'name':'ContentPlaceHolder1_f_upload','imageObjs':[]},'templateDisabledRemoveItem':{'element':'RemoveT','postfixes':[''],'imagePostfixes':['Img'],'className':['dxucDisabled_Material dxucButtonDisabled_Material'],'cssText':[''],'name':'ContentPlaceHolder1_f_upload','imageObjs':[]}});
+
+//-->
+</script>
+                                                 <input type="submit" name="ctl00$ContentPlaceHolder1$brfile" value="استعراض الملف" id="ContentPlaceHolder1_brfile" disabled="disabled" class="aspNetDisabled btn btn-primary">
+                                                         
+                                                 </div>
+                                             </div>
+                                        </div>
+                                            
+                                        </div>
+
+                            
+                            <div class="form-group">
+                                <div class="col-sm-12 text-left">
+                                    <input type="submit" name="ctl00$ContentPlaceHolder1$CancelButton" value="الغاء" id="ContentPlaceHolder1_CancelButton" disabled="disabled" class="aspNetDisabled btn btn-white">
+                                    <input type="submit" name="ctl00$ContentPlaceHolder1$UpdateButton" value="حفظ البيانات" id="ContentPlaceHolder1_UpdateButton" disabled="disabled" class="aspNetDisabled btn btn-primary">
+                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-lg-4">
+                <div class="ibox float-e-margins">
+
+                    <div class="ibox-content">
+                        <div class="form-horizontal">
+                            
+                            <div class="panel panel-primary">
+
+                                <div class="panel-heading">
+                                    <h3 class="panel-title text-left "> البيانات الوظيفية للموظف</h3>
+                                </div>
+                                <div class="panel-body">
+                                    
+                                    <div>
+		<table class="table table-bordered table-hover text-left" cellspacing="0" rules="all" border="1" id="ContentPlaceHolder1_GridView1" style="border-collapse:collapse;">
+			<tbody><tr>
+				<th scope="col">&nbsp;</th><th scope="col">&nbsp;</th><th scope="col">رقم كتاب التعيين</th><th scope="col">تاريخ كتاب التعيين</th>
+			</tr><tr>
+				<td>
+                                                    <a id="ContentPlaceHolder1_GridView1_LinkButton1_0" class="btn btn-danger" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1$ctl02$LinkButton1','')">حذف</a>
+                                                    
+                                                </td><td>
+                                                        <a id="ContentPlaceHolder1_GridView1_btn_Update_0" class=" btn btn-warning Mybtn" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$GridView1$ctl02$btn_Update&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">تعديل القيد</a>
+                                                    </td><td>عقد</td><td>
+                                                    <span id="ContentPlaceHolder1_GridView1_Label1_0">27/07/2017</span>
+                                                </td>
+			</tr>
+		</tbody></table>
+	</div>
+                                    
+                                   
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    
+</div>
+        </div>
+    </div>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
+
+
+
+                <div class="footer">
+
+                    <div>
+                        برمجة وتصميم قسم تقنية المعلومات والاتصالات © 2021
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Mainly scripts -->
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+        <!-- Custom and plugin javascript -->
+        <script src="js/inspinia.js"></script>
+        <script src="js/plugins/pace/pace.min.js"></script>
+
+        <!-- Flot -->
+        <script src="js/plugins/flot/jquery.flot.js"></script>
+        <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+        <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+
+        <!-- ChartJS-->
+        <script src="js/plugins/chartJs/Chart.min.js"></script>
+
+        <!-- Peity -->
+        <script src="js/plugins/peity/jquery.peity.min.js"></script>
+        <!-- Peity demo -->
+        <script src="js/demo/peity-demo.js"></script>
+
+
+        <script>
+            $(document).ready(function () {
+
+
+                var d1 = [[1262304000000, 6], [1264982400000, 3057], [1267401600000, 20434], [1270080000000, 31982], [1272672000000, 26602], [1275350400000, 27826], [1277942400000, 24302], [1280620800000, 24237], [1283299200000, 21004], [1285891200000, 12144], [1288569600000, 10577], [1291161600000, 10295]];
+                var d2 = [[1262304000000, 5], [1264982400000, 200], [1267401600000, 1605], [1270080000000, 6129], [1272672000000, 11643], [1275350400000, 19055], [1277942400000, 30062], [1280620800000, 39197], [1283299200000, 37000], [1285891200000, 27000], [1288569600000, 21000], [1291161600000, 17000]];
+
+                var data1 = [
+                    { label: "Data 1", data: d1, color: '#17a084' },
+                    { label: "Data 2", data: d2, color: '#127e68' }
+                ];
+                $.plot($("#flot-chart1"), data1, {
+                    xaxis: {
+                        tickDecimals: 0
+                    },
+                    series: {
+                        lines: {
+                            show: true,
+                            fill: true,
+                            fillColor: {
+                                colors: [{
+                                    opacity: 1
+                                }, {
+                                    opacity: 1
+                                }]
+                            },
+                        },
+                        points: {
+                            width: 0.1,
+                            show: false
+                        },
+                    },
+                    grid: {
+                        show: false,
+                        borderWidth: 0
+                    },
+                    legend: {
+                        show: false,
+                    }
+                });
+
+                var lineData = {
+                    labels: ["January", "February", "March", "April", "May", "June", "July"],
+                    datasets: [
+                        {
+                            label: "Example dataset",
+                            backgroundColor: "rgba(26,179,148,0.5)",
+                            borderColor: "rgba(26,179,148,0.7)",
+                            pointBackgroundColor: "rgba(26,179,148,1)",
+                            pointBorderColor: "#fff",
+                            data: [48, 48, 60, 39, 56, 37, 30]
+                        },
+                        {
+                            label: "Example dataset",
+                            backgroundColor: "rgba(220,220,220,0.5)",
+                            borderColor: "rgba(220,220,220,1)",
+                            pointBackgroundColor: "rgba(220,220,220,1)",
+                            pointBorderColor: "#fff",
+                            data: [65, 59, 40, 51, 36, 25, 40]
+                        }
+                    ]
+                };
+
+                var lineOptions = {
+                    responsive: true
+                };
+
+
+                var ctx = document.getElementById("lineChart").getContext("2d");
+                new Chart(ctx, { type: 'line', data: lineData, options: lineOptions });
+
+            });
+        </script>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ContentPlaceHolder1_RegularExpressionValidator7"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ContentPlaceHolder1_RegularExpressionValidator7 = document.all ? document.all["ContentPlaceHolder1_RegularExpressionValidator7"] : document.getElementById("ContentPlaceHolder1_RegularExpressionValidator7");
+ContentPlaceHolder1_RegularExpressionValidator7.controltovalidate = "ContentPlaceHolder1_endjobdate";
+ContentPlaceHolder1_RegularExpressionValidator7.errormessage = "التاريخ بصيغة 20/05/2017";
+ContentPlaceHolder1_RegularExpressionValidator7.display = "Dynamic";
+ContentPlaceHolder1_RegularExpressionValidator7.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ContentPlaceHolder1_RegularExpressionValidator7.validationexpression = "^(((0[1-9]|[12]\\d|3[01])\\/(0[13578]|1[02])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|[12]\\d|30)\\/(0[13456789]|1[012])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|1\\d|2[0-8])\\/02\\/((19|[2-9]\\d)\\d{2}))|(29\\/02\\/((1[6-9]|[2-9]\\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CalendarBehavior, {"format":"dd/MM/yyyy","id":"txtLastUpgradingDate_CalendarExtender"}, null, null, $get("ContentPlaceHolder1_txtLastUpgradingDate"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CalendarBehavior, {"format":"dd/MM/yyyy","id":"Last_RiseStep_Date_CalendarExtender"}, null, null, $get("ContentPlaceHolder1_Last_RiseStep_Date"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CalendarBehavior, {"format":"dd/MM/yyyy","id":"txtHireBookDate_CalendarExtender"}, null, null, $get("ContentPlaceHolder1_txtHireBookDate"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CalendarBehavior, {"format":"dd/MM/yyyy","id":"txtBeginJobBookDate_CalendarExtender"}, null, null, $get("ContentPlaceHolder1_txtBeginJobBookDate"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CalendarBehavior, {"format":"dd/MM/yyyy","id":"txtBeginJobDate_CalendarExtender"}, null, null, $get("ContentPlaceHolder1_txtBeginJobDate"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CalendarBehavior, {"format":"dd/MM/yyyy","id":"endjobdate_CalendarExtender"}, null, null, $get("ContentPlaceHolder1_endjobdate"));
+});
+
+document.getElementById('ContentPlaceHolder1_RegularExpressionValidator7').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_RegularExpressionValidator7'));
+}
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CalendarBehavior, {"format":"dd/MM/yyyy","id":"txtGraduate_Date_CalendarExtender"}, null, null, $get("ContentPlaceHolder1_txtGraduate_Date"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CalendarBehavior, {"format":"dd/MM/yyyy","id":"Termination_Service_Date_CalendarExtender"}, null, null, $get("ContentPlaceHolder1_Termination_Service_Date"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ConfirmButtonBehavior, {"confirmText":"هل أنت متأكد من تعديل القيد ؟؟","id":"UpdateButton_ConfirmButtonExtender"}, null, null, $get("ContentPlaceHolder1_UpdateButton"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ConfirmButtonBehavior, {"confirmText":"هل أنت متأكد من حذف القيد؟؟","id":"LinkButton1_ConfirmButtonExtender"}, null, null, $get("ContentPlaceHolder1_GridView1_LinkButton1_0"));
+});
+//]]>
+</script>
+<input type="hidden" name="DXScript" value="1_11,1_252,1_12,1_23,1_64,1_13,1_14,1_183,1_184,1_21,1_22,1_190,1_15,1_17,1_186,1_193,1_41,1_47,1_40"><input type="hidden" name="DXCss" value="1_68,1_69,1_209,1_206,1_210,0_1374,0_1377,0_1503,0_1506,0_1781,0_1784,1_74,1_73"></form><div id="ContentPlaceHolder1_f_upload_InlineDropZone" class="dxucInlineDropZoneSys dxucDropZone_Material" style="width: 280px; display: none; height: 63px; top: 1659.94px; left: 946.976px; padding: 0px;">
+		<div class="dxucIZBorder">
+			<div class="dxucIZBackground">
+				<span>Drop file(s) here</span>
+			</div>
+		</div>
+	</div>
+
+
+</body></html>
