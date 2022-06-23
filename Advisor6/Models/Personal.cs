@@ -60,5 +60,6 @@ namespace Advisor6.Models
 
         [ForeignKey("Employment_infoId")]
         public Employment_info Employment_info { get; set; }
+
     }
 }
