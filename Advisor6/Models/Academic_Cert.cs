@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,6 +8,7 @@ namespace Advisor6.Models
 {
     public class Academic_Cert
     {
+        [Key]
         public int Id { get; set; }
         public string Academic_Degree { get; set; }
         public string University { get; set; }

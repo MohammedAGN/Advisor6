@@ -32,7 +32,6 @@ namespace Advisor6.Models
         public DateTime Actual_direct_date { get; set; }
         public DateTime Contract_expiry_date { get; set; }
         public string Last_Job { get; set; }
-
         public string Nots { get; set; }
         public DateTime EntryDate { get; set; }
         public DateTime LastUpdateDate { get; set; }
