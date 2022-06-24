@@ -53,8 +53,25 @@ namespace Advisor6.Models
 
         ////    //Relationships
         //public List<Administrative_Orders> Administrative_Orders { get; set; }
-        public int Employment_infoId { get; set; }
+        //Relationships
 
-   
+        // Employment_info
+        public int Academic_CertId { get; set; }
+
+        [ForeignKey("Academic_CertId")]
+        public Academic_Cert Academic_Cert { get; set; }
+
+        // Employment_info
+        public int Employment_infoId { get; set; } = 1;
+
+        [ForeignKey("Employment_infoId")]
+        public Employment_info Employment_info { get; set; }
+
+        // Vacations
+        public int VacationsId { get; set; } = 1;
+
+        [ForeignKey("VacationsId")]
+        public Vacations Vacations { get; set; }
+
     }
 }

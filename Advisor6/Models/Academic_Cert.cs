@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Advisor6.Data.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Advisor6.Models
 {
-    public class Academic_Cert
+    public class Academic_Cert : IEntityBase
     {
         [Key]
         public int Id { get; set; }
@@ -20,6 +22,9 @@ namespace Advisor6.Models
         public string Notes { get; set; }
         public string PDF { get; set; }
         public DateTime Inserting_Date { get; set; }
+
+
+        //Relationships
         public List<Personal> Personal { get; set; }
     }
 }

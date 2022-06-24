@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Advisor6.Data.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Advisor6.Models
 {
-    public class Ifad
+    public class Ifad : IEntityBase
     {
         [Key]
         public int Id { get; set; }       

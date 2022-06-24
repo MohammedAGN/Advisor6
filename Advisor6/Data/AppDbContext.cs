@@ -15,12 +15,14 @@ namespace Advisor6.Data
            
         }
 
-
-
         public DbSet<Personal> Personal { get; set; }
         public DbSet<Employment_info> Employment_info { get; set; }     
         public DbSet<Administrative_Orders> Administrative_Orders { get; set; }
-        
+        public DbSet<Academic_Cert> Academic_Cert { get; set; }
+        public DbSet<Ifad> Ifad { get; set; }
+        public DbSet<Thanks> Thanks { get; set; }
+        public DbSet<Trining> Trining { get; set; }
+        public DbSet<Vacations> Vacations { get; set; }
 
     }
 }

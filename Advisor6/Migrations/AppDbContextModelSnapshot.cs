@@ -19,12 +19,57 @@ namespace Advisor6.Migrations
                 .HasAnnotation("ProductVersion", "5.0.16")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Advisor6.Models.Administrative_Orders", b =>
+            modelBuilder.Entity("Advisor6.Models.Academic_Cert", b =>
                 {
-                    b.Property<int>("Admi_id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Academic_Degree")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("College")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Graduate_Year")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Inserting_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PDF")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Specilisit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("University")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Academic_Cert");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Administrative_Orders", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Admi_id")
+                        .HasColumnType("int");
 
                     b.Property<int>("AdministrativeNo")
                         .HasColumnType("int");
@@ -62,7 +107,7 @@ namespace Advisor6.Migrations
                     b.Property<string>("Type_Of_Order")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Admi_id");
+                    b.HasKey("Id");
 
                     b.ToTable("Administrative_Orders");
                 });
@@ -139,12 +184,81 @@ namespace Advisor6.Migrations
                     b.ToTable("Employment_info");
                 });
 
+            modelBuilder.Entity("Advisor6.Models.Ifad", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("IfadActual_Days")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IfadBookDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IfadBookNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IfadDirectDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ifad_Days")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ifad_Paid_Sid")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ifad_Sid")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ifad_Supject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ifad_Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ifad_TravelDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ifad_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InsertingDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Inserting_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PDF")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("U_id")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ifad");
+                });
+
             modelBuilder.Entity("Advisor6.Models.Personal", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Academic_CertId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
@@ -175,6 +289,9 @@ namespace Advisor6.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 
+                    b.Property<int?>("IfadId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -196,25 +313,283 @@ namespace Advisor6.Migrations
                     b.Property<string>("PhoneNo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ThanksId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TriningId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VacationsId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("Academic_CertId");
+
                     b.HasIndex("Employment_infoId");
+
+                    b.HasIndex("IfadId");
+
+                    b.HasIndex("ThanksId");
+
+                    b.HasIndex("TriningId");
+
+                    b.HasIndex("VacationsId");
 
                     b.ToTable("Personal");
                 });
 
+            modelBuilder.Entity("Advisor6.Models.Thanks", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Inserting_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OrderDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ThanksBook_Date")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ThanksBook_No")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Thanks_Days")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Thanks_Reason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Thanks_Sid")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Thanks_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("U_id")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("book_no")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("thanks_upper")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Thanks");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Trining", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Inserting_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Not")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("T_status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("T_type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrainingBookDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrainingBookNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Training_Days")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Training_DirectDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Training_EndDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Training_Esimate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Training_GraduteDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Training_Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Training_PaidSid")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Training_Sid")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Training_StartDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("U_id")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Vacation_WithOrder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Trining");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Vacations", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Emp_Vacations_SickTotal")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Emp_Vacations_Total")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Inserting_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Payment_Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sick_Vacation_Days")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("U_id")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Vacation_Book_Date")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Vacation_Book_No")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Vacation_Days")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Vacation_End_Date")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Vacation_No")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Vacation_Start_Date")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Vacation_WithOrder")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("book_no")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("order_no")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("vacation_upper")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Vacations");
+                });
+
             modelBuilder.Entity("Advisor6.Models.Personal", b =>
                 {
+                    b.HasOne("Advisor6.Models.Academic_Cert", "Academic_Cert")
+                        .WithMany("Personal")
+                        .HasForeignKey("Academic_CertId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Advisor6.Models.Employment_info", "Employment_info")
                         .WithMany("Personal")
                         .HasForeignKey("Employment_infoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Advisor6.Models.Ifad", null)
+                        .WithMany("Personal")
+                        .HasForeignKey("IfadId");
+
+                    b.HasOne("Advisor6.Models.Thanks", null)
+                        .WithMany("Personal")
+                        .HasForeignKey("ThanksId");
+
+                    b.HasOne("Advisor6.Models.Trining", null)
+                        .WithMany("Personal")
+                        .HasForeignKey("TriningId");
+
+                    b.HasOne("Advisor6.Models.Vacations", "Vacations")
+                        .WithMany("Personal")
+                        .HasForeignKey("VacationsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Academic_Cert");
+
                     b.Navigation("Employment_info");
+
+                    b.Navigation("Vacations");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Academic_Cert", b =>
+                {
+                    b.Navigation("Personal");
                 });
 
             modelBuilder.Entity("Advisor6.Models.Employment_info", b =>
+                {
+                    b.Navigation("Personal");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Ifad", b =>
+                {
+                    b.Navigation("Personal");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Thanks", b =>
+                {
+                    b.Navigation("Personal");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Trining", b =>
+                {
+                    b.Navigation("Personal");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Vacations", b =>
                 {
                     b.Navigation("Personal");
                 });

@@ -1,4 +1,6 @@
 ﻿using Advisor6.Data;
+using Advisor6.Data.Services;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,16 +12,21 @@ namespace Advisor6.Controllers
 {
     public class Administrative_OrdersController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IAdministrative_OrdersService _service;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public Administrative_OrdersController(AppDbContext context)
+        public Administrative_OrdersController(IAdministrative_OrdersService service, IWebHostEnvironment webHostEnvironment)
         {
-            _context = context;
+
+            _service = service;
+            _webHostEnvironment = webHostEnvironment;
         }
+
         public async Task<IActionResult> Index()
         {
-            var data = await _context.Administrative_Orders.ToListAsync();
-            return View();
+            var data = await _service.GetAllAsync();
+
+            return View(data);
         }
     }
 }

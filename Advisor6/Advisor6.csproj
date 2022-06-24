@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Folder Include="Reports\" />
-    <Folder Include="Views\Administrative_Orders\" />
     <Folder Include="wwwroot\PADV\PDF\" />
     <Folder Include="wwwroot\PADV\Photo\" />
   </ItemGroup>

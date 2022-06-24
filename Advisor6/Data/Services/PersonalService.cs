@@ -35,7 +35,9 @@ namespace Advisor6.Data.Services
                 DataEntryName = data.DataEntryName,
                 Image = data.Image,
                 PDF = data.PDF,
-                Employment_infoId = data.Employment_infoId
+                Employment_infoId = data.Employment_infoId,
+                Academic_CertId = data.Academic_CertId,
+                VacationsId = data.VacationsId
             };
             await _context.Personal.AddAsync(newPersonal);
             await _context.SaveChangesAsync();
@@ -45,8 +47,9 @@ namespace Advisor6.Data.Services
         {
             var response = new NewPersonalDropdownsVM()
             {
-                Employment_infos = await _context.Employment_info.OrderBy(n => n.MainDeptartment).ToListAsync()
-                //Cinemas = await _context.Cinemas.OrderBy(n => n.Name).ToListAsync(),
+                Employment_infos = await _context.Employment_info.OrderBy(n => n.MainDeptartment).ToListAsync(),
+                Academic_Certs = await _context.Academic_Cert.OrderBy(n => n.Academic_Degree).ToListAsync()
+               
                 //Producers = await _context.Producers.OrderBy(n => n.FullName).ToListAsync()
             };
 
@@ -57,10 +60,13 @@ namespace Advisor6.Data.Services
         {
             var personalDetails = await _context.Personal
                 .Include(c => c.Employment_info)
-                .FirstOrDefaultAsync(n => n.Id == id);
-            //.Include(p => p.Producer)
+            .Include(p => p.Academic_Cert)
+            .FirstOrDefaultAsync(n => n.Id == id);
             //.Include(am => am.Actors_Movies).ThenInclude(a => a.Actor)
-
+            // .Include(w => w.Ifad)
+            //.Include(x => x.Thanks)
+            //.Include(y => y.Traning)
+            //.Include(z => z.Vacations)
 
             return personalDetails;
         }
@@ -89,7 +95,7 @@ namespace Advisor6.Data.Services
                 await _context.SaveChangesAsync();
             }
 
-              
+
         }
         // تم حذفها في المحاضرة 41
         //{

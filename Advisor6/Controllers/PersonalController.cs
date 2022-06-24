@@ -146,30 +146,10 @@ namespace Advisor6.Controllers
         //Get: Personal/Details/1
         public async Task<IActionResult> Details(int id)
         {
+          
             var personalDetails = await _service.GetPersonalByIdAsync(id);
-            if (personalDetails == null) return View("NotFound");
-            var response = new NewPersonalVM()
-            {
-                Id = personalDetails.Id,
-                FullName = personalDetails.FullName,
-                PhoneNo = personalDetails.PhoneNo,
-                Gender = personalDetails.Gender,
-                MarriedStatus = personalDetails.MarriedStatus,
-                Email = personalDetails.Email,
-                Address = personalDetails.Address,
-                BirthDate = personalDetails.BirthDate,
-                BornPlace = personalDetails.BornPlace,
-                Nots = personalDetails.Nots,
-                EntryDate = personalDetails.EntryDate,
-                LastUpdateDate = personalDetails.LastUpdateDate,
-                DataEntryName = personalDetails.DataEntryName,
-                Image = personalDetails.Image,
-                PDF = personalDetails.PDF,
-                Employment_infoId = personalDetails.Employment_infoId
-            };
-            var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
-            ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
-            return View(response);
+            return View(personalDetails);
+            
         }
 
 

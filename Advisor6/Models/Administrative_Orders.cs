@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Advisor6.Data.Base;
+using Advisor6.Data.Base;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Advisor6.Models
 {
-    public class Administrative_Orders
+    public class Administrative_Orders : IEntityBase
     {
        [Key]
+        public int Id { get; set; }
         public int Admi_id { get; set; }
         public int AdministrativeNo { get; set; }
         public int OrderNo { get; set; }
