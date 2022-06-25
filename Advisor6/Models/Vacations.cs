@@ -1,9 +1,13 @@
-﻿using Advisor6.Data.Base;
+﻿using System.ComponentModel.DataAnnotations;
+
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+
 using System.Linq;
-using System.Threading.Tasks;
+using Advisor6.Data;
+using System.ComponentModel.DataAnnotations.Schema;
+using Advisor6.Data.Base;
+using Microsoft.AspNetCore.Http;
 
 namespace Advisor6.Models
 {
@@ -29,6 +33,12 @@ namespace Advisor6.Models
         public string order_no { get; set; }
         public string book_no { get; set; }
         public DateTime Inserting_Date { get; set; }
+        
+        [NotMapped]
+        public IFormFile Photo { get; set; }
+        [NotMapped]
+        public IFormFile pdf { get; set; }
+
         public List<Personal> Personal { get; set; }
      
     }

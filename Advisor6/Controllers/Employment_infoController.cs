@@ -47,10 +47,7 @@ namespace Advisor6.Controllers
         //GET: Employment_info/create
         public async Task<IActionResult> Create()
         {
-            // اضافة المعلومات الوظيفية الى المستشار
-         
-            //== id);
-            
+        
             return View();
         }
         // Post : Employment_info/Create

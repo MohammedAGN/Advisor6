@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Advisor6.Migrations
 {
-    public partial class add_Academic : Migration
+    public partial class Academic_Cert : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
