@@ -1,11 +1,13 @@
-﻿using Advisor6.Data.Base;
-using Advisor6.Data.Base;
+﻿using System.ComponentModel.DataAnnotations;
+
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+
 using System.Linq;
-using System.Threading.Tasks;
+using Advisor6.Data;
+using System.ComponentModel.DataAnnotations.Schema;
+using Advisor6.Data.Base;
+using Microsoft.AspNetCore.Http;
 
 namespace Advisor6.Models
 {
@@ -28,13 +30,24 @@ namespace Advisor6.Models
         public string Image { get; set; }
         public string PDF { get; set; }
 
+
+        [NotMapped]
+        public IFormFile Photo { get; set; }
+        [NotMapped]
+        public IFormFile pdf { get; set; }
+
+
+        //Relationships
+        public List<Personal> Personal { get; set; }
+
+
         //   //Relationships
 
-       ////Personal
+        ////Personal
 
-       // [ForeignKey("PersonalId")]
-       //public int PersonalId { get; set; }       
-       //public Personal Personal { get; set; }
+        // [ForeignKey("PersonalId")]
+        //public int PersonalId { get; set; }       
+        //public Personal Personal { get; set; }
 
         //Employment_info
 

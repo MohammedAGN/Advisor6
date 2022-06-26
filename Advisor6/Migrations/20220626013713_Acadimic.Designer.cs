@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Advisor6.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220625101741_Academic_Cert")]
-    partial class Academic_Cert
+    [Migration("20220626013713_Acadimic")]
+    partial class Acadimic
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -265,6 +265,9 @@ namespace Advisor6.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("Administrative_OrdersId")
+                        .HasColumnType("int");
+
                     b.Property<string>("BirthDate")
                         .HasColumnType("nvarchar(max)");
 
@@ -328,6 +331,8 @@ namespace Advisor6.Migrations
 
                     b.HasIndex("Academic_CertId");
 
+                    b.HasIndex("Administrative_OrdersId");
+
                     b.HasIndex("Employment_infoId");
 
                     b.HasIndex("IfadId");
@@ -351,6 +356,9 @@ namespace Advisor6.Migrations
                     b.Property<DateTime>("Inserting_Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("OrderDate")
                         .HasColumnType("nvarchar(max)");
 
@@ -358,6 +366,9 @@ namespace Advisor6.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OrderType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PDF")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PID")
@@ -405,7 +416,10 @@ namespace Advisor6.Migrations
                     b.Property<DateTime>("Inserting_Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Not")
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PDF")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PID")
@@ -480,6 +494,12 @@ namespace Advisor6.Migrations
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PDF")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PID")
                         .HasColumnType("nvarchar(max)");
 
@@ -535,6 +555,10 @@ namespace Advisor6.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Advisor6.Models.Administrative_Orders", null)
+                        .WithMany("Personal")
+                        .HasForeignKey("Administrative_OrdersId");
+
                     b.HasOne("Advisor6.Models.Employment_info", "Employment_info")
                         .WithMany("Personal")
                         .HasForeignKey("Employment_infoId")
@@ -567,6 +591,11 @@ namespace Advisor6.Migrations
                 });
 
             modelBuilder.Entity("Advisor6.Models.Academic_Cert", b =>
+                {
+                    b.Navigation("Personal");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Administrative_Orders", b =>
                 {
                     b.Navigation("Personal");
                 });

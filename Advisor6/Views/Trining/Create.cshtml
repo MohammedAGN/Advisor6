@@ -1,8 +1,11 @@
-﻿@model Employment_info
+﻿@model Trining
+
+
+    <h1 class="float-right">الدورات التدريبية وورش العمل / اضافة جديد</h1>
     <div class="row" dir="rtl">
         <div class="col-md-8 offset-2 ">
             <p>
-                <h1 class="float-right">المعلومات الوظيفية / اضافة جديد</h1>
+
             </p>
             <br />
             <br />
@@ -12,99 +15,61 @@
                 <div class="col-md-10 offset-2">
                     <form enctype="multipart/form-data" asp-action="Create">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+                        <div class="form-group">
+                            <label asp-for="Personal" class="control-label float-right">الاسم</label>
+                            <input asp-for="Personal" class="form-control" />
+                            <span asp-validation-for="Personal" class="text-danger"></span>
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label asp-for="MainDeptartment" class="control-label float-right">الدائرة</label>
-                                    <input asp-for="MainDeptartment" class="form-control" />
-                                    <span asp-validation-for="MainDeptartment" class="text-danger"></span>
+                                    <label asp-for="Training_Name" class="control-label float-right">اسم الدورة</label>
+                                    <input asp-for="Training_Name" class="form-control" />
+                                    <span asp-validation-for="Training_Name" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="SubDeptartment" class="control-label float-right">القسم</label>
-                                    <input asp-for="SubDeptartment" class="form-control" />
-                                    <span asp-validation-for="SubDeptartment" class="text-danger"></span>
+                                    <label asp-for="Training_Sid" class="control-label float-right">الجهة المنفذة</label>
+                                    <input asp-for="Training_Sid" class="form-control" />
+                                    <span asp-validation-for="Training_Sid" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="Salary" class="control-label float-right">الراتب</label>
-                                    <input asp-for="Salary" class="form-control" />
-                                    <span asp-validation-for="Salary" class="text-danger"></span>
+                                    <label asp-for="Training_Days" class="control-label float-right">عدد ايام الدورة</label>
+                                    <input asp-for="Training_Days" class="form-control" />
+                                    <span asp-validation-for="Training_Days" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="Service_Continuation" class="control-label float-right">الحالة الوظيفية</label>
-                                    <input asp-for="Service_Continuation" class="form-control" />
-                                    <span asp-validation-for="Service_Continuation" class="text-danger"></span>
+                                    <label asp-for="Training_StartDate" class="control-label float-right">تاريخ بدء الدورة</label>
+                                    <input asp-for="Training_StartDate" class="form-control" />
+                                    <span asp-validation-for="Training_StartDate" class="text-danger"></span>
                                 </div>
-                                <div class="form-group">
-                                    <label asp-for="Job_Title" class="control-label float-right">العنوان الوظيفي</label>
-                                    <input asp-for="Job_Title" class="form-control" />
-                                    <span asp-validation-for="Job_Title" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="Job_Status" class="control-label float-right"></label>
-                                    <input asp-for="Job_Status" class="form-control" />
-                                    <span asp-validation-for="Job_Status" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="EmploymentBook_No" class="control-label float-right">رقم كتاب التعببن</label>
-                                    <input asp-for="EmploymentBook_No" class="form-control" />
-                                    <span asp-validation-for="EmploymentBook_No" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="EmploymentBook_Date" class="control-label float-right">تاريخ التعيين</label>
-                                    <input asp-for="EmploymentBook_Date" class="form-control" />
-                                    <span asp-validation-for="EmploymentBook_Date" class="text-danger"></span>
-                                </div>
-                               
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label asp-for="DirectBook_No" class="control-label float-right">رقم كتاب المباشرة</label>
-                                    <input asp-for="DirectBook_No" class="form-control" />
-                                    <span asp-validation-for="DirectBook_No" class="text-danger"></span>
+                                    <label asp-for="Training_EndDate" class="control-label float-right">تاريخ انتهاء الدورة</label>
+                                    <input asp-for="Training_EndDate" class="form-control" />
+                                    <span asp-validation-for="Training_EndDate" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="DirectBook_Date" class="control-label float-right">تاريخ كتاب المباشرة</label>
-                                    <input asp-for="DirectBook_Date" class="form-control" />
-                                    <span asp-validation-for="DirectBook_Date" class="text-danger"></span>
+                                    <label asp-for="Training_DirectDate" class="control-label float-right">تاريخ المباشرة بالدورة</label>
+                                    <input asp-for="Training_DirectDate" class="form-control" />
+                                    <span asp-validation-for="Training_DirectDate" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="Actual_direct_date" class="control-label float-right">تاريخ المباشرة الفعلي</label>
-                                    <input asp-for="Actual_direct_date" class="form-control" />
-                                    <span asp-validation-for="Actual_direct_date" class="text-danger"></span>
+                                    <label asp-for="TrainingBookNo" class="control-label float-right">رقم الكتاب</label>
+                                    <input asp-for="TrainingBookNo" class="form-control" />
+                                    <span asp-validation-for="TrainingBookNo" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label asp-for="Contract_expiry_date" class="control-label float-right">تاريخ انتهاء العقد</label>
-                                    <input asp-for="Contract_expiry_date" class="form-control" />
-                                    <span asp-validation-for="Contract_expiry_date" class="text-danger"></span>
-                                </div>
-
-                                <div class="form-group">
-                                    <label asp-for="EntryDate" class="control-label float-right">تاريخ ادخال القيد</label>
-                                    <input asp-for="EntryDate" class="form-control" />
-                                    <span asp-validation-for="EntryDate" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="LastUpdateDate" class="control-label float-right">تاريخ اخر تحديث للقيد</label>
-                                    <input asp-for="LastUpdateDate" class="form-control" />
-                                    <span asp-validation-for="LastUpdateDate" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="DataEntryName" class="control-label float-right">اسم مدخل البيانات</label>
-                                    <input asp-for="DataEntryName" class="form-control" />
-                                    <span asp-validation-for="DataEntryName" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="Last_Job" class="control-label float-right">جهة العمل السابقة</label>
-                                    <input asp-for="Last_Job" class="form-control" />
-                                    <span asp-validation-for="Last_Job" class="text-danger"></span>
+                                    <label asp-for="TrainingBookDate" class="control-label float-right">تاريخ الكتاب</label>
+                                    <input asp-for="TrainingBookDate" class="form-control" />
+                                    <span asp-validation-for="TrainingBookDate" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label asp-for="Nots" class="control-label float-right">الملاحظات</label>
-                            <textarea asp-for="Nots" class="form-control" ></textarea>
-                            <span asp-validation-for="Nots" class="text-danger"></span>
+                            <label asp-for="Notes" class="control-label float-right">الملاحظات</label>
+                            <input asp-for="Notes" class="form-control" />
+                            <span asp-validation-for="Notes" class="text-danger"></span>
                         </div>
 
                         <div class="form-group">

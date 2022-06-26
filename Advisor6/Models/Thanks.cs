@@ -28,7 +28,9 @@ namespace Advisor6.Models
         public string U_id { get; set; }   
         public string thanks_upper { get; set; }
         public string book_no { get; set; }
-       
+        public string Notes { get; set; }
+        public string PDF { get; set; }
+
         public DateTime Inserting_Date { get; set; }
 
        

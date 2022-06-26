@@ -31,7 +31,8 @@ namespace Advisor6.Models
         public string PID { get; set; }
         public string T_status { get; set; }
         public string T_type { get; set; }
-        public string Not { get; set; }
+        public string Notes { get; set; }
+        public string PDF { get; set; }
         public DateTime Inserting_Date { get; set; }
         
         [NotMapped]

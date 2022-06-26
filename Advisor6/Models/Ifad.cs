@@ -8,12 +8,17 @@ using Advisor6.Data;
 using System.ComponentModel.DataAnnotations.Schema;
 using Advisor6.Data.Base;
 using Microsoft.AspNetCore.Http;
+
+
+
+
 namespace Advisor6.Models
 {
+
     public class Ifad : IEntityBase
     {
         [Key]
-        public int Id { get; set; }       
+        public int Id { get; set; }
         public string Ifad_Type { get; set; }
         public string Ifad_Supject { get; set; }
         public string Ifad_Title { get; set; }
@@ -32,12 +37,14 @@ namespace Advisor6.Models
         public string PID { get; set; }
         public string PDF { get; set; }
         public DateTime Inserting_Date { get; set; }
-        
+
         [NotMapped]
         public IFormFile Photo { get; set; }
         [NotMapped]
         public IFormFile pdf { get; set; }
 
+
+        //Relationships
         public List<Personal> Personal { get; set; }
 
     }

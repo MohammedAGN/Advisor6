@@ -32,6 +32,8 @@ namespace Advisor6.Models
         public string vacation_upper { get; set; }
         public string order_no { get; set; }
         public string book_no { get; set; }
+        public string Notes { get; set; }
+        public string PDF { get; set; }
         public DateTime Inserting_Date { get; set; }
         
         [NotMapped]

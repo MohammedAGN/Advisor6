@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Advisor6.Migrations
 {
-    public partial class Academic_Cert : Migration
+    public partial class Acadimic : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -135,6 +135,8 @@ namespace Advisor6.Migrations
                     U_id = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     thanks_upper = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     book_no = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PDF = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Inserting_Date = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -164,7 +166,8 @@ namespace Advisor6.Migrations
                     PID = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     T_status = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     T_type = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Not = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PDF = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Inserting_Date = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -195,6 +198,8 @@ namespace Advisor6.Migrations
                     vacation_upper = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     order_no = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     book_no = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PDF = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Inserting_Date = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -226,6 +231,7 @@ namespace Advisor6.Migrations
                     Academic_CertId = table.Column<int>(type: "int", nullable: false),
                     Employment_infoId = table.Column<int>(type: "int", nullable: false),
                     VacationsId = table.Column<int>(type: "int", nullable: false),
+                    Administrative_OrdersId = table.Column<int>(type: "int", nullable: true),
                     IfadId = table.Column<int>(type: "int", nullable: true),
                     ThanksId = table.Column<int>(type: "int", nullable: true),
                     TriningId = table.Column<int>(type: "int", nullable: true)
@@ -239,6 +245,12 @@ namespace Advisor6.Migrations
                         principalTable: "Academic_Cert",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Personal_Administrative_Orders_Administrative_OrdersId",
+                        column: x => x.Administrative_OrdersId,
+                        principalTable: "Administrative_Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Personal_Employment_info_Employment_infoId",
                         column: x => x.Employment_infoId,
@@ -277,6 +289,11 @@ namespace Advisor6.Migrations
                 column: "Academic_CertId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Personal_Administrative_OrdersId",
+                table: "Personal",
+                column: "Administrative_OrdersId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Personal_Employment_infoId",
                 table: "Personal",
                 column: "Employment_infoId");
@@ -305,13 +322,13 @@ namespace Advisor6.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Administrative_Orders");
-
-            migrationBuilder.DropTable(
                 name: "Personal");
 
             migrationBuilder.DropTable(
                 name: "Academic_Cert");
+
+            migrationBuilder.DropTable(
+                name: "Administrative_Orders");
 
             migrationBuilder.DropTable(
                 name: "Employment_info");
