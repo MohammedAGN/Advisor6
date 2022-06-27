@@ -53,6 +53,8 @@ namespace Advisor6.Controllers
         {
             var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
             ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
+            ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
+            ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
             return View();
         }
 
@@ -64,6 +66,8 @@ namespace Advisor6.Controllers
             {
                 var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
                 ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
+                ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
+                ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
                 return View();
             }
             if (personal.Photo != null)
@@ -109,6 +113,8 @@ namespace Advisor6.Controllers
 
             var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
             ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
+            ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
+            ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
             return View(response);
         }
         // Post : Personal/Edit
@@ -121,6 +127,8 @@ namespace Advisor6.Controllers
             {
                 var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
                 ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
+                ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
+                ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
                 return View();
             }
             if (personal.Photo != null)
@@ -179,6 +187,8 @@ namespace Advisor6.Controllers
             };
             var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
             ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
+            ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
+            ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
             return View(response);
         }
         // Post : Personal/Delete

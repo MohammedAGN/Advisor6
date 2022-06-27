@@ -3,9 +3,9 @@ using Advisor6.Models;
 
 namespace Advisor6.Data.Services
 {
-    public class EmploymentService : EntityBaseRepository<Employment_info> , IEmploymentService
+    public class Employment_infoService : EntityBaseRepository<Employment_info> , IEmployment_infoService
     {
-        public EmploymentService(AppDbContext context) : base(context)  
+        public Employment_infoService(AppDbContext context) : base(context)  
         {
 
         }

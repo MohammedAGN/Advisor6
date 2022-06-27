@@ -4,6 +4,7 @@ using Advisor6.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -26,14 +27,20 @@ namespace Advisor6.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var data = await _service.GetAllAsync();
+            var data = await _service.GetAllAsync(n => n.Personal);
 
             return View(data);
         }
         //GET: Employment_info/create
         public async Task<IActionResult> Create()
         {
+            var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
 
+            ViewBag.Personals = new SelectList(personalDropdownsData.Personals, "Id", "FullName");
+
+            //ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
+            //ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
+     
             return View();
         }
 

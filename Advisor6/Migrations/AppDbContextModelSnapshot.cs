@@ -98,6 +98,9 @@ namespace Advisor6.Migrations
                     b.Property<string>("PDF")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PersonalId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Subject")
                         .HasColumnType("nvarchar(max)");
 
@@ -108,6 +111,8 @@ namespace Advisor6.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PersonalId");
 
                     b.ToTable("Administrative_Orders");
                 });
@@ -239,6 +244,9 @@ namespace Advisor6.Migrations
                     b.Property<string>("PID")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PersonalId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -246,6 +254,8 @@ namespace Advisor6.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PersonalId");
 
                     b.ToTable("Ifad");
                 });
@@ -262,9 +272,6 @@ namespace Advisor6.Migrations
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Administrative_OrdersId")
-                        .HasColumnType("int");
 
                     b.Property<string>("BirthDate")
                         .HasColumnType("nvarchar(max)");
@@ -292,9 +299,6 @@ namespace Advisor6.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 
-                    b.Property<int?>("IfadId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -316,12 +320,6 @@ namespace Advisor6.Migrations
                     b.Property<string>("PhoneNo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ThanksId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TriningId")
-                        .HasColumnType("int");
-
                     b.Property<int>("VacationsId")
                         .HasColumnType("int");
 
@@ -329,15 +327,7 @@ namespace Advisor6.Migrations
 
                     b.HasIndex("Academic_CertId");
 
-                    b.HasIndex("Administrative_OrdersId");
-
                     b.HasIndex("Employment_infoId");
-
-                    b.HasIndex("IfadId");
-
-                    b.HasIndex("ThanksId");
-
-                    b.HasIndex("TriningId");
 
                     b.HasIndex("VacationsId");
 
@@ -372,6 +362,9 @@ namespace Advisor6.Migrations
                     b.Property<string>("PID")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PersonalId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ThanksBook_Date")
                         .HasColumnType("nvarchar(max)");
 
@@ -401,6 +394,8 @@ namespace Advisor6.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PersonalId");
+
                     b.ToTable("Thanks");
                 });
 
@@ -422,6 +417,9 @@ namespace Advisor6.Migrations
 
                     b.Property<string>("PID")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PersonalId")
+                        .HasColumnType("int");
 
                     b.Property<string>("T_status")
                         .HasColumnType("nvarchar(max)");
@@ -469,6 +467,8 @@ namespace Advisor6.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PersonalId");
 
                     b.ToTable("Trining");
                 });
@@ -545,6 +545,28 @@ namespace Advisor6.Migrations
                     b.ToTable("Vacations");
                 });
 
+            modelBuilder.Entity("Advisor6.Models.Administrative_Orders", b =>
+                {
+                    b.HasOne("Advisor6.Models.Personal", "Personal")
+                        .WithMany("Administrative_Orders")
+                        .HasForeignKey("PersonalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Personal");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Ifad", b =>
+                {
+                    b.HasOne("Advisor6.Models.Personal", "Personal")
+                        .WithMany("Ifad")
+                        .HasForeignKey("PersonalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Personal");
+                });
+
             modelBuilder.Entity("Advisor6.Models.Personal", b =>
                 {
                     b.HasOne("Advisor6.Models.Academic_Cert", "Academic_Cert")
@@ -553,27 +575,11 @@ namespace Advisor6.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Advisor6.Models.Administrative_Orders", null)
-                        .WithMany("Personal")
-                        .HasForeignKey("Administrative_OrdersId");
-
                     b.HasOne("Advisor6.Models.Employment_info", "Employment_info")
                         .WithMany("Personal")
                         .HasForeignKey("Employment_infoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Advisor6.Models.Ifad", null)
-                        .WithMany("Personal")
-                        .HasForeignKey("IfadId");
-
-                    b.HasOne("Advisor6.Models.Thanks", null)
-                        .WithMany("Personal")
-                        .HasForeignKey("ThanksId");
-
-                    b.HasOne("Advisor6.Models.Trining", null)
-                        .WithMany("Personal")
-                        .HasForeignKey("TriningId");
 
                     b.HasOne("Advisor6.Models.Vacations", "Vacations")
                         .WithMany("Personal")
@@ -588,12 +594,29 @@ namespace Advisor6.Migrations
                     b.Navigation("Vacations");
                 });
 
-            modelBuilder.Entity("Advisor6.Models.Academic_Cert", b =>
+            modelBuilder.Entity("Advisor6.Models.Thanks", b =>
                 {
+                    b.HasOne("Advisor6.Models.Personal", "Personal")
+                        .WithMany("Thanks")
+                        .HasForeignKey("PersonalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Personal");
                 });
 
-            modelBuilder.Entity("Advisor6.Models.Administrative_Orders", b =>
+            modelBuilder.Entity("Advisor6.Models.Trining", b =>
+                {
+                    b.HasOne("Advisor6.Models.Personal", "Personal")
+                        .WithMany("Trining")
+                        .HasForeignKey("PersonalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Personal");
+                });
+
+            modelBuilder.Entity("Advisor6.Models.Academic_Cert", b =>
                 {
                     b.Navigation("Personal");
                 });
@@ -603,19 +626,15 @@ namespace Advisor6.Migrations
                     b.Navigation("Personal");
                 });
 
-            modelBuilder.Entity("Advisor6.Models.Ifad", b =>
+            modelBuilder.Entity("Advisor6.Models.Personal", b =>
                 {
-                    b.Navigation("Personal");
-                });
+                    b.Navigation("Administrative_Orders");
 
-            modelBuilder.Entity("Advisor6.Models.Thanks", b =>
-                {
-                    b.Navigation("Personal");
-                });
+                    b.Navigation("Ifad");
 
-            modelBuilder.Entity("Advisor6.Models.Trining", b =>
-                {
-                    b.Navigation("Personal");
+                    b.Navigation("Thanks");
+
+                    b.Navigation("Trining");
                 });
 
             modelBuilder.Entity("Advisor6.Models.Vacations", b =>

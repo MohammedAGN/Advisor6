@@ -15,10 +15,10 @@ namespace Advisor6.Controllers
 {
     public class Employment_infoController : Controller
     {
-        private readonly IEmploymentService _service;
+        private readonly IEmployment_infoService _service;
         private readonly IWebHostEnvironment _webHostEnvironment;
         
-        public Employment_infoController(IEmploymentService service, IWebHostEnvironment webHostEnvironment)
+        public Employment_infoController(IEmployment_infoService service, IWebHostEnvironment webHostEnvironment)
         {
             
             _service= service;

@@ -31,7 +31,7 @@ namespace Advisor6
 
             // Services configuration
             services.AddScoped<IPersonalService, PersonalService>();
-            services.AddScoped<IEmploymentService, EmploymentService>();
+            services.AddScoped<IEmployment_infoService, Employment_infoService>();
             services.AddScoped<IAcademic_CertService, Academic_CertService>();
             services.AddScoped<IAdministrative_OrdersService, Administrative_OrdersService>();
             services.AddScoped<IIfadService, IfadService>();

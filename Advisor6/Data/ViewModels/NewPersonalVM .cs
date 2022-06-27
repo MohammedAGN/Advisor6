@@ -14,6 +14,7 @@ namespace Advisor6.Models
 {
     public class NewPersonalVM 
     {
+        [Key]
         public int Id { get; set; }
         public int PersonalId { get; set; }
 
@@ -52,6 +53,11 @@ namespace Advisor6.Models
 
 
         ////    //Relationships
+        public List<Administrative_Orders> Administrative_Orders { get; set; }
+        public List<Ifad> Ifad { get; set; }
+        public List<Thanks> Thanks { get; set; }
+        public List<Trining> Trining { get; set; }
+       
         //public List<Administrative_Orders> Administrative_Orders { get; set; }
         //Relationships
 
@@ -62,13 +68,13 @@ namespace Advisor6.Models
         public Academic_Cert Academic_Cert { get; set; }
 
         // Employment_info
-        public int Employment_infoId { get; set; } = 1;
+        public int Employment_infoId { get; set; }
 
         [ForeignKey("Employment_infoId")]
         public Employment_info Employment_info { get; set; }
 
         // Vacations
-        public int VacationsId { get; set; } = 1;
+        public int VacationsId { get; set; }
 
         [ForeignKey("VacationsId")]
         public Vacations Vacations { get; set; }

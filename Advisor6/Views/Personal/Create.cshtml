@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label asp-for="MarriedStatus" class="control-label float-right">الحالة الاجتماعية</label>
-                                <select asp-for="MarriedStatus" class="form-control"  asp-items="Html.GetEnumSelectList<MarriedStatus>()"></select>
+                                <select asp-for="MarriedStatus" class="form-control" asp-items="Html.GetEnumSelectList<MarriedStatus>()"></select>
                                 <span asp-validation-for="MarriedStatus" class="text-danger"></span>
                             </div>
                             <div class="form-group">
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                             <div class="form-group">
+                            <div class="form-group">
                                 <label asp-for="Address" class="control-label float-right">العنوان</label>
                                 <input asp-for="Address" class="form-control" />
                                 <span asp-validation-for="Address" class="text-danger"></span>
@@ -55,7 +55,7 @@
                                 <label asp-for="BirthDate" class="control-label float-right">تاريخ الميلاد</label>
                                 <input asp-for="BirthDate" type="date" class="form-control" />
                                 <span asp-validation-for="BirthDate" class="text-danger"></span>
-                            </div>                       
+                            </div>
                             <div class="form-group">
                                 <label asp-for="BornPlace" class="control-label float-right">محل الولادة</label>
                                 <input asp-for="BornPlace" class="form-control" />
@@ -73,27 +73,37 @@
                             </div>
                         </div>
                     </div>
-                     <div class="form-group">
-                                <label asp-for="Employment_infoId" class="control-label float-right">المعلومات الوظيفية</label>
-                                <select asp-for="Employment_infoId" class="form-control" asp-items="ViewBag.Employment_infos"></select>
-                                <span asp-validation-for="Employment_infoId" class="text-danger"></span>
-                            </div>
                     <div class="form-group">
-                                <label asp-for="Photo" class="control-label float-right">ربط الصورة الشخصية</label>
-                                <div class="custom-file">
-                                    <input asp-for="Photo" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                </div>
-                                <span asp-validation-for="Photo" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="pdf" class="control-label float-right">pdf ربط ملف</label>
-                                <div class="custom-file">
-                                    <input asp-for="pdf" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                </div>
-                                <span asp-validation-for="pdf" class="text-danger"></span>
-                            </div>
+                        <label asp-for="Employment_infoId" class="control-label float-right">المعلومات الوظيفية</label>
+                        <select asp-for="Employment_infoId" class="form-control" asp-items="ViewBag.Employment_infos"></select>
+                        <span asp-validation-for="Employment_infoId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Academic_CertId" class="control-label float-right">معلومات التحصيل الدراسي</label>
+                        <select asp-for="Academic_CertId" class="form-control" asp-items="ViewBag.Academic_Certs"></select>
+                        <span asp-validation-for="Academic_CertId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="VacationsId" class="control-label float-right">الاجازات</label>
+                        <select asp-for="VacationsId" class="form-control" asp-items="ViewBag.Vacationss"></select>
+                        <span asp-validation-for="VacationsId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Photo" class="control-label float-right">ربط الصورة الشخصية</label>
+                        <div class="custom-file">
+                            <input asp-for="Photo" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                        <span asp-validation-for="Photo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="pdf" class="control-label float-right">pdf ربط ملف</label>
+                        <div class="custom-file">
+                            <input asp-for="pdf" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                        <span asp-validation-for="pdf" class="text-danger"></span>
+                    </div>
                     <div class="form-group">
                         <label asp-for="Nots" class="control-label float-right">الملاحظات</label>
                         <textarea asp-for="Nots" class="form-control"></textarea>
