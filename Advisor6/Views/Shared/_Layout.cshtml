@@ -12,7 +12,12 @@
     <header dir="rtl">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Advisor6</a>
+                <a class="btn btn-outline-success my-2 my-sm-0" asp-controller="Account" asp-action="Login">
+                    <i class="bi bi-box-arrow-in-right"></i> الدخول الى الحساب
+                </a>
+                <a class="btn btn-outline-primary my-2 my-sm-0" asp-controller="Account" asp-action="Register">
+                    <i class="bi bi-person-plus"></i> Register
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -30,8 +35,8 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Personal" asp-action="Index">المستشارين</a>
                         </li>
                         @*  <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Employment_info" asp-action="Index">المعلومات الوظيفية</a>
-        </li>*@
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Employment_info" asp-action="Index">المعلومات الوظيفية</a>
+                </li>*@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Employment_info" asp-action="Index">Employment_info</a>
                         </li>
@@ -54,7 +59,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Vacations" asp-action="Index">Vacations</a>
                         </li>
                     </ul>
-                   @* @await Html.PartialAsync("_Search", "Personal")*@
+                    @* @await Html.PartialAsync("_Search", "Personal")*@
 
                 </div>
             </div>

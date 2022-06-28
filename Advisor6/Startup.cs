@@ -1,8 +1,11 @@
 using Advisor6.Data;
 using Advisor6.Data.Services;
+using Advisor6.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,6 +42,16 @@ namespace Advisor6
             services.AddScoped<ITriningService, TriningService>();
             services.AddScoped<IVacationsService, VacationsService>();
 
+            //Authentication and authorization
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddMemoryCache();
+            services.AddSession();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            });
+
+
             services.AddControllersWithViews();
         }
 
@@ -60,6 +73,10 @@ namespace Advisor6
 
             app.UseRouting();
 
+            //Authentication & Authorization
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -70,8 +87,8 @@ namespace Advisor6
             });
 
             //Seed database
-         // AppDbInitializer.Seed(app);
-         //   AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
+            AppDbInitializer.Seed(app);
+            AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
         }
     }
 }
