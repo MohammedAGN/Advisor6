@@ -1,8 +1,10 @@
 ﻿using Advisor6.Data;
+using Advisor6.Data.Static;
 using Advisor6.Data.ViewModels;
 using Advisor6.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,13 +24,23 @@ namespace Advisor6.Controllers
             _signInManager = signInManager;
             _context = context;
         }
-
+        // Get / HomePage
         public IActionResult Index()
         {
             return View();
         }
+        // Get / allUsers
+        public async Task<IActionResult> Users()
+        {
+            var users = await _context.Users.ToListAsync();
+            return View(users);
+        }
+
+
+        //Get/LoginPage
         public IActionResult Login() => View(new LoginVM());
 
+        //Post/LoginPage
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM loginVM)
         {
@@ -53,8 +65,10 @@ namespace Advisor6.Controllers
             TempData["Error"] = "Wrong credentials. Please, try again!";
             return View(loginVM);
         }
+        //Get/RegisterPage
         public IActionResult Register() => View(new RegisterVM());
 
+        //Post/RegisterPage
         [HttpPost]
         public async Task<IActionResult> Register(RegisterVM registerVM)
         {
@@ -80,12 +94,14 @@ namespace Advisor6.Controllers
 
             return View("RegisterCompleted");
         }
+        
 
+        //Post/LogoutPage
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Movies");
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult AccessDenied(string ReturnUrl)

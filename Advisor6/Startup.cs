@@ -72,6 +72,7 @@ namespace Advisor6
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             //Authentication & Authorization
             app.UseAuthentication();
