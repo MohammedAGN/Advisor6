@@ -24,8 +24,37 @@ namespace Advisor6.Controllers
             _signInManager = signInManager;
             _context = context;
         }
-        // Get / HomePage
-        public IActionResult Index()
+
+
+        //public class AccountRepository : IAccountRepository
+        //{
+        //    private readonly UserManager<ApplicationUser> _userManager;
+        //    private readonly SignInManager<ApplicationUser> _signInManager;
+        //    private readonly RoleManager<IdentityRole> _roleManager;
+        //    //private readonly IUserService _userService;
+        //    //private readonly IEmailService _emailService;
+        //    //private readonly IConfiguration _configuration;
+
+        //    public AccountRepository(UserManager<ApplicationUser> userManager,
+        //        SignInManager<ApplicationUser> signInManager,
+        //        RoleManager<IdentityRole> roleManager,
+        //        //IUserService userService,
+        //        //IEmailService emailService,
+        //        //IConfiguration configuration)
+        //    {
+        //        _userManager = userManager;
+        //        _signInManager = signInManager;
+        //        _roleManager = roleManager;
+        //        //_userService = userService;
+        //        //_emailService = emailService;
+        //        //_configuration = configuration;
+        //    }
+
+
+
+
+            // Get / HomePage
+            public IActionResult Index()
         {
             return View();
         }

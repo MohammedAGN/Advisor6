@@ -16,12 +16,17 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.ReportViewer.Common" Version="10.0.40219.1" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+	  
+	  
+    <!--<PackageReference Include="Microsoft.ReportViewer.Common" Version="10.0.40219.1" />
+  تم ايقاف الكود لغاية تنفيذ تسجيل الدخول  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />-->
+  
+  
+  
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Reports\" />
+    <!--تم ايقاف الكود لغاية تنفيذ تسجيل الدخول<Folder Include="Reports\" />-->
     <Folder Include="wwwroot\PADV\PDF\" />
     <Folder Include="wwwroot\PADV\Photo\" />
   </ItemGroup>
