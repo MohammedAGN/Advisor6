@@ -11,5 +11,6 @@ namespace Advisor6.Models
     {
         [Display(Name = "Full name")]
         public string FullName { get; set; }
+        
     }
 }

@@ -31,7 +31,23 @@ namespace Advisor6
         {
             //DbContext configuration           
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
+////////////
+///
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequiredLength = 5;
+                options.Password.RequiredUniqueChars = 1;
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+               
+            });
 
+
+
+            //////////////
+            ///
             // Services configuration
             services.AddScoped<IPersonalService, PersonalService>();
             services.AddScoped<IEmployment_infoService, Employment_infoService>();
@@ -43,7 +59,8 @@ namespace Advisor6
             services.AddScoped<IVacationsService, VacationsService>();
 
             //Authentication and authorization
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
             services.AddMemoryCache();
             services.AddSession();
             services.AddAuthentication(options =>

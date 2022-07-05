@@ -85,9 +85,11 @@ namespace Advisor6.Controllers
             {
                 FullName = registerVM.FullName,
                 Email = registerVM.EmailAddress,
-                UserName = registerVM.EmailAddress
+                UserName = registerVM.EmailAddress,
+               
             };
             var newUserResponse = await _userManager.CreateAsync(newUser, registerVM.Password);
+            //, 
 
             if (newUserResponse.Succeeded)
                 await _userManager.AddToRoleAsync(newUser, UserRoles.User);
@@ -107,6 +109,41 @@ namespace Advisor6.Controllers
         public IActionResult AccessDenied(string ReturnUrl)
         {
             return View();
+        }
+
+
+        ////////////
+        ///
+
+        [Route("signup")]
+        public IActionResult Signup()
+        {
+            return View();
+        }
+
+        [Route("signup")]
+        [HttpPost]
+        public async Task<IActionResult> Signup(RegisterVM registerVM)
+        {
+            if (ModelState.IsValid)
+            {
+                // write your code
+                var result = await _userManager.CreateUserAsync(registerVM);
+                if (!result.Succeeded)
+                {
+                    foreach (var errorMessage in result.Errors)
+                    {
+                        ModelState.AddModelError("", errorMessage.Description);
+                    }
+
+                    return View(registerVM);
+                }
+
+                ModelState.Clear();
+                return RedirectToAction("ConfirmEmail", new { email = registerVM.EmailAddress });
+            }
+
+            return View(registerVM);
         }
     }
 }
