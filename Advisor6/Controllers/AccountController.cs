@@ -21,6 +21,7 @@ namespace Advisor6.Controllers
         public AccountController(IAccountRepository accountRepository)
         {
             _accountRepository = accountRepository;
+
         }
 
 
@@ -34,6 +35,7 @@ namespace Advisor6.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterVM registerVM)
         {
+             
             if (ModelState.IsValid)
             {
                 // write your code
@@ -49,9 +51,10 @@ namespace Advisor6.Controllers
                 }
 
                 ModelState.Clear();
-                return RedirectToAction("ConfirmEmail", new { email = registerVM.EmailAddress });
+                return RedirectToAction("ConfirmEmail", new { email = registerVM.Password });
             }
 
+            
             return View(registerVM);
         }
 

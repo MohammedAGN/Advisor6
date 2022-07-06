@@ -8,9 +8,9 @@ namespace Advisor6.Data.ViewModels
 {
     public class RegisterVM
     {
-        [Display(Name = "Full name")]
-        [Required(ErrorMessage = "Full name is required")]
-        public string FullName { get; set; }
+        //[Display(Name = "Full name")]
+        //[Required(ErrorMessage = "Full name is required")]
+        //public string FirstName { get; set; }
 
         [Display(Name = "Email address")]
         [Required(ErrorMessage = "Email address is required")]

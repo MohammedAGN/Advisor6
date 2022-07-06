@@ -2,22 +2,22 @@
 
 namespace Advisor6.Migrations
 {
-    public partial class addFullName : Migration
+    public partial class addFirstName : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
+            migrationBuilder.RenameColumn(
                 name: "FullName",
                 table: "AspNetUsers",
-                type: "nvarchar(max)",
-                nullable: true);
+                newName: "FirstName");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "FullName",
-                table: "AspNetUsers");
+            migrationBuilder.RenameColumn(
+                name: "FirstName",
+                table: "AspNetUsers",
+                newName: "FullName");
         }
     }
 }
