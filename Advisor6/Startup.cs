@@ -1,5 +1,6 @@
 using Advisor6.Data;
 using Advisor6.Data.Services;
+using Advisor6.Data.Repository;
 using Advisor6.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -14,6 +15,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
+
 
 namespace Advisor6
 {
@@ -31,18 +34,22 @@ namespace Advisor6
         {
             //DbContext configuration           
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
-////////////
-///
-            services.Configure<IdentityOptions>(options =>
-            {
-                options.Password.RequiredLength = 5;
-                options.Password.RequiredUniqueChars = 1;
-                options.Password.RequireDigit = false;
-                options.Password.RequireLowercase = false;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-               
-            });
+            ////////////
+            ///
+           // services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+
+            //.AddDefaultTokenProviders();
+            //services.Configure<IdentityOptions>(options =>
+            //{
+            //    options.Password.RequiredLength = 5;
+            //    options.Password.RequiredUniqueChars = 1;
+            //    options.Password.RequireDigit = false;
+            //    options.Password.RequireLowercase = false;
+            //    options.Password.RequireNonAlphanumeric = false;
+            //    options.Password.RequireUppercase = false;
+
+            //});
 
 
 
@@ -57,16 +64,16 @@ namespace Advisor6
             services.AddScoped<IThanksService, ThanksService>();
             services.AddScoped<ITriningService, TriningService>();
             services.AddScoped<IVacationsService, VacationsService>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
 
             //Authentication and authorization
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppDbContext>();
-            services.AddMemoryCache();
-            services.AddSession();
-            services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            });
+            
+            //services.AddMemoryCache();
+            //services.AddSession();
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            //});
 
 
             services.AddControllersWithViews();
@@ -85,17 +92,16 @@ namespace Advisor6
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseSession();
+            //app.UseSession();
 
             //Authentication & Authorization
             app.UseAuthentication();
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -105,8 +111,8 @@ namespace Advisor6
             });
 
             //Seed database
-            AppDbInitializer.Seed(app);
-            AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
+            //AppDbInitializer.Seed(app);
+            //AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
         }
     }
 }

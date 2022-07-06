@@ -1,4 +1,5 @@
 ﻿using Advisor6.Data;
+using Advisor6.Data.Repository;
 using Advisor6.Data.Static;
 using Advisor6.Data.ViewModels;
 using Advisor6.Models;
@@ -14,150 +15,29 @@ namespace Advisor6.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly AppDbContext _context;
-
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, AppDbContext context)
+        private readonly IAccountRepository _accountRepository;
+        //private readonly SignInManager<ApplicationUser> _signInManager;
+        //private readonly AppDbContext _context;
+        public AccountController(IAccountRepository accountRepository)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
-            _context = context;
+            _accountRepository = accountRepository;
         }
 
 
-        //public class AccountRepository : IAccountRepository
-        //{
-        //    private readonly UserManager<ApplicationUser> _userManager;
-        //    private readonly SignInManager<ApplicationUser> _signInManager;
-        //    private readonly RoleManager<IdentityRole> _roleManager;
-        //    //private readonly IUserService _userService;
-        //    //private readonly IEmailService _emailService;
-        //    //private readonly IConfiguration _configuration;
-
-        //    public AccountRepository(UserManager<ApplicationUser> userManager,
-        //        SignInManager<ApplicationUser> signInManager,
-        //        RoleManager<IdentityRole> roleManager,
-        //        //IUserService userService,
-        //        //IEmailService emailService,
-        //        //IConfiguration configuration)
-        //    {
-        //        _userManager = userManager;
-        //        _signInManager = signInManager;
-        //        _roleManager = roleManager;
-        //        //_userService = userService;
-        //        //_emailService = emailService;
-        //        //_configuration = configuration;
-        //    }
-
-
-
-
-            // Get / HomePage
-            public IActionResult Index()
+        [Route("Register")]
+        public IActionResult Register()
         {
             return View();
         }
-        // Get / allUsers
-        public async Task<IActionResult> Users()
-        {
-            var users = await _context.Users.ToListAsync();
-            return View(users);
-        }
 
-
-        //Get/LoginPage
-        public IActionResult Login() => View(new LoginVM());
-
-        //Post/LoginPage
-        [HttpPost]
-        public async Task<IActionResult> Login(LoginVM loginVM)
-        {
-            if (!ModelState.IsValid) return View(loginVM);
-
-            var user = await _userManager.FindByEmailAsync(loginVM.EmailAddress);
-            if (user != null)
-            {
-                var passwordCheck = await _userManager.CheckPasswordAsync(user, loginVM.Password);
-                if (passwordCheck)
-                {
-                    var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
-                    if (result.Succeeded)
-                    {
-                        return RedirectToAction("Index", "Personal");
-                    }
-                }
-                TempData["Error"] = "Wrong credentials. Please, try again!";
-                return View(loginVM);
-            }
-
-            TempData["Error"] = "Wrong credentials. Please, try again!";
-            return View(loginVM);
-        }
-        //Get/RegisterPage
-        public IActionResult Register() => View(new RegisterVM());
-
-        //Post/RegisterPage
+        [Route("Register")]
         [HttpPost]
         public async Task<IActionResult> Register(RegisterVM registerVM)
-        {
-            if (!ModelState.IsValid) return View(registerVM);
-
-            var user = await _userManager.FindByEmailAsync(registerVM.EmailAddress);
-            if (user != null)
-            {
-                TempData["Error"] = "This email address is already in use";
-                return View(registerVM);
-            }
-
-            var newUser = new ApplicationUser()
-            {
-                FullName = registerVM.FullName,
-                Email = registerVM.EmailAddress,
-                UserName = registerVM.EmailAddress,
-               
-            };
-            var newUserResponse = await _userManager.CreateAsync(newUser, registerVM.Password);
-            //, 
-
-            if (newUserResponse.Succeeded)
-                await _userManager.AddToRoleAsync(newUser, UserRoles.User);
-
-            return View("RegisterCompleted");
-        }
-        
-
-        //Post/LogoutPage
-        [HttpPost]
-        public async Task<IActionResult> Logout()
-        {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
-        }
-
-        public IActionResult AccessDenied(string ReturnUrl)
-        {
-            return View();
-        }
-
-
-        ////////////
-        ///
-
-        [Route("signup")]
-        public IActionResult Signup()
-        {
-            return View();
-        }
-
-        [Route("signup")]
-        [HttpPost]
-        public async Task<IActionResult> Signup(RegisterVM registerVM)
         {
             if (ModelState.IsValid)
             {
                 // write your code
-                var result = await _userManager.CreateUserAsync(registerVM);
+                var result = await _accountRepository.CreateUserAsync(registerVM);
                 if (!result.Succeeded)
                 {
                     foreach (var errorMessage in result.Errors)
@@ -174,5 +54,101 @@ namespace Advisor6.Controllers
 
             return View(registerVM);
         }
+
+
+
+
+        //        // Get / HomePage
+        //        public IActionResult Index()
+        //    {
+        //        return View();
+        //    }
+        //    // Get / allUsers
+        //    public async Task<IActionResult> Users()
+        //    {
+        //        var users = await _context.Users.ToListAsync();
+        //        return View(users);
+        //    }
+
+
+        //    //Get/LoginPage
+        //    public IActionResult Login() => View(new LoginVM());
+
+        //    //Post/LoginPage
+        //    [HttpPost]
+        //    public async Task<IActionResult> Login(LoginVM loginVM)
+        //    {
+        //        if (!ModelState.IsValid) return View(loginVM);
+
+        //        var user = await _userManager.FindByEmailAsync(loginVM.EmailAddress);
+        //        if (user != null)
+        //        {
+        //            var passwordCheck = await _userManager.CheckPasswordAsync(user, loginVM.Password);
+        //            if (passwordCheck)
+        //            {
+        //                var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
+        //                if (result.Succeeded)
+        //                {
+        //                    return RedirectToAction("Index", "Personal");
+        //                }
+        //            }
+        //            TempData["Error"] = "Wrong credentials. Please, try again!";
+        //            return View(loginVM);
+        //        }
+
+        //        TempData["Error"] = "Wrong credentials. Please, try again!";
+        //        return View(loginVM);
+        //    }
+        //    //Get/RegisterPage
+        //    public IActionResult Register() => View(new RegisterVM());
+
+        //    //Post/RegisterPage
+        //    [HttpPost]
+        //    public async Task<IActionResult> Register(RegisterVM registerVM)
+        //    {
+        //        if (!ModelState.IsValid) return View(registerVM);
+
+        //        var user = await _userManager.FindByEmailAsync(registerVM.EmailAddress);
+        //        if (user != null)
+        //        {
+        //            TempData["Error"] = "This email address is already in use";
+        //            return View(registerVM);
+        //        }
+
+        //        var newUser = new ApplicationUser()
+        //        {
+        //            FullName = registerVM.FullName,
+        //            Email = registerVM.EmailAddress,
+        //            UserName = registerVM.EmailAddress,
+
+        //        };
+        //        var newUserResponse = await _userManager.CreateAsync(newUser, registerVM.Password);
+        //        //, 
+
+        //        if (newUserResponse.Succeeded)
+        //            await _userManager.AddToRoleAsync(newUser, UserRoles.User);
+
+        //        return View("RegisterCompleted");
+        //    }
+
+
+        //    //Post/LogoutPage
+        //    [HttpPost]
+        //    public async Task<IActionResult> Logout()
+        //    {
+        //        await _signInManager.SignOutAsync();
+        //        return RedirectToAction("Index", "Home");
+        //    }
+
+        //    public IActionResult AccessDenied(string ReturnUrl)
+        //    {
+        //        return View();
+        //    }
+
+
+        //    ////////////
+        //    ///
+
+
     }
 }

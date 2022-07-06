@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Advisor6.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220627220123_IdentityDbContext")]
-    partial class IdentityDbContext
+    [Migration("20220706015236_addFullName")]
+    partial class addFullName
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
