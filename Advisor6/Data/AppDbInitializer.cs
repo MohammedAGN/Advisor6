@@ -132,7 +132,7 @@ namespace Advisor6.Data
                 {
                     var newAdminUser = new ApplicationUser()
                     {
-                        FirstName = "Admin User",
+                        FullName = "Admin User",
                         UserName = "admin-user",
                         Email = adminUserEmail,
                         EmailConfirmed = true
@@ -149,7 +149,7 @@ namespace Advisor6.Data
                 {
                     var newAppUser = new ApplicationUser()
                     {
-                        FirstName = "Application User",
+                        FullName = "Application User",
                         UserName = "app-user",
                         Email = appUserEmail,
                         EmailConfirmed = true

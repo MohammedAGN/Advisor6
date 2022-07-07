@@ -10,14 +10,12 @@ namespace Advisor6.Data.ViewModels
     {
         [Display(Name = "Full name")]
         [Required(ErrorMessage = "Full name is required")]
-        public string FirstName { get; set; }
+        public string FullName { get; set; }
 
         [Display(Name = "Email address")]
         [Required(ErrorMessage = "Email address is required")]
         [EmailAddress(ErrorMessage = "Please enter a valid email")]
         public string EmailAddress { get; set; }
-
-        
         
         [Required(ErrorMessage = "Please enter a strong password")]
         [Compare("ConfirmPassword", ErrorMessage = "Password does not match")]
@@ -28,17 +26,7 @@ namespace Advisor6.Data.ViewModels
         [Required(ErrorMessage = "Please confirm your password")]
         [Display(Name = "Confirm Password")]
         [DataType(DataType.Password)]
-        
         public string ConfirmPassword { get; set; }
 
-
-        ///////////////////
-        ///
-        //[Required(ErrorMessage = "Please enter your first name")]
-        //[Display(Name = "First name")]
-        //public string FirstName { get; set; }
-
-        //[Display(Name = "Last name")]
-        //public string LastName { get; set; }
     }
 }

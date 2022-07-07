@@ -18,7 +18,7 @@ else
     <div class="dropdown">
         <button class="btn btn-outline-success dropdown-toggle" type="button" id="profile-btn" data-toggle="dropdown"
                 aria-expanded="false">
-            <i class="bi bi-person-badge"></i> Hello @UserManager.GetUserName(User)
+            <i class="bi bi-person-badge"></i> @UserManager.GetUserName(User)
         </button>
         <ul class="dropdown-menu" aria-labelledby="profile-btn">
             @if (User.IsInRole("Admin"))
@@ -31,9 +31,6 @@ else
             }
         </ul>
     </div>
-
-
-
     <span style="padding: 5px;"></span>
     <form asp-controller="Account" asp-action="Logout">
         <button class="btn btn-outline-danger my-2 my-sm-0">

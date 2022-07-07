@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Advisor6.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220706214704_fname")]
-    partial class fname
+    [Migration("20220707121559_UserPassword1")]
+    partial class UserPassword1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -138,7 +138,7 @@ namespace Advisor6.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
@@ -173,6 +173,9 @@ namespace Advisor6.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("UserPassword")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

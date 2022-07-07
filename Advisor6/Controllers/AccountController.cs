@@ -43,9 +43,10 @@ namespace Advisor6.Controllers
             }
             var newUser = new ApplicationUser()
             {
-                FirstName = registerVM.Password,
+                FullName = registerVM.FullName,
                 Email = registerVM.EmailAddress,
-                UserName = registerVM.EmailAddress
+                UserPassword = registerVM.Password,
+                UserName = registerVM.FullName
             };
             var newUserResponse = await _userManager.CreateAsync(newUser, registerVM.Password);
             if (newUserResponse.Succeeded)
