@@ -1,6 +1,6 @@
 using Advisor6.Data;
 using Advisor6.Data.Services;
-using Advisor6.Data.Repository;
+//using Advisor6.Data.Repository;
 using Advisor6.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -49,10 +49,10 @@ namespace Advisor6
                 options.Password.RequireLowercase = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
-                
+
 
             });
-            
+
 
 
             //////////////
@@ -66,7 +66,7 @@ namespace Advisor6
             services.AddScoped<IThanksService, ThanksService>();
             services.AddScoped<ITriningService, TriningService>();
             services.AddScoped<IVacationsService, VacationsService>();
-            services.AddScoped<IAccountRepository, AccountRepository>();
+            //services.AddScoped<IAccountRepository, AccountRepository>();
 
             //Authentication and authorization
 
@@ -102,7 +102,7 @@ namespace Advisor6
 
             //Authentication & Authorization
             app.UseAuthentication();
-            //app.UseAuthorization();
+ 
 
 
             app.UseEndpoints(endpoints =>
@@ -113,8 +113,8 @@ namespace Advisor6
             });
 
             //Seed database
-            //AppDbInitializer.Seed(app);
-            //AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
+            AppDbInitializer.Seed(app);
+            AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
         }
     }
 }

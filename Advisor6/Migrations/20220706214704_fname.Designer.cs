@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Advisor6.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220706114424_addFirstName")]
-    partial class addFirstName
+    [Migration("20220706214704_fname")]
+    partial class fname
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
