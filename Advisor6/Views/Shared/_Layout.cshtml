@@ -53,6 +53,27 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Vacations" asp-action="Index">Vacations</a>
                         </li>
+                        @inject SignInManager<ApplicationUser> signInManager;
+
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("SuperAdmin"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Manage
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" asp-controller="Manager"
+                                       asp-action="ListUsers">Users</a>
+                                    <a class="dropdown-item" asp-controller="Manager"
+                                       asp-action="ListRoles">Roles</a>
+                                    <a class="dropdown-item" asp-controller="Account"
+                                       asp-action="ChangePassword">
+                                        Password
+                                    </a>
+                                </div>
+                            </li>
+                        }
                     </ul>
                     @* @await Html.PartialAsync("_Search", "Personal")*@
 

@@ -4,5 +4,6 @@
         <hr />
         <a class="btn btn-outline-success" asp-controller="Home" asp-action="Index">Home Page</a>
     </div>
+    @ViewBag.ErrorMessage
     @await Html.PartialAsync("_CreateNew","Personal")
 </div>

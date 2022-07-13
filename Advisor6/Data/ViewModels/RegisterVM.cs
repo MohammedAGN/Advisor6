@@ -28,5 +28,7 @@ namespace Advisor6.Data.ViewModels
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
 
+      
+
     }
 }

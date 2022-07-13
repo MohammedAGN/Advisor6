@@ -9,37 +9,36 @@
         <p>
             <h4>List of all users</h4>
         </p>
-
         <table class="table">
             <thead>
                 <tr class="text-center">
-                   @* <th>@Html.DisplayNameFor(model => model.FirstName)</th>*@
-                    <th>@Html.DisplayNameFor(model => model.UserName)</th>
+                    <th>@Html.DisplayNameFor(model => model.FullName)</th>
+                    @*<th>@Html.DisplayNameFor(model => model.UserName)</th>*@
                     <th>@Html.DisplayNameFor(model => model.Email)</th>
-                    <th>@Html.DisplayNameFor(model => model.PasswordHash)</th>
+                    <th>@Html.DisplayNameFor(model => model.UserPassword)</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                <tr>
-                   @* <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.FirstName)
-                    </td>*@
+                <tr class="text-center">
                     <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.UserName)
+                        @Html.DisplayFor(modelItem => item.FullName)
                     </td>
+                    @*<td class="align-middle">
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>*@
                     <td class="align-middle">
                         @Html.DisplayFor(modelItem => item.Email)
                     </td>
                     <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.PasswordHash)
+                        @Html.DisplayFor(modelItem => item.UserPassword)
                     </td>
+
+
                 </tr>
                 }
             </tbody>
-
         </table>
-
     </div>
 </div>

@@ -1,4 +1,4 @@
-﻿@using Advisor6.Data.ViewModels;
+﻿
 @model RegisterVM;
 
 @{
@@ -11,12 +11,12 @@
             <h4>Sign up for a new account</h4>
         </p>
 
-        @*@if (TempData["Error"] != null)
+        @if (TempData["Error"] != null)
         {
             <div class="col-md-12 alert alert-danger">
                 <span><b>Sorry!</b> - @TempData["Error"] </span>
             </div>
-        }*@
+        }
         <div class="container">
             <h4 class="display-4">Register</h4>
             <hr />
@@ -24,6 +24,10 @@
                 <div class="col-md-4">
                     <form asp-action="Register">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    
+
+
                         <div class="form-group">
                             <label asp-for="FullName" class="control-label"></label>
                             <input asp-for="FullName" class="form-control" />

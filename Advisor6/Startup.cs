@@ -102,7 +102,7 @@ namespace Advisor6
 
             //Authentication & Authorization
             app.UseAuthentication();
- 
+            app.UseAuthorization();
 
 
             app.UseEndpoints(endpoints =>
