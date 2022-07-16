@@ -41,7 +41,10 @@ namespace Advisor6.Models
         [NotMapped]
         public IFormFile pdf { get; set; }
 
-        public List<Personal> Personal { get; set; }
-     
+        //public List<Personal> Personal { get; set; }
+        [ForeignKey("PersonalId")]
+        public int PersonalId { get; set; }
+        public Personal Personal { get; set; }
+
     }
 }

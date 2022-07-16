@@ -51,10 +51,10 @@ namespace Advisor6.Controllers
         // Get : Personal/Create
         public async Task<IActionResult> Create()
         {
-            var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
-            ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
-            ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
-            ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
+            //var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
+            //ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
+            //ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
+            //ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
             return View();
         }
 
@@ -62,14 +62,14 @@ namespace Advisor6.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(NewPersonalVM personal)
         {
-            if (!ModelState.IsValid)
-            {
-                var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
-                ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
-                ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
-                ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
-                return View();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
+            //    ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
+            //    ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
+            //    ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
+            //    return View();
+            //}
             if (personal.Photo != null)
             {
                 string folder = "PADV/Photo/";
@@ -108,13 +108,13 @@ namespace Advisor6.Controllers
                 DataEntryName = personalDetails.DataEntryName,
                 Image = personalDetails.Image,
                 PDF = personalDetails.PDF,
-                Employment_infoId = personalDetails.Employment_infoId
+                //Employment_infoId = personalDetails.Employment_infoId
             };
 
-            var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
-            ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
-            ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
-            ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
+            //var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
+            //ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
+            //ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
+            //ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
             return View(response);
         }
         // Post : Personal/Edit
@@ -123,14 +123,14 @@ namespace Advisor6.Controllers
         {
             if (id != personal.Id) return View("NotFound");
 
-            if (!ModelState.IsValid)
-            {
-                var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
-                ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
-                ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
-                ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
-                return View();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
+            //    ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");
+            //    ViewBag.Academic_Certs = new SelectList(personalDropdownsData.Academic_Certs, "Id", "Academic_Degree");
+            //    ViewBag.Vacationss = new SelectList(personalDropdownsData.Vacationss, "Id", "Vacation_Start_Date");
+            //    return View();
+            //}
             if (personal.Photo != null)
             {
                 string folder = "PADV/Photo/";
@@ -183,7 +183,7 @@ namespace Advisor6.Controllers
                 DataEntryName = personalDetails.DataEntryName,
                 Image = personalDetails.Image,
                 PDF = personalDetails.PDF,
-                Employment_infoId = personalDetails.Employment_infoId
+                //Employment_infoId = personalDetails.Employment_infoId
             };
             var personalDropdownsData = await _service.GetNewPersonalDropdownsValues();
             ViewBag.Employment_infos = new SelectList(personalDropdownsData.Employment_infos, "Id", "MainDeptartment");

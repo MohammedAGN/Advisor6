@@ -58,24 +58,27 @@ namespace Advisor6.Models
         public List<Ifad> Ifad { get; set; }
         public List<Thanks> Thanks { get; set; }
         public List<Trining> Trining { get; set; }
+        public List<Academic_Cert> Academic_Cert { get; set; }
+        public List<Employment_info> Employment_info { get; set; }
+        public List<Vacations> Vacations { get; set; }
 
-        // Employment_info
-        public int Academic_CertId{ get; set; }
+        //// Employment_info
+        //public int Academic_CertId{ get; set; }
 
-        [ForeignKey("Academic_CertId")]
-        public Academic_Cert Academic_Cert { get; set; }
+        //[ForeignKey("Academic_CertId")]
+        //public Academic_Cert Academic_Cert { get; set; }
 
-        // Employment_info
-        public int Employment_infoId { get; set; }
+        //// Employment_info
+        //public int Employment_infoId { get; set; }
 
-        [ForeignKey("Employment_infoId")]
-        public Employment_info Employment_info { get; set; }
+        //[ForeignKey("Employment_infoId")]
+        //public Employment_info Employment_info { get; set; }
 
-        // Vacations
-        public int VacationsId { get; set; }
+        //// Vacations
+        //public int VacationsId { get; set; }
 
-        [ForeignKey("VacationsId")]
-        public Vacations Vacations { get; set; }
+        //[ForeignKey("VacationsId")]
+        //public Vacations Vacations { get; set; }
 
     }
 }

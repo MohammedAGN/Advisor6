@@ -24,5 +24,6 @@ namespace Advisor6.Data.ViewModels
             "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+
     }
 }

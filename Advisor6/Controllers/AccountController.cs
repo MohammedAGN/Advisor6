@@ -30,7 +30,6 @@ namespace Advisor6.Controllers
             _roleManager = roleManager;
         }
 
-
         //Get/Account/"Register"
         public IActionResult Register() => View(new RegisterVM());
 
@@ -67,7 +66,6 @@ namespace Advisor6.Controllers
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("index", "home");
                 }
-
                 // If there are any errors, add them to the ModelState object
                 // which will be displayed by the validation summary tag helper
                 foreach (var error in result.Errors)
@@ -75,12 +73,8 @@ namespace Advisor6.Controllers
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-
             return View(model);
         }
-
-
-
 
 
 
@@ -104,13 +98,10 @@ namespace Advisor6.Controllers
         ////////////////////////////    };
         ////////////////////////////    var newUserResponse = await _userManager.CreateAsync(newUser, registerVM.Password);
         ////////////////////////////    if (newUserResponse.Succeeded)
-
         ////////////////////////////        await _userManager.AddToRoleAsync(newUser, UserRoles.User);
         ////////////////////////////    return View("RegisterCompleted");
         ////////////////////////////}
         //////////////////////////////هذا  الكود يعمل وبدون مشاكل
-
-
 
 
         //Get/LoginPage
@@ -157,8 +148,6 @@ namespace Advisor6.Controllers
         public async Task<IActionResult> Users()
         {
             var users = await _context.Users.ToListAsync();
-
-
             return View(users);
         }
 
@@ -179,6 +168,8 @@ namespace Advisor6.Controllers
                 {
                     return RedirectToAction("Login");
                 }
+                    user.UserPassword = model.NewPassword;
+                     await _userManager.UpdateAsync(user);
 
                 // ChangePasswordAsync changes the user password
                 var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
@@ -195,12 +186,10 @@ namespace Advisor6.Controllers
                     }
                     return View();
                 }
-
                 // Upon successfully changing the password refresh sign-in cookie
                 await _signInManager.RefreshSignInAsync(user);
                 return View("ChangePasswordConfirmation");
             }
-
             return View(model);
         }
     }

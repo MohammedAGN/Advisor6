@@ -49,9 +49,10 @@ namespace Advisor6.Models
         //public List<Administrative_Orders> Administrative_Orders { get; set; }
 
         // //  //Personal
-        //[ForeignKey("PersonalId")]
-        //public int PersonalId { get; set; }
+        [ForeignKey("PersonalId")]
+        public int PersonalId { get; set; }
+        public Personal Personal { get; set; }
 
-        public List<Personal> Personal { get; set; }
+        //public List<Personal> Personal { get; set; }
     }
 }

@@ -136,13 +136,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    @*<div class="form-group">
                         <label asp-for="Employment_infoId" class="control-label float-right">المعلومات الوظيفية</label>
                         <input asp-for="@Model.Employment_info.MainDeptartment" class="form-control" readonly></input>
 
 
                         <span asp-validation-for="Employment_infoId" class="text-danger"></span>
-                    </div>
+                    </div>*@
 
                     <div class="form-group">
                         <label asp-for="Nots" class="control-label float-right">الملاحظات</label>
@@ -183,12 +183,12 @@
                     <form>
                         <div class="row" dir="rtl">
                             <div class="col-md-6">
-                                <div class="form-group">
+                                @*<div class="form-group">
                                     <label asp-for="@Model.Employment_info.MainDeptartment" class="control-label float-right">الدائرة</label>
                                     <input asp-for="@Model.Employment_info.MainDeptartment" class="form-control" readonly />
                                     <span asp-validation-for="@Model.Employment_info.MainDeptartment" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
+                                </div>*@
+                                @*<div class="form-group">
                                     <label asp-for="@Model.Employment_info.SubDeptartment" class="control-label float-right">القسم</label>
                                     <input asp-for="@Model.Employment_info.SubDeptartment" class="form-control" readonly />
                                     <span asp-validation-for="@Model.Employment_info.SubDeptartment" class="text-danger"></span>
@@ -222,12 +222,12 @@
                                     <label asp-for="@Model.Employment_info.EmploymentBook_Date" class="control-label float-right">تاريخ التعيين</label>
                                     <input asp-for="@Model.Employment_info.EmploymentBook_Date" class="form-control" readonly />
                                     <span asp-validation-for="@Model.Employment_info.EmploymentBook_Date" class="text-danger"></span>
-                                </div>
+                                </div>*@
 
                             </div>
                             <div class="col-md-6">
 
-                                <div class="form-group">
+                                @*<div class="form-group">
                                     <label asp-for="@Model.Employment_info.DirectBook_No" class="control-label float-right">رقم كتاب المباشرة</label>
                                     <input asp-for="@Model.Employment_info.DirectBook_No" class="form-control" readonly />
                                     <span asp-validation-for="@Model.Employment_info.DirectBook_No" class="text-danger"></span>
@@ -246,9 +246,9 @@
                                     <label asp-for="@Model.Employment_info.Contract_expiry_date" class="control-label float-right">تاريخ انتهاء العقد</label>
                                     <input asp-for="@Model.Employment_info.Contract_expiry_date" class="form-control" readonly />
                                     <span asp-validation-for="@Model.Employment_info.Contract_expiry_date" class="text-danger"></span>
-                                </div>
+                                </div>*@
 
-                                <div class="form-group">
+                                @*<div class="form-group">
                                     <label asp-for="@Model.Employment_info.EntryDate" class="control-label float-right">تاريخ ادخال القيد</label>
                                     <input asp-for="@Model.Employment_info.EntryDate" class="form-control" readonly />
                                     <span asp-validation-for="@Model.Employment_info.EntryDate" class="text-danger"></span>
@@ -274,13 +274,13 @@
                             <label asp-for="@Model.Employment_info.Nots" class="control-label float-right">الملاحظات</label>
                             <textarea asp-for="@Model.Employment_info.Nots" class="form-control" readonly></textarea>
                             <span asp-validation-for="@Model.Employment_info.Nots" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
+                        </div>*@
+                        @*<div class="form-group">
                             <a class="btn btn-outline-primary" asp-controller="Employment_info" asp-action="Edit" asp-route-id="@Model.Employment_info.Id"><i class="bi bi-pencil-square"></i></a> |
                             <a class="btn btn-info" target="_blank" href="@Model.Employment_info.PDF"><i class="bi bi-file-earmark-pdf-fill"></i></a> |
                             <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@Model.Id"><i class="bi bi-trash"></i></a>|
                             <a class="btn btn-outline-secondary" asp-action="Index">Back to List</a>
-                        </div>
+                        </div>*@
                         <div>
 
                             <div style="position: fixed; right: 25px; bottom: 75px;" class="text-white">

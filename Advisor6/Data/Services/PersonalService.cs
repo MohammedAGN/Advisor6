@@ -35,9 +35,9 @@ namespace Advisor6.Data.Services
                 DataEntryName = data.DataEntryName,
                 Image = data.Image,
                 PDF = data.PDF,
-                Employment_infoId = data.Employment_infoId,
-                Academic_CertId = data.Academic_CertId,
-                VacationsId = data.VacationsId
+                //Employment_infoId = data.Employment_infoId,
+                //Academic_CertId = data.Academic_CertId,
+                //VacationsId = data.VacationsId
             };
             await _context.Personal.AddAsync(newPersonal);
             await _context.SaveChangesAsync();
@@ -59,11 +59,11 @@ namespace Advisor6.Data.Services
 
         public async Task<Personal> GetPersonalByIdAsync(int id)
         {
-            var personalDetails = await _context.Personal
-                .Include(c => c.Employment_info)
-            .Include(p => p.Academic_Cert)
-            .Include(p => p.Vacations)
-            .FirstOrDefaultAsync(n => n.Id == id);
+            var personalDetails = await _context.Personal.FirstOrDefaultAsync(n => n.Id == id);
+            //    .Include(c => c.Employment_info)
+            //.Include(p => p.Academic_Cert)
+            //.Include(p => p.Vacations)
+            //.FirstOrDefaultAsync(n => n.Id == id);
             //.Include(am => am.Actors_Movies).ThenInclude(a => a.Actor)
             // .Include(w => w.Ifad)
             //.Include(x => x.Thanks)
@@ -93,7 +93,7 @@ namespace Advisor6.Data.Services
                 dbPersonal.DataEntryName = data.DataEntryName;
                 dbPersonal.Image = data.Image;
                 dbPersonal.PDF = data.PDF;
-                dbPersonal.Employment_infoId = data.Employment_infoId;
+                //dbPersonal.Employment_infoId = data.Employment_infoId;
                 await _context.SaveChangesAsync();
             }
 
